@@ -6,26 +6,16 @@ import CryptoHunkz from './utils/CryptoHunkz.json';
 
 // CONSTANTS
 const hunkzAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-const contract = new ethers.Contract(hunkzAddress, CryptoHunkz.abi);
 
-let wallet = new ethers.Wallet(
-	'0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
-);
+// const signer = wallet.connect(provider);
 
-const signer = wallet.connect(provider);
-
-provider.on('network', (newNetwork, oldNetwork) => {
-	if (oldNetwork) {
-		window.location.reload();
-	}
-});
+// provider.on('network', (newNetwork, oldNetwork) => {
+// 	if (oldNetwork) {
+// 		window.location.reload();
+// 	}
+// });
 
 function App() {
-	// console.log(`Hunkz ABI: ${JSON.stringify(CryptoHunkz.abi)}`)
-	// console.log(window.ethereum)
-	console.log(provider);
-
 	const [account, setCurrentAccount] = useState(null);
 	const [amount, setAmount] = useState(1);
 
@@ -37,8 +27,8 @@ function App() {
 		}
 	};
 
-	const mintHunkz = async (event, amount) => {
-		event.preventDefault();
+	const mintHunkz = async (e) => {
+		e.preventDefault();
 		if (typeof window.ethereum !== 'undefined') {
 			await requestAccount();
 			const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -48,24 +38,23 @@ function App() {
 				CryptoHunkz.abi,
 				signer
 			);
-			let totalPrice = await contract.price();
+			let price = await contract.price();
+			console.log(price);
+			console.log(amount);
+			let totalPrice = price * amount;
 			console.log(totalPrice);
-			// let txn = contract.mintHunk(
-			// 	amount,
-			// 	{
-			// 		value: ethers.utils.parseEther(amount * totalPrice.toString()),
-			// 	}
-			// {
-			// 	gasLimit: 300000,
-			// }
-			// );
-			// await txn.wait;
-			// console.log('completed');
+			let txn = contract.mintHunk(amount, {
+				value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
+				gasLimit: 3000000,
+			});
+			await txn.wait;
+			console.log(await txn, 'completed');
 		}
 	};
 
 	const handleAmountChange = (event) => {
 		setAmount(event.target.value);
+		console.log(amount);
 	};
 
 	async function getBalance(event) {
@@ -182,6 +171,7 @@ function App() {
 				<input type='text' value={amount} onChange={handleAmountChange} />
 				<button>Mint</button>
 			</form>
+			<button onClick={getBalance}>Balance</button>
 		</div>
 	);
 }
