@@ -4,8 +4,3 @@
   font-size: .7rem;
   text-align: center;
 }
-
-.navbar {
-  display: flex;
-  justify-content: space-around;
-}
