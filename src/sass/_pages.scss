@@ -25,3 +25,19 @@ img {
 	display: block;
 	margin: 0 auto;
 }
+
+/*********************/
+// Team Page
+/*********************/
+.team {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	justify-items: center;
+}
+
+.team-member-frame {
+	height: 300px;
+	width: 300px;
+	border-radius: 10px;
+}
