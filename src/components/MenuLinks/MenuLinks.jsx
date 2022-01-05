@@ -1,10 +1,9 @@
 import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
-const BurgerMenu2 = ({ connect, account }) => {
+const MenuLinks = ({ connect, account, open }) => {
 	return (
-		<Menu right className='menu'>
+		<div className={`menu-links ${open ? 'menu-links-open' : null}`}>
 			<Link
 				activeClass='active'
 				to='home'
@@ -62,8 +61,8 @@ const BurgerMenu2 = ({ connect, account }) => {
 					Connect
 				</button>
 			)}
-		</Menu>
+		</div>
 	);
 };
 
-export default BurgerMenu2;
+export default MenuLinks;

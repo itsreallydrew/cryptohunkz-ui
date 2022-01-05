@@ -2,6 +2,7 @@ import React from 'react';
 // import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import BurgerMenu2 from '../BurgerMenu/BurgerMenu2';
+import BurgerMenu3 from '../BurgerMenu/BurgerMenu3';
 
 const Nav = ({ connect, account }) => {
 	return (
@@ -20,7 +21,8 @@ const Nav = ({ connect, account }) => {
 				Mint
 			</Link> */}
 			{/* <BurgerMenu /> */}
-			<BurgerMenu2 connect={connect} account={account} />
+			{/* <BurgerMenu2 connect={connect} account={account} /> */}
+			<BurgerMenu3 connect={connect} account={account} />
 		</nav>
 	);
 };
