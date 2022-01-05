@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Mint from './components/Mint/Mint';
 import CryptoHunkz from './utils/CryptoHunkz.json';
 import { Link, Element, animateScroll as scroll } from 'react-scroll';
+import Roadmap from './components/Roadmap/Roadmap';
 
 // CONSTANTS
 const hunkzAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
@@ -169,6 +170,11 @@ function App() {
 				getBalance={getBalance}
 				/>
 			</Element>
+			<Element name='roadmap'>
+				<Roadmap/>
+			</Element>
+			<Element name='team'></Element>
+			<Element name='links'></Element>
 		</div>
 	);
 }

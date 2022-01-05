@@ -7,9 +7,9 @@ const BurgerMenu = () => {
         <Menu>
             <a href="/" className="menu-item">Home</a>
             <Link activeClass='active' to='mint' spy={true} smooth={true} duration={500} className="menu-item">Mint</Link>
-            <a href="/roadmap" className="menu-item">Roadmap</a>
-            <a href="/team" className="menu-item">Team</a>
-            <a href="/links" className="menu-item">Links</a>
+            <Link activeClass='active' to='roadmap' spy={true} smooth={true} duration={500} className="menu-item">Roadmap</Link>
+            <Link activeClass='active' to='team' spy={true} smooth={true} duration={500} className="menu-item">Team</Link>
+            <Link activeClass='active' to='links' spy={true} smooth={true} duration={500} className="menu-item">Links</Link>
         </Menu>
     )
 }
