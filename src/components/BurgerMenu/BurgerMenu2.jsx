@@ -2,7 +2,7 @@ import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
-const BurgerMenu2 = ({ connect }) => {
+const BurgerMenu2 = ({ connect, account }) => {
 	return (
 		<Menu right>
 			<Link
@@ -50,9 +50,18 @@ const BurgerMenu2 = ({ connect }) => {
 				className='bm-item'>
 				Links
 			</Link>
-			<button onClick={connect} className='btn btn-outline-dark'>
-				Connect
-			</button>
+			{account ? (
+				<div className='btn btn-outline-dark'>
+					{`${account.slice(0, 6)}..${account.slice(
+						account.length - 4,
+						account.length
+					)}`}
+				</div>
+			) : (
+				<button onClick={connect} className='btn btn-outline-dark'>
+					Connect
+				</button>
+			)}
 		</Menu>
 	);
 };

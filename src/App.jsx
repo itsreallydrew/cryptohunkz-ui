@@ -162,20 +162,20 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Header connect={connectWallet} />
+			<Header connect={connectWallet} account={account} />
 			<Element name='mint'>
-			<Mint
-				mintHunkz={mintHunkz}
-				amount={amount}
-				handleAmountChange={handleAmountChange}
-				getBalance={getBalance}
+				<Mint
+					mintHunkz={mintHunkz}
+					amount={amount}
+					handleAmountChange={handleAmountChange}
+					getBalance={getBalance}
 				/>
 			</Element>
 			<Element name='roadmap'>
-				<Roadmap/>
+				<Roadmap />
 			</Element>
 			<Element name='team'>
-				<Team/>
+				<Team />
 			</Element>
 			<Element name='links'></Element>
 		</div>
