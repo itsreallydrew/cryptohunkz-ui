@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-const MenuLinks = ({ connect, account, open }) => {
+const MenuLinks = ({ connect, account, open, setOpen }) => {
 	return (
 		<div className={`menu-links ${open ? 'menu-links-open' : null}`}>
 			<Link

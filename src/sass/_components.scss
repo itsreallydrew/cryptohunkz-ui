@@ -61,6 +61,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
 	display: inline-block;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.bm-item:hover {
+	cursor: pointer;
 }
 
 /* Styling of overlay */
@@ -126,19 +132,24 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // Menu Links
 /*********************/
 .menu-links {
-	height: 20vh;
+	height: 40vh;
+	width: 30vh;
 	background-color: rgba(7, 34, 53, 1);
 	bottom: 0;
-	left: 50px;
+	// left: 50px;
 	right: 0;
 	top: 100px;
 	opacity: 0;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	padding: 15px 30px;
-	position: fixed;
+	position: absolute;
 	transition: all 0.35s ease-in-out;
 	transform: translateX(100%);
 	z-index: 1;
+
+	display: grid;
+	grid-template-columns: repeat(1fr);
+	grid-gap: 1rem;
 }
 .menu-links-open {
 	transform: translateX(0%);
