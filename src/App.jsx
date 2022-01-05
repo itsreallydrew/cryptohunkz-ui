@@ -2,13 +2,12 @@ import { ethers } from 'ethers';
 import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Mint from './components/Mint/Mint'
+import Mint from './components/Mint/Mint';
 import CryptoHunkz from './utils/CryptoHunkz.json';
-
+import { Link, Element, animateScroll as scroll } from 'react-scroll';
 
 // CONSTANTS
 const hunkzAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
-
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
@@ -155,15 +154,21 @@ function App() {
 		}
 	};
 
-	useEffect(async () => {
+	useEffect(() => {
 		checkIfWalletIsConnected();
 	}, []);
 
 	return (
 		<div className='App'>
 			<Header connect={connectWallet} />
-			<Mint mintHunkz={mintHunkz} amount={amount} handleAmountChange={handleAmountChange} getBalance={getBalance}/>
-			
+			<Element name='mint'>
+			<Mint
+				mintHunkz={mintHunkz}
+				amount={amount}
+				handleAmountChange={handleAmountChange}
+				getBalance={getBalance}
+				/>
+			</Element>
 		</div>
 	);
 }

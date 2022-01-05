@@ -1,5 +1,7 @@
 import React from 'react';
-import './Nav.css'
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { Link, animateScroll as scroll } from 'react-scroll';
+
 
 const Nav = ({ connect }) => {
     return (
@@ -8,6 +10,8 @@ const Nav = ({ connect }) => {
             <button onClick={connect} className="btn btn-outline-dark">
                 Connect
             </button>
+            <Link activeClass='active' to='mint' spy={true} smooth={true} duration={500} className="menu-item">Mint</Link>
+            {/* <BurgerMenu/> */}
         </nav>
     );
 };
