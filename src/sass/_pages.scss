@@ -18,6 +18,25 @@ img {
 	display: block;
 }
 
+.discord {
+	border-radius: 0.2rem;
+	border: 0.1rem solid $blue;
+	font-weight: 700;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	margin-top: 2rem;
+
+	&:hover {
+		background-color: $gray-900;
+		cursor: pointer;
+	}
+
+	& a {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
 /*********************/
 // Mint Page
 /*********************/
@@ -35,6 +54,7 @@ img {
 	display: grid;
 	grid-template-rows: auto-fit, minmax(300px, 1fr);
 	grid-template-columns: repeat(2, 1fr);
+	gap: 0 1rem;
 }
 
 .item-2,
@@ -42,23 +62,38 @@ img {
 	align-self: center;
 }
 
+.item-1-content,
+.item-2-content,
+.item-3-content,
+.item-4-content,
+.item-5-content {
+	border: 1px solid $gray-800;
+	border-radius: 5px;
+	padding: 0.6rem;
+
+	&:hover {
+		box-shadow: 0rem 0.05rem 0.1rem $teal;
+		color: $teal;
+	}
+}
+
 /*********************/
 // Team Page
 /*********************/
 .team {
-	width: 100vw;
-	border: 1.5rem solid salmon;
+	width: 95vw;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	gap: 1rem;
 	justify-items: center;
 
 	&-member {
 		// height: 100
 		width: 100%;
 		border-radius: 1rem;
-		border: 1rem solid yellowgreen;
+		border: 0.2rem solid $blue;
+		overflow: hidden;
 
 		&-frame {
 			width: 100%;

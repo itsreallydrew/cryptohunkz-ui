@@ -7,6 +7,8 @@ import CryptoHunkz from './utils/CryptoHunkz.json';
 import { Link, Element, animateScroll as scroll } from 'react-scroll';
 import Roadmap from './components/Roadmap/Roadmap';
 import Team from './components/Team/Team';
+import FAQ from './components/FAQ/FAQ';
+import Links from './components/Links/Links';
 
 // CONSTANTS
 const hunkzAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
@@ -177,8 +179,12 @@ function App() {
 			<Element name='team'>
 				<Team />
 			</Element>
-			<Element name='faq'></Element>
-			<Element name='links'></Element>
+			<Element name='faq'>
+				<FAQ />
+			</Element>
+			<Element name='links'>
+				<Links />
+			</Element>
 		</div>
 	);
 }

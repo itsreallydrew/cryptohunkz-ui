@@ -219,6 +219,23 @@ img {
   display: block;
 }
 
+.discord {
+  border-radius: 0.2rem;
+  border: 0.1rem solid #2a9fd6;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+.discord:hover {
+  background-color: #212529;
+  cursor: pointer;
+}
+.discord a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /*********************/
 /*********************/
 #kaiju {
@@ -233,6 +250,7 @@ img {
   display: grid;
   grid-template-rows: auto-fit, minmax(300px, 1fr);
   grid-template-columns: repeat(2, 1fr);
+  gap: 0 1rem;
 }
 
 .item-2,
@@ -240,20 +258,38 @@ img {
   align-self: center;
 }
 
+.item-1-content,
+.item-2-content,
+.item-3-content,
+.item-4-content,
+.item-5-content {
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 0.6rem;
+}
+.item-1-content:hover,
+.item-2-content:hover,
+.item-3-content:hover,
+.item-4-content:hover,
+.item-5-content:hover {
+  box-shadow: 0rem 0.05rem 0.1rem #20c997;
+  color: #20c997;
+}
+
 /*********************/
 /*********************/
 .team {
-  width: 100vw;
-  border: 1.5rem solid salmon;
+  width: 95vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
   justify-items: center;
 }
 .team-member {
   width: 100%;
   border-radius: 1rem;
-  border: 1rem solid yellowgreen;
+  border: 0.2rem solid #2a9fd6;
+  overflow: hidden;
 }
 .team-member-frame {
   width: 100%;
