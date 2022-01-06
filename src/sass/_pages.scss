@@ -30,14 +30,30 @@ img {
 // Team Page
 /*********************/
 .team {
+	width: 100vw;
+	border: 15px solid salmon;
+
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
 	justify-items: center;
+
+	&-member {
+		// height: 100
+		width: 100%;
+		border-radius: 10px;
+		border: 10px solid yellowgreen;
+
+		&-frame {
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
 }
 
-.team-member-frame {
-	height: 300px;
-	width: 300px;
-	border-radius: 10px;
-}
+/*********************/
+// Roadmap
+/*********************/
