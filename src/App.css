@@ -215,6 +215,15 @@ img {
 
 /*********************/
 /*********************/
+.roadmap {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto-fit, minmax(300px, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*********************/
+/*********************/
 .team {
   width: 100vw;
   border: 15px solid salmon;
@@ -234,6 +243,3 @@ img {
 .team-member-frame img {
   width: 100%;
 }
-
-/*********************/
-/*********************/

@@ -27,6 +27,17 @@ img {
 }
 
 /*********************/
+// Roadmap Page
+/*********************/
+.roadmap {
+	height: 100vh;
+
+	display: grid;
+	grid-template-rows: auto-fit, minmax(300px, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+}
+
+/*********************/
 // Team Page
 /*********************/
 .team {
@@ -53,7 +64,3 @@ img {
 		}
 	}
 }
-
-/*********************/
-// Roadmap
-/*********************/
