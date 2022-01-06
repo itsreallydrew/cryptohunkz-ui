@@ -1,19 +1,17 @@
 import { ethers } from 'ethers';
 import { useState, useEffect } from 'react';
 import './App.css';
-import Header from './components/Header';
+import Header from './components/Header/Header';
+import Mint from './components/Mint/Mint';
 import CryptoHunkz from './utils/CryptoHunkz.json';
+import { Link, Element, animateScroll as scroll } from 'react-scroll';
+import Roadmap from './components/Roadmap/Roadmap';
+import Team from './components/Team/Team';
+import FAQ from './components/FAQ/FAQ';
+import Links from './components/Links/Links';
 
 // CONSTANTS
-const hunkzAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
-
-// const signer = wallet.connect(provider);
-
-// provider.on('network', (newNetwork, oldNetwork) => {
-// 	if (oldNetwork) {
-// 		window.location.reload();
-// 	}
-// });
+const hunkzAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
@@ -52,13 +50,13 @@ function App() {
 		}
 	};
 
-	const handleAmountChange = (event) => {
-		setAmount(event.target.value);
+	const handleAmountChange = (e) => {
+		setAmount(e.target.value);
 		console.log(amount);
 	};
 
-	async function getBalance(event) {
-		event.preventDefault();
+	async function getBalance(e) {
+		e.preventDefault();
 		if (typeof window.ethereum !== 'undefined') {
 			const [account] = await window.ethereum.request({
 				method: 'eth_requestAccounts',
@@ -160,18 +158,33 @@ function App() {
 		}
 	};
 
-	useEffect(async () => {
+	useEffect(() => {
 		checkIfWalletIsConnected();
 	}, []);
 
 	return (
 		<div className='App'>
-			<Header connect={connectWallet} />
-			<form onSubmit={mintHunkz}>
-				<input type='text' value={amount} onChange={handleAmountChange} />
-				<button>Mint</button>
-			</form>
-			<button onClick={getBalance}>Balance</button>
+			<Header connect={connectWallet} account={account} />
+			<Element name='mint'>
+				<Mint
+					mintHunkz={mintHunkz}
+					amount={amount}
+					handleAmountChange={handleAmountChange}
+					getBalance={getBalance}
+				/>
+			</Element>
+			<Element name='roadmap'>
+				<Roadmap />
+			</Element>
+			<Element name='team'>
+				<Team />
+			</Element>
+			<Element name='faq'>
+				<FAQ />
+			</Element>
+			<Element name='links'>
+				<Links />
+			</Element>
 		</div>
 	);
 }

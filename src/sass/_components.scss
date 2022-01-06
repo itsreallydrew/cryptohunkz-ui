@@ -1,0 +1,167 @@
+/*********************/
+// Burger Menu
+/*********************/
+/* Position and sizing of burger button */
+.bm-burger-button {
+	position: absolute;
+	width: 3.6rem;
+	height: 3rem;
+	// right: 36px;
+	// top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+	background: $blue;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+	background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+	height: 2.4rem;
+	width: 2.4rem;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+	background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+	position: fixed;
+	height: 100vh;
+}
+
+/* General sidebar styles */
+.bm-menu {
+	background: #373a47;
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+	fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+	color: #b8b7ad;
+	padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+	display: inline-block;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.bm-item:hover {
+	cursor: pointer;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+/*********************/
+// Burger Menu 3
+/*********************/
+.nav-icon-5 {
+	width: 3.5rem;
+	height: 3rem;
+	margin: 1rem;
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+}
+.nav-icon-5 span {
+	background-color: #fff;
+	position: absolute;
+	border-radius: 2px;
+	transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+	width: 100%;
+	height: 4px;
+	transition-duration: 500ms;
+}
+.nav-icon-5 span:nth-child(1) {
+	top: 0px;
+	left: 0px;
+}
+.nav-icon-5 span:nth-child(2) {
+	top: 1.3rem;
+	left: 0px;
+	opacity: 1;
+}
+.nav-icon-5 span:nth-child(3) {
+	bottom: 0px;
+	left: 0px;
+}
+.nav-icon-5:not(.open):hover span:nth-child(1) {
+	transform: rotate(-3deg) scaleY(1.1);
+}
+.nav-icon-5:not(.open):hover span:nth-child(2) {
+	transform: rotate(3deg) scaleY(1.1);
+}
+.nav-icon-5:not(.open):hover span:nth-child(3) {
+	transform: rotate(-4deg) scaleY(1.1);
+}
+.nav-icon-5.open span:nth-child(1) {
+	transform: rotate(45deg);
+	top: 1.3rem;
+}
+.nav-icon-5.open span:nth-child(2) {
+	opacity: 0;
+}
+.nav-icon-5.open span:nth-child(3) {
+	transform: rotate(-45deg);
+	top: 1.3rem;
+}
+
+/*********************/
+// Menu Links
+/*********************/
+.menu-links {
+	height: 40vh;
+	width: 30vh;
+	background-color: rgba(7, 34, 53, 1);
+	bottom: 0;
+	// left: 50px;
+	right: 0;
+	top: 10rem;
+	opacity: 0;
+	overflow-y: hidden;
+	padding: 1.5rem 3rem;
+	position: absolute;
+	transition: all 0.35s ease-in-out;
+	transform: translateX(100%);
+	z-index: 1;
+
+	display: grid;
+	grid-template-columns: repeat(1fr);
+	grid-gap: 1rem;
+}
+.menu-links-open {
+	transform: translateX(0%);
+	opacity: 0.8;
+}
+
+/*********************/
+// Mint Button
+/*********************/
+.btn {
+	border-radius: 5rem;
+	width: 8rem;
+	font-size: 1.1rem;
+	text-align: center;
+}
