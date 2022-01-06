@@ -3,14 +3,14 @@ import React from 'react';
 const Roadmap = () => {
 	return (
 		<div className='roadmap'>
-			<div className='roadmap-item'>
+			<div className='roadmap-item item-1'>
 				<h4>Pamp Level 1: Mint out</h4>
 				<p>
 					CryptoHunkz will release their exclusive collection of 5557 #Hunkz
 					featuring 500 Animated/ Rares and 16 Legendary Hunkz 2D Art.
 				</p>
 			</div>
-			<div className='roadmap-item'>
+			<div className='roadmap-item item-2'>
 				<h4>Pamp Level 2: Acquire 6x6 land plot in Sandbox</h4>
 				<p>
 					The future of CryptoHunkz lies within the Metaverse. After mint out
@@ -18,7 +18,7 @@ const Roadmap = () => {
 					next in our building stage.
 				</p>
 			</div>
-			<div className='roadmap-item'>
+			<div className='roadmap-item item-3'>
 				<h4>Pamp Level 3: 3D VX</h4>
 				<p>
 					In the Metaverse CryptoHunkz will be animated into a 3D Voxel that
@@ -26,7 +26,7 @@ const Roadmap = () => {
 					exclusive airdrops.
 				</p>
 			</div>
-			<div className='roadmap-item'>
+			<div className='roadmap-item item-4'>
 				<h4>
 					Pamp Level 4: Building arena on our land to host events, games,
 					concerts, meetups, etc...
@@ -37,7 +37,7 @@ const Roadmap = () => {
 					Games, Concerts, Meetups, whatever the community has in mind.
 				</p>
 			</div>
-			<div className='roadmap-item'>
+			<div className='roadmap-item item-5'>
 				<h4>Pamp Level 5: Airdrop character items</h4>
 				<p>
 					To complement the 3D Voxels there will be future airdropped items

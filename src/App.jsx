@@ -177,6 +177,7 @@ function App() {
 			<Element name='team'>
 				<Team />
 			</Element>
+			<Element name='faq'></Element>
 			<Element name='links'></Element>
 		</div>
 	);

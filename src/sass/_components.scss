@@ -4,8 +4,8 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
 	position: absolute;
-	width: 36px;
-	height: 30px;
+	width: 3.6rem;
+	height: 3rem;
 	// right: 36px;
 	// top: 36px;
 }
@@ -22,8 +22,8 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-	height: 24px;
-	width: 24px;
+	height: 2.4rem;
+	width: 2.4rem;
 }
 
 /* Color/shape of close button cross */
@@ -78,9 +78,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // Burger Menu 3
 /*********************/
 .nav-icon-5 {
-	width: 35px;
-	height: 30px;
-	margin: 10px 10px;
+	width: 3.5rem;
+	height: 3rem;
+	margin: 1rem;
 	position: relative;
 	cursor: pointer;
 	display: inline-block;
@@ -99,7 +99,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	left: 0px;
 }
 .nav-icon-5 span:nth-child(2) {
-	top: 13px;
+	top: 1.3rem;
 	left: 0px;
 	opacity: 1;
 }
@@ -118,14 +118,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .nav-icon-5.open span:nth-child(1) {
 	transform: rotate(45deg);
-	top: 13px;
+	top: 1.3rem;
 }
 .nav-icon-5.open span:nth-child(2) {
 	opacity: 0;
 }
 .nav-icon-5.open span:nth-child(3) {
 	transform: rotate(-45deg);
-	top: 13px;
+	top: 1.3rem;
 }
 
 /*********************/
@@ -138,10 +138,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	bottom: 0;
 	// left: 50px;
 	right: 0;
-	top: 100px;
+	top: 10rem;
 	opacity: 0;
 	overflow-y: hidden;
-	padding: 15px 30px;
+	padding: 1.5rem 3rem;
 	position: absolute;
 	transition: all 0.35s ease-in-out;
 	transform: translateX(100%);
@@ -160,8 +160,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // Mint Button
 /*********************/
 .btn {
-	border-radius: 50px;
-	width: 5rem;
-	font-size: 0.7rem;
+	border-radius: 5rem;
+	width: 8rem;
+	font-size: 1.1rem;
 	text-align: center;
 }
