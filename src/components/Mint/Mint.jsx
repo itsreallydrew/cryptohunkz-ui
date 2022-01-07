@@ -1,15 +1,25 @@
 import React from 'react';
+import MintModal from '../MintModal';
 
 
-const Mint = ({ mintHunkz, amount, handleAmountChange, getBalance }) => {
+const Mint = ({ mintHunkz, amount, handleAmountChange, getBalance, openModal, closeModal, modalIsOpen, customStyles, subtitle, afterOpenModal }) => {
     return (
         <div>
             <img id='kaiju' src="https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif" alt="hunk-gif" />
-            <form onSubmit={mintHunkz}>
-				<input className="form-control" type='number' max="2" min="1" value={amount} onChange={handleAmountChange} />
-				<button className="btn btn-success">Mint</button>
-			</form>
-			<button className="btn btn-info" onClick={getBalance}>Balance</button>
+            <MintModal 
+                mintHunkz={mintHunkz}
+                amount={amount}
+                handleAmountChange={handleAmountChange}
+                getBalance={getBalance}
+                
+                openModal={openModal} 
+                closeModal={closeModal} 
+                modalIsOpen={modalIsOpen} 
+                customStyles={customStyles} 
+                subtitle={subtitle} 
+                afterOpenModal={afterOpenModal}
+            />
+            
         </div>
     );
 };
