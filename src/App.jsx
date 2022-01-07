@@ -9,9 +9,22 @@ import Roadmap from './components/Roadmap/Roadmap';
 import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
+import MintModal from './components/MintModal'
+
+
+const customStyles = {
+	content: {
+	  top: '50%',
+	  left: '50%',
+	  right: 'auto',
+	  bottom: 'auto',
+	  marginRight: '-50%',
+	  transform: 'translate(-50%, -50%)',
+	},
+  };
 
 // CONSTANTS
-const hunkzAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
+const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
@@ -162,6 +175,24 @@ function App() {
 		checkIfWalletIsConnected();
 	}, []);
 
+	let subtitle;
+
+	
+	const [modalIsOpen, setIsOpen] = useState(false);
+
+	function openModal() {
+		setIsOpen(true);
+	}
+
+	function afterOpenModal() {
+		// references are now sync'd and can be accessed.
+		subtitle.style.color = '#f00';
+	}
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
 	return (
 		<div className='App'>
 			<Header connect={connectWallet} account={account} />
@@ -171,6 +202,13 @@ function App() {
 					amount={amount}
 					handleAmountChange={handleAmountChange}
 					getBalance={getBalance}
+
+					openModal={openModal} 
+					closeModal={closeModal} 
+					modalIsOpen={modalIsOpen} 
+					customStyles={customStyles} 
+					subtitle={subtitle} 
+					afterOpenModal={afterOpenModal}
 				/>
 			</Element>
 			<Element name='roadmap'>

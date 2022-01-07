@@ -19,7 +19,7 @@ async function main() {
 
   await hunkz.deployed();
 
-  console.log("Greeter deployed to:", hunkz.address);
+  console.log("CryptoHunkz deployed to:", hunkz.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
