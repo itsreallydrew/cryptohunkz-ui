@@ -139,18 +139,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   left: 0px;
 }
 
-.nav-icon-5:not(.open):hover span:nth-child(1) {
-  transform: rotate(-3deg) scaleY(1.1);
-}
-
-.nav-icon-5:not(.open):hover span:nth-child(2) {
-  transform: rotate(3deg) scaleY(1.1);
-}
-
-.nav-icon-5:not(.open):hover span:nth-child(3) {
-  transform: rotate(-4deg) scaleY(1.1);
-}
-
 .nav-icon-5.open span:nth-child(1) {
   transform: rotate(45deg);
   top: 1.3rem;
@@ -198,6 +186,22 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 8rem;
   font-size: 1.1rem;
   text-align: center;
+}
+
+/*********************/
+/**********************/
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 
 /*********************/

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'
 import { ethers } from 'ethers'
 import CryptoHunkz from '../utils/CryptoHunkz.json';
-import 'animate.css'
+import { fadeInDown } from 'react-animations';
 
 // CONSTANTS
 const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
@@ -11,6 +11,7 @@ const MintModal = ({ account, openModal, closeModal, modalIsOpen, getBalance, re
     Modal.setAppElement('#root');
     
     const [amount, setAmount] = useState(1);
+    const [balance, setBalance] = useState(null)
 
     const mintHunkz = async (e) => {
 		e.preventDefault();
@@ -69,7 +70,7 @@ const MintModal = ({ account, openModal, closeModal, modalIsOpen, getBalance, re
           alignItems: 'center',
           flexDirection: 'column',
           borderRadius: '15px',
-        //   backgroundColor: 'black',
+          backgroundColor: 'black',
         //   border: '.5rem solid purple',
           boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
           boxShadow: "rgb(38, 57, 77) 0px 20px 30px -10px",
@@ -82,18 +83,23 @@ const MintModal = ({ account, openModal, closeModal, modalIsOpen, getBalance, re
         },
       };
 
-      const nice = {
-        color: 'black',
+    const nice = {
+    color: 'black',
+    textAlign: 'center',
+    fontSize: '5rem'
+    }
+
+    const divStyles = {
+        fontSize: '4rem',
+        color: 'lightgreen',
+    //   backgroundColor: 'black',
         textAlign: 'center'
-      }
 
-      const divStyles = {
-          fontSize: '16px',
-          color: 'lightgreen',
-        //   backgroundColor: 'black',
-          textAlign: 'center'
+    }
 
-      }
+    const pStyles = {
+        fontSize: "1.5rem"
+    }
 
     useEffect(() => {
         if (typeof window.ethereum !== 'undefined') {
@@ -102,16 +108,18 @@ const MintModal = ({ account, openModal, closeModal, modalIsOpen, getBalance, re
             provider.getBalance(address).then(bal => {
                 const balInEth = ethers.utils.formatEther(bal)
                 console.log(`balance: ${balInEth} ETH`)
+                setBalance(balInEth);
             })
         }
-    }, [])
+    }, [balance])
 
     
 
     return (
-        <div className="modal-background animate__animated animate__animate__flipInX">
+        <div className="modal-background">
             <button className="btn btn-outline-success" onClick={openModal}>Get Yours Now</button>
             <Modal
+                closeTimeoutMS={400}
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
@@ -122,7 +130,8 @@ const MintModal = ({ account, openModal, closeModal, modalIsOpen, getBalance, re
                     <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
                     </div>
                 </div> */}
-                <div>price per Hunkz: .077 ETH</div>
+                <p style={pStyles}>price per Hunkz: .077 ETH</p>
+                <p style={pStyles}>balance: {Number(balance).toFixed(4)}</p>
                 <form onSubmit={mintHunkz}>
                     <div style={divStyles}type='number' max="2" min="1" onChange={handleAmountChange}>{amount}</div>
                     <button className="btn btn-success">Mint</button>
