@@ -1,9 +1,16 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 const Roadmap = () => {
+	Aos.init({
+		duration: 700
+	})
+
 	return (
 		<div className='roadmap'>
-			<div className='roadmap-item item-1'>
+			<div data-aos="fade-right" className='roadmap-item item-1'>
 				<div className='item-1-content'>
 					<h4>Pamp Level 1: Mint out</h4>
 					<p>
