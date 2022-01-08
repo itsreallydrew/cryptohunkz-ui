@@ -1,5 +1,4 @@
 import React from 'react';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 
@@ -19,7 +18,7 @@ const Roadmap = () => {
 					</p>
 				</div>
 			</div>
-			<div className='roadmap-item item-2'>
+			<div data-aos="fade-left" className='roadmap-item item-2'>
 				<div className='item-2-content'>
 					<h4>Pamp Level 2: Acquire 6x6 land plot in Sandbox</h4>
 					<p>
@@ -29,7 +28,7 @@ const Roadmap = () => {
 					</p>
 				</div>
 			</div>
-			<div className='roadmap-item item-3'>
+			<div data-aos="fade-right" className='roadmap-item item-3'>
 				<div className='item-3-content'>
 					<h4>Pamp Level 3: 3D VX</h4>
 					<p>
@@ -39,7 +38,7 @@ const Roadmap = () => {
 					</p>
 				</div>
 			</div>
-			<div className='roadmap-item item-4'>
+			<div data-aos="fade-left" className='roadmap-item item-4'>
 				<div className='item-4-content'>
 					<h4>
 						Pamp Level 4: Building arena on our land to host events, games,
@@ -53,7 +52,7 @@ const Roadmap = () => {
 					</p>
 				</div>
 			</div>
-			<div className='roadmap-item item-5'>
+			<div data-aos="fade-right" className='roadmap-item item-5'>
 				<div className='item-5-content'>
 					<h4>Pamp Level 5: Airdrop character items</h4>
 					<p>
