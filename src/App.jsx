@@ -9,26 +9,13 @@ import Roadmap from './components/Roadmap/Roadmap';
 import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
-import MintModal from './components/MintModal'
 
-
-const customStyles = {
-	content: {
-	  top: '50%',
-	  left: '50%',
-	  right: 'auto',
-	  bottom: 'auto',
-	  marginRight: '-50%',
-	  transform: 'translate(-50%, -50%)',
-	},
-  };
-
-// CONSTANTS
 const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+
+
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
-	const [amount, setAmount] = useState(1);
 
 	const requestAccount = async () => {
 		try {
@@ -38,35 +25,9 @@ function App() {
 		}
 	};
 
-	const mintHunkz = async (e) => {
-		e.preventDefault();
-		if (typeof window.ethereum !== 'undefined') {
-			await requestAccount();
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const signer = provider.getSigner();
-			const contract = new ethers.Contract(
-				hunkzAddress,
-				CryptoHunkz.abi,
-				signer
-			);
-			let price = await contract.price();
-			console.log(price);
-			console.log(amount);
-			let totalPrice = price * amount;
-			console.log(totalPrice);
-			let txn = contract.mintHunk(amount, {
-				value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
-				gasLimit: 3000000,
-			});
-			await txn.wait;
-			console.log(await txn, 'completed');
-		}
-	};
+	
 
-	const handleAmountChange = (e) => {
-		setAmount(e.target.value);
-		console.log(amount);
-	};
+	
 
 	async function getBalance(e) {
 		e.preventDefault();
@@ -175,40 +136,18 @@ function App() {
 		checkIfWalletIsConnected();
 	}, []);
 
-	let subtitle;
-
 	
-	const [modalIsOpen, setIsOpen] = useState(false);
-
-	function openModal() {
-		setIsOpen(true);
-	}
-
-	function afterOpenModal() {
-		// references are now sync'd and can be accessed.
-		subtitle.style.color = '#f00';
-	}
-
-	function closeModal() {
-		setIsOpen(false);
-	}
 
 	return (
 		<div className='App'>
 			<Header connect={connectWallet} account={account} />
 			<Element name='mint'>
 				<Mint
-					mintHunkz={mintHunkz}
-					amount={amount}
-					handleAmountChange={handleAmountChange}
+					// mintHunkz={mintHunkz}
+					// handleAmountChange={handleAmountChange}
 					getBalance={getBalance}
-
-					openModal={openModal} 
-					closeModal={closeModal} 
-					modalIsOpen={modalIsOpen} 
-					customStyles={customStyles} 
-					subtitle={subtitle} 
-					afterOpenModal={afterOpenModal}
+					requestAccount={requestAccount}
+					account={account}
 				/>
 			</Element>
 			<Element name='roadmap'>
