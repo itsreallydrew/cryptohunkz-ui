@@ -28,7 +28,6 @@ const Mint = ({ account, mintHunkz, getBalance, requestAccount }) => {
             <img id='kaiju' src="https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif" alt="hunk-gif" />
             <MintModal 
                 mintHunkz={mintHunkz}
-                // handleAmountChange={handleAmountChange}
                 getBalance={getBalance}
                 account={account}
                 requestAccount={requestAccount}

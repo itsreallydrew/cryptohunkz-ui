@@ -9,7 +9,8 @@ import Roadmap from './components/Roadmap/Roadmap';
 import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
-import MintModal from './components/MintModal'
+
+const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
 
 
