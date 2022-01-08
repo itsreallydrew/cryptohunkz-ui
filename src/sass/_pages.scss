@@ -19,22 +19,42 @@ img {
 }
 
 .discord {
+	text-decoration: none;
 	border-radius: 0.2rem;
 	border: 0.1rem solid $blue;
 	font-weight: 700;
 	padding: 1rem;
+	position: relative;
 	border-radius: 0.5rem;
 	margin-top: 2rem;
+	overflow: hidden;
+}
 
-	&:hover {
-		background-color: $gray-900;
-		cursor: pointer;
-	}
+.discord:hover {
+	color: transparent;
+	transition: all 2.5s;
+}
 
-	& a {
-		color: $white;
-		text-decoration: none;
-	}
+.discord::before {
+	content: 'GET PUMPED';
+	color: $white;
+	font-size: 1.5rem;
+	display: grid;
+	place-content: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	// z-index: -1;
+	transform: translateY(-100%);
+	transition: all 1s;
+}
+
+.discord:hover::before {
+	transform: translateY(0);
+	cursor: pointer;
 }
 
 /*********************/
@@ -43,6 +63,43 @@ img {
 #kaiju {
 	display: block;
 	margin: 0 auto;
+}
+
+/*********************/
+// Mint Modal Page
+/*********************/
+.mint-modal {
+	top: 50%;
+	left: 50%;
+	right: auto;
+	bottom: auto;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	height: 75%;
+	width: 75%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 1.5rem;
+	background-color: black;
+	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+		rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+		rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+		rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+		rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.mint-title {
+	color: black;
+	text-align: center;
+	font-size: 5rem;
+}
+
+.mint-div {
+	font-size: 4rem;
+	color: lightgreen;
+	text-align: center;
 }
 
 /*********************/
@@ -81,12 +138,12 @@ img {
 // Team Page
 /*********************/
 .team {
-	width: 95vw;
+	width: 100vw;
+	padding: 5rem;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-	gap: 1rem;
-	justify-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 3rem;
 
 	&-member {
 		// height: 100

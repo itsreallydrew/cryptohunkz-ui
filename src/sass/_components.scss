@@ -156,6 +156,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	opacity: 0.8;
 }
 
+.menu-links * {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 2rem;
+	color: $white;
+	position: relative;
+}
+
 /*********************/
 // Mint Button
 /*********************/
@@ -166,22 +174,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	text-align: center;
 }
 
-
 /*********************/
 // Mint Modal
 /**********************/
 .ReactModal__Overlay {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
+	opacity: 0;
+	transition: opacity 500ms ease-in-out;
 }
 
-.ReactModal__Overlay--after-open{
-    opacity: 1;
+.ReactModal__Overlay--after-open {
+	opacity: 1;
 }
 
-.ReactModal__Overlay--before-close{
-    opacity: 0;
+.ReactModal__Overlay--before-close {
+	opacity: 0;
 	transition: opacity 400ms ease-in-out;
 }
-
-  

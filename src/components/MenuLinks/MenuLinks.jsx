@@ -7,15 +7,18 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 			<Link
 				activeClass='active'
 				to='home'
+				data-text='home'
 				spy={true}
 				smooth={true}
 				duration={500}
 				className='bm-item'>
+				{' '}
 				Home
 			</Link>
 			<Link
 				activeClass='active'
 				to='mint'
+				data-text='mint'
 				spy={true}
 				smooth={true}
 				duration={500}
@@ -25,6 +28,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 			<Link
 				activeClass='active'
 				to='roadmap'
+				data-text='roadmap'
 				spy={true}
 				smooth={true}
 				duration={500}
@@ -34,6 +38,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 			<Link
 				activeClass='active'
 				to='team'
+				data-text='team'
 				spy={true}
 				smooth={true}
 				duration={500}
@@ -43,6 +48,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 			<Link
 				activeClass='active'
 				to='links'
+				data-text='links'
 				spy={true}
 				smooth={true}
 				duration={500}
@@ -50,16 +56,16 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				Links
 			</Link>
 			{account ? (
-				<div className='btn btn-outline-dark'>
+				<a href='null' className='btn btn-outline-dark'>
 					{`${account.slice(0, 6)}..${account.slice(
 						account.length - 4,
 						account.length
 					)}`}
-				</div>
+				</a>
 			) : (
-				<button onClick={connect} className='btn btn-outline-dark'>
+				<a href='null' onClick={connect} className='btn btn-outline-dark'>
 					Connect
-				</button>
+				</a>
 			)}
 		</div>
 	);
