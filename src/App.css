@@ -161,17 +161,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 30vh;
   background-color: rgba(6, 7, 7, 0.762);
   bottom: 0;
-  right: 0;
+  left: 0;
   top: 8rem;
   opacity: 0;
   overflow-y: hidden;
   padding: 1.5rem 3rem;
   position: absolute;
   transition: all 0.35s ease-in-out;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   z-index: 1;
   display: grid;
-  justify-items: end;
+  justify-items: start;
   align-items: center;
   grid-gap: 1rem;
 }
@@ -187,6 +187,32 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 2rem;
   color: #fff;
   position: relative;
+}
+
+.social-icons {
+  display: grid;
+  gap: 1rem 0;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.os-icon {
+  height: 2.6rem;
+  width: 2.66rem;
+}
+
+.connectButton {
+  text-decoration: none;
+  border-radius: 0.2rem;
+  border: 0.1rem solid #2a9fd6;
+  font-weight: 700;
+  padding: 1rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  overflow: hidden;
 }
 
 /*********************/

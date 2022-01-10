@@ -12,8 +12,6 @@ import Links from './components/Links/Links';
 
 const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
-
-
 function App() {
 	const [account, setCurrentAccount] = useState(null);
 
@@ -24,10 +22,6 @@ function App() {
 			console.log('Must connect to Metamask first');
 		}
 	};
-
-	
-
-	
 
 	async function getBalance(e) {
 		e.preventDefault();
@@ -136,8 +130,6 @@ function App() {
 		checkIfWalletIsConnected();
 	}, []);
 
-	
-
 	return (
 		<div className='App'>
 			<Header connect={connectWallet} account={account} />
@@ -159,9 +151,9 @@ function App() {
 			<Element name='faq'>
 				<FAQ />
 			</Element>
-			<Element name='links'>
+			{/* <Element name='links'>
 				<Links />
-			</Element>
+			</Element> */}
 		</div>
 	);
 }

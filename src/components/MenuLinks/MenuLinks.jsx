@@ -1,5 +1,11 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import {
+	faDiscord as discord,
+	faTwitter as twitter,
+} from '@fortawesome/free-brands-svg-icons';
+import opensea from '../../assets/Logomark-Transparent White.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MenuLinks = ({ connect, account, open, setOpen }) => {
 	return (
@@ -45,7 +51,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				className='bm-item'>
 				Team
 			</Link>
-			<Link
+			{/* <Link
 				activeClass='active'
 				to='links'
 				data-text='links'
@@ -54,7 +60,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				duration={500}
 				className='bm-item'>
 				Links
-			</Link>
+			</Link> */}
 			{account ? (
 				<a href='null' className='btn btn-outline-dark'>
 					{`${account.slice(0, 6)}..${account.slice(
@@ -67,6 +73,17 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 					Connect
 				</a>
 			)}
+			<div className='social-icons'>
+				<a href='anchor' className='icon'>
+					<FontAwesomeIcon icon={discord} />
+				</a>
+				<a href='anchor' className='icon'>
+					<FontAwesomeIcon icon={twitter} />
+				</a>
+				<a className='os-icon icon'>
+					<img src={opensea} alt='' />
+				</a>
+			</div>
 		</div>
 	);
 };
