@@ -157,7 +157,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /*********************/
 /*********************/
 .menu-links {
-  height: 40vh;
+  height: 50vh;
   width: 30vh;
   background-color: rgba(6, 7, 7, 0.762);
   bottom: 0;
@@ -173,7 +173,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: grid;
   justify-items: start;
   align-items: center;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
 .menu-links-open {
@@ -340,9 +340,10 @@ img {
 /*********************/
 .roadmap {
   height: 100vh;
+  padding: 1rem;
   display: grid;
   grid-template-rows: auto-fit, minmax(300px, 1fr);
-  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   gap: 0 1rem;
 }
 
@@ -389,4 +390,13 @@ img {
 }
 .team-member-frame img {
   width: 100%;
+}
+
+/*********************/
+/*********************/
+.faq-page {
+  padding: 1rem;
+}
+.faq-page h1 {
+  margin-bottom: 2rem;
 }

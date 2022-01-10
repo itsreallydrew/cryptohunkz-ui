@@ -108,10 +108,12 @@ img {
 /*********************/
 .roadmap {
 	height: 100vh;
+	padding: 1rem;
 
 	display: grid;
 	grid-template-rows: auto-fit, minmax(300px, 1fr);
-	grid-template-columns: repeat(2, 1fr);
+	// grid-template-columns: repeat(2, 1fr);
+	align-items: center;
 	gap: 0 1rem;
 }
 
@@ -160,5 +162,16 @@ img {
 				width: 100%;
 			}
 		}
+	}
+}
+
+/*********************/
+// FAQ
+/*********************/
+.faq-page {
+	padding: 1rem;
+
+	h1 {
+		margin-bottom: 2rem;
 	}
 }
