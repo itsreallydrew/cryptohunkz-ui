@@ -188,16 +188,21 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .connectButton {
+	font-size: 1.5rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
 	border: 0.1rem solid $blue;
 	font-weight: 700;
 	padding: 1rem;
 	position: relative;
-	border-radius: 0.5rem;
-	margin-top: 2rem;
+	border-radius: 2rem;
+	// margin-top: 2rem;
 	overflow: hidden;
 }
+
+// .connectButton:hover {
+
+// }
 
 /*********************/
 // Mint Button

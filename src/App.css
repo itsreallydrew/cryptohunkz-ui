@@ -204,14 +204,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .connectButton {
+  font-size: 1.5rem;
   text-decoration: none;
   border-radius: 0.2rem;
   border: 0.1rem solid #2a9fd6;
   font-weight: 700;
   padding: 1rem;
   position: relative;
-  border-radius: 0.5rem;
-  margin-top: 2rem;
+  border-radius: 2rem;
   overflow: hidden;
 }
 
@@ -260,10 +260,10 @@ img {
 }
 
 .discord {
+  font-size: 2rem;
   text-decoration: none;
   border-radius: 0.2rem;
   border: 0.1rem solid #2a9fd6;
-  font-weight: 700;
   padding: 1rem;
   position: relative;
   border-radius: 0.5rem;
@@ -279,7 +279,7 @@ img {
 .discord::before {
   content: "GET PUMPED";
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: grid;
   place-content: center;
   position: absolute;

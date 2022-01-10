@@ -19,10 +19,11 @@ img {
 }
 
 .discord {
+	font-size: 2rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
 	border: 0.1rem solid $blue;
-	font-weight: 700;
+	// font-weight: 700;
 	padding: 1rem;
 	position: relative;
 	border-radius: 0.5rem;
@@ -38,7 +39,7 @@ img {
 .discord::before {
 	content: 'GET PUMPED';
 	color: $white;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	display: grid;
 	place-content: center;
 	position: absolute;
