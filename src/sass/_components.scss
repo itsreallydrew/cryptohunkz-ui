@@ -67,6 +67,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .bm-item:hover {
 	cursor: pointer;
+	color: $blue;
 }
 
 /* Styling of overlay */
@@ -134,11 +135,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .menu-links {
 	height: 40vh;
 	width: 30vh;
-	background-color: rgba(7, 34, 53, 1);
+	background-color: rgba(6, 7, 7, 0.762);
 	bottom: 0;
 	// left: 50px;
 	right: 0;
-	top: 10rem;
+	top: 8rem;
 	opacity: 0;
 	overflow-y: hidden;
 	padding: 1.5rem 3rem;
@@ -148,12 +149,22 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	z-index: 1;
 
 	display: grid;
-	grid-template-columns: repeat(1fr);
+	// grid-template-columns: repeat(1fr);
+	justify-items: end;
+	align-items: center;
 	grid-gap: 1rem;
 }
 .menu-links-open {
 	transform: translateX(0%);
 	opacity: 0.8;
+}
+
+.menu-links * {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 2rem;
+	color: $white;
+	position: relative;
 }
 
 /*********************/
@@ -166,22 +177,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	text-align: center;
 }
 
-
 /*********************/
 // Mint Modal
 /**********************/
 .ReactModal__Overlay {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
+	opacity: 0;
+	transition: opacity 500ms ease-in-out;
 }
 
-.ReactModal__Overlay--after-open{
-    opacity: 1;
+.ReactModal__Overlay--after-open {
+	opacity: 1;
 }
 
-.ReactModal__Overlay--before-close{
-    opacity: 0;
+.ReactModal__Overlay--before-close {
+	opacity: 0;
 	transition: opacity 400ms ease-in-out;
 }
-
-  
