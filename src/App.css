@@ -432,3 +432,39 @@ img {
 .faq-page h1 {
   margin-bottom: 2rem;
 }
+
+.question-1,
+.question-2,
+.question-3,
+.question-4,
+.question-5 {
+  background-color: #20c997;
+  color: #fff;
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.active,
+.question-1:hover,
+.question-2:hover,
+.question-3:hover,
+.question-4:hover,
+.question-5:hover {
+  background-color: #2a9fd6;
+}
+
+.panel {
+  padding: 0 1.5rem;
+  background-color: #222;
+  display: none;
+  overflow: hidden;
+}
+
+.reveal {
+  display: block;
+}

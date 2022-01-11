@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FAQ = () => {
+	const [revealed, setRevealed] = useState(false);
+
+	const handleClick = () => {
+		setRevealed(!revealed);
+	};
+
 	return (
 		<div className='faq-page' id='faqPage'>
 			<h1>FAQ</h1>
-			<div className='faq-accordion-item'>
+			{/* <div className='faq-accordion-item'>
 				<h4 className='faq-accordion-header' id='headingOne'>
 					<button
 						className='faq-accordion-button collapsed'
@@ -123,14 +129,21 @@ const FAQ = () => {
 				</div>
 			</div>
 
+			<div className='question-1'>
+				<h4>What's this project about?</h4>
+				<p>Being pumped.</p>
+			</div>
+
 			<div className='question-2'>
 				<h4>What's the price?</h4>
 				<p>0.07E</p>
 			</div>
+
 			<div className='question-3'>
 				<h4>How many can we mint?</h4>
 				<p>Max 5 per wallet</p>
 			</div>
+
 			<div className='question-4'>
 				<h4>Is there a roadmap?</h4>
 				<p>
@@ -138,8 +151,57 @@ const FAQ = () => {
 					throughout the metaverse. You can see the full roadmap above.
 				</p>
 			</div>
+
 			<div className='question-5'>
 				<h4>Why should I buy?</h4>
+				<p>Because only the strong survive and Hunkz are the strongest</p>
+			</div> */}
+
+			<button
+				className={`question-1 ${revealed ? 'active' : null}`}
+				onClick={handleClick}>
+				<h4>What is this project about?</h4>
+			</button>
+			<div className={`panel ${revealed ? 'reveal' : null}`}>
+				<p>Being pumped.</p>
+			</div>
+
+			<button
+				className={`question-2 ${revealed ? 'active' : null}`}
+				onClick={handleClick}>
+				<h4>What's the price?</h4>
+			</button>
+			<div className={`panel ${revealed ? 'reveal' : null}`}>
+				<p>0.077E</p>
+			</div>
+
+			<button
+				className={`question-3 ${revealed ? 'active' : null}`}
+				onClick={handleClick}>
+				<h4>How many can I mint?</h4>
+			</button>
+			<div className={`panel ${revealed ? 'reveal' : null}`}>
+				<p>Max 5 per wallet.</p>
+			</div>
+
+			<button
+				className={`question-4 ${revealed ? 'active' : null}`}
+				onClick={handleClick}>
+				<h4>Is there a roadmap?</h4>
+			</button>
+			<div className={`panel ${revealed ? 'reveal' : null}`}>
+				<p>
+					Yes. Our plan is to provide the best experience to the Hunkz community
+					throughout the metaverse. You can see the full roadmap above.
+				</p>
+			</div>
+
+			<button
+				className={`question-5 ${revealed ? 'active' : null}`}
+				onClick={handleClick}>
+				<h4>Why should I buy?</h4>
+			</button>
+			<div className={`panel ${revealed ? 'reveal' : null}`}>
 				<p>Because only the strong survive and Hunkz are the strongest</p>
 			</div>
 		</div>

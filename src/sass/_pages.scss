@@ -206,3 +206,39 @@ img {
 		margin-bottom: 2rem;
 	}
 }
+
+.question-1,
+.question-2,
+.question-3,
+.question-4,
+.question-5 {
+	background-color: $teal;
+	color: $white;
+	cursor: pointer;
+	padding: 1.5rem;
+	width: 100%;
+	text-align: center;
+	border: none;
+	outline: none;
+	transition: 0.5s;
+}
+
+.active,
+.question-1:hover,
+.question-2:hover,
+.question-3:hover,
+.question-4:hover,
+.question-5:hover {
+	background-color: $blue;
+}
+
+.panel {
+	padding: 0 1.5rem;
+	background-color: $gray-800;
+	display: none;
+	overflow: hidden;
+}
+
+.reveal {
+	display: block;
+}
