@@ -1,5 +1,7 @@
 import React from 'react';
 import testImage from '../../assets/Arnold-breathing-animation-2.gif';
+import { faTwitter as twitter } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Team = () => {
 	return (
@@ -8,25 +10,45 @@ const Team = () => {
 				<div className='team-member-frame'>
 					<img src={testImage} alt='' />
 				</div>
-				<h3>Vanilla Face</h3>
+				<div className='dox'>
+					<h3>Vanilla Face</h3>
+					<a href='anchor'>
+						<FontAwesomeIcon icon={twitter} className='img' />
+					</a>
+				</div>
 			</div>
 			<div className='team-member'>
 				<div className='team-member-frame'>
 					<img src={testImage} alt='' />
 				</div>
-				<h3>RKhavoc</h3>
+				<div className='dox'>
+					<h3>RKhavoc</h3>
+					<a href='anchor'>
+						<FontAwesomeIcon icon={twitter} className='img' />
+					</a>
+				</div>
 			</div>
 			<div className='team-member'>
 				<div className='team-member-frame'>
 					<img src={testImage} alt='' />
 				</div>
-				<h3>Junji</h3>
+				<div className='dox'>
+					<h3>Junji</h3>
+					<a href='anchor'>
+						<FontAwesomeIcon icon={twitter} className='img' />
+					</a>
+				</div>
 			</div>
 			<div className='team-member'>
 				<div className='team-member-frame'>
 					<img src={testImage} alt='' />
 				</div>
-				<h3>itsreallydrew</h3>
+				<div className='dox'>
+					<h3>itsreallydrew</h3>
+					<a href='anchor'>
+						<FontAwesomeIcon icon={twitter} className='img' />
+					</a>
+				</div>
 			</div>
 		</div>
 	);

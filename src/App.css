@@ -157,23 +157,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /*********************/
 /*********************/
 .menu-links {
-  height: 40vh;
+  height: 50vh;
   width: 30vh;
   background-color: rgba(6, 7, 7, 0.762);
   bottom: 0;
-  right: 0;
+  left: 0;
   top: 8rem;
   opacity: 0;
   overflow-y: hidden;
   padding: 1.5rem 3rem;
   position: absolute;
   transition: all 0.35s ease-in-out;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   z-index: 1;
   display: grid;
-  justify-items: end;
+  justify-items: start;
   align-items: center;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
 .menu-links-open {
@@ -187,6 +187,32 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 2rem;
   color: #fff;
   position: relative;
+}
+
+.social-icons {
+  display: grid;
+  gap: 1rem 0;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.os-icon {
+  height: 2.6rem;
+  width: 2.66rem;
+}
+
+.connectButton {
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  border: 0.1rem solid #2a9fd6;
+  font-weight: 700;
+  padding: 1rem;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 /*********************/
@@ -234,10 +260,10 @@ img {
 }
 
 .discord {
+  font-size: 2rem;
   text-decoration: none;
   border-radius: 0.2rem;
   border: 0.1rem solid #2a9fd6;
-  font-weight: 700;
   padding: 1rem;
   position: relative;
   border-radius: 0.5rem;
@@ -253,7 +279,7 @@ img {
 .discord::before {
   content: "GET PUMPED";
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: grid;
   place-content: center;
   position: absolute;
@@ -313,11 +339,16 @@ img {
 /*********************/
 /*********************/
 .roadmap {
-  height: 100vh;
+  padding: 0 1rem;
   display: grid;
-  grid-template-rows: auto-fit, minmax(300px, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 1rem;
+  gap: 2rem;
+}
+
+.roadmap-item {
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
 }
 
 .item-2,
@@ -333,6 +364,20 @@ img {
   border: 1px solid #222;
   border-radius: 5px;
   padding: 0.6rem;
+}
+.item-1-content h4,
+.item-2-content h4,
+.item-3-content h4,
+.item-4-content h4,
+.item-5-content h4 {
+  font-size: 2.5rem;
+}
+.item-1-content p,
+.item-2-content p,
+.item-3-content p,
+.item-4-content p,
+.item-5-content p {
+  font-size: 1.4rem;
 }
 .item-1-content:hover,
 .item-2-content:hover,
@@ -363,4 +408,63 @@ img {
 }
 .team-member-frame img {
   width: 100%;
+}
+
+.dox {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dox h3 {
+  font-size: 2rem;
+}
+.dox .img {
+  height: 2rem;
+  width: 2rem;
+}
+
+/*********************/
+/*********************/
+.faq-page {
+  padding: 1rem;
+}
+.faq-page h1 {
+  margin-bottom: 2rem;
+}
+
+.question-1,
+.question-2,
+.question-3,
+.question-4,
+.question-5 {
+  background-color: #20c997;
+  color: #fff;
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.active,
+.question-1:hover,
+.question-2:hover,
+.question-3:hover,
+.question-4:hover,
+.question-5:hover {
+  background-color: #2a9fd6;
+}
+
+.panel {
+  padding: 0 1.5rem;
+  background-color: #222;
+  display: none;
+  overflow: hidden;
+}
+
+.reveal {
+  display: block;
 }
