@@ -6,10 +6,11 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import opensea from '../../assets/Logomark-Transparent White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import 'animate.css'
 
 const MenuLinks = ({ connect, account, open, setOpen }) => {
 	return (
-		<div className={`menu-links ${open ? 'menu-links-open' : null}`}>
+		<div className={`menu-links animate__animated animate__fadeInLeft ${open ? 'menu-links-open' : null}`}>
 			<Link
 				activeClass='active'
 				to='home'
