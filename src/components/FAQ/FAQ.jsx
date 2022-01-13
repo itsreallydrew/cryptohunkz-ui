@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import Accordion from 'react-bootstrap/esm/Accordion';
+import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
+import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 
 const FAQ = () => {
 	const [revealed, setRevealed] = useState(false);
@@ -157,7 +161,7 @@ const FAQ = () => {
 				<p>Because only the strong survive and Hunkz are the strongest</p>
 			</div> */}
 
-			<button
+			{/* <button
 				className={`question-1 ${revealed ? 'active' : null}`}
 				onClick={handleClick}>
 				<h4>What is this project about?</h4>
@@ -203,7 +207,39 @@ const FAQ = () => {
 			</button>
 			<div className={`panel ${revealed ? 'reveal' : null}`}>
 				<p>Because only the strong survive and Hunkz are the strongest</p>
-			</div>
+			</div> */}
+			<Accordion defaultActiveKey='0'>
+				<AccordionItem eventKey='0'>
+					<AccordionHeader>What is this project about?</AccordionHeader>
+					<AccordionBody>Being pumped.</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem eventKey='1'>
+					<AccordionHeader>What's the price?</AccordionHeader>
+					<AccordionBody>.077E</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem eventKey='2'>
+					<AccordionHeader>How many can I mint?</AccordionHeader>
+					<AccordionBody>Max 5 per wallet</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem eventKey='3'>
+					<AccordionHeader>Is there a roadmap?</AccordionHeader>
+					<AccordionBody>
+						Yes. Our plan is to provide the best experience to the Hunkz
+						community throughout the real world and the metaverse. You can see
+						the full roadmap above.
+					</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem eventKey='4'>
+					<AccordionHeader>Why should I buy?</AccordionHeader>
+					<AccordionBody>
+						Because only the strong survive and Hunkz are the strongest.
+					</AccordionBody>
+				</AccordionItem>
+			</Accordion>
 		</div>
 	);
 };
