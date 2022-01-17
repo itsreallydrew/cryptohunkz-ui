@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { ethers } from 'ethers';
 import CryptoHunkz from '../utils/CryptoHunkz.json';
 import { fadeInDown } from 'react-animations';
+import { ToastContainer, toast } from 'react-toastify'
 
 // CONSTANTS
 const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
@@ -19,6 +20,8 @@ const MintModal = ({
 
 	const [amount, setAmount] = useState(1);
 	const [balance, setBalance] = useState(null);
+
+	const notifyMint = () => toast(`Success, you've minted your CryptoHunkz!`)
 
 	const mintHunkz = async (e) => {
 		e.preventDefault();
@@ -42,6 +45,7 @@ const MintModal = ({
 			});
 			await txn.wait;
 			console.log(await txn, 'completed');
+			notifyMint()
 		}
 	};
 
@@ -120,7 +124,7 @@ const MintModal = ({
 				setBalance(balInEth);
 			});
 		}
-	}, [balance]);
+	}, [account]);
 
 	return (
 		<div className='modal-background'>
@@ -168,6 +172,7 @@ const MintModal = ({
 					Close
 				</button>
 			</Modal>
+			<ToastContainer/>
 		</div>
 	);
 };
