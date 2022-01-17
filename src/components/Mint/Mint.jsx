@@ -4,7 +4,7 @@ import MintModal from '../MintModal';
 // CONSTANTS
 const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
-const Mint = ({ account, mintHunkz, getBalance, requestAccount }) => {
+const Mint = ({ account, mintHunkz, getBalance, requestAccount, notifyMint }) => {
 
 
 	
@@ -31,6 +31,7 @@ const Mint = ({ account, mintHunkz, getBalance, requestAccount }) => {
                 getBalance={getBalance}
                 account={account}
                 requestAccount={requestAccount}
+                notifyMint={notifyMint}
                 
                 openModal={openModal} 
                 closeModal={closeModal} 

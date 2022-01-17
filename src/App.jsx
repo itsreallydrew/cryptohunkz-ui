@@ -9,11 +9,14 @@ import Roadmap from './components/Roadmap/Roadmap';
 import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
+	const notifyMint = () => toast.success(`Success, please check Etherscan for your transaction status `)
 
 	const requestAccount = async () => {
 		try {
@@ -140,6 +143,7 @@ function App() {
 					getBalance={getBalance}
 					requestAccount={requestAccount}
 					account={account}
+					notifyMint={notifyMint}
 				/>
 			</Element>
 			<Element name='roadmap'>
@@ -154,6 +158,7 @@ function App() {
 			{/* <Element name='links'>
 				<Links />
 			</Element> */}
+			<ToastContainer />
 		</div>
 	);
 }
