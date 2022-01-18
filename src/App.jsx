@@ -16,7 +16,7 @@ const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
-	const notifyMint = () => toast.success(`Success, please check Etherscan for your transaction status `)
+	const notifyMint = () => toast.success(`Transaction submitted successfully `)
 
 	const requestAccount = async () => {
 		try {
