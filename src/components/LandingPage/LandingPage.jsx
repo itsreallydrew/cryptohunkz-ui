@@ -14,7 +14,7 @@ const LandingPage = () => {
 				asperiores quisquam natus? 7777 CryptoHunkz coming to overtake the
 				metaverse and establish themselves as the premier
 			</p>
-			<a href='#' className='discord'>
+			<a href='#' className='discord' target="_blank">
 				Join our discord
 			</a>
 		</div>

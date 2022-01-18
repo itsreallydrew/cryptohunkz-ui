@@ -208,7 +208,7 @@ const FAQ = () => {
 			<div className={`panel ${revealed ? 'reveal' : null}`}>
 				<p>Because only the strong survive and Hunkz are the strongest</p>
 			</div> */}
-			<Accordion defaultActiveKey='0'>
+			<Accordion>
 				<AccordionItem eventKey='0'>
 					<AccordionHeader>What is this project about?</AccordionHeader>
 					<AccordionBody>Being pumped.</AccordionBody>

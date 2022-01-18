@@ -63,16 +63,16 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				Links
 			</Link> */}
 			{account ? (
-				<a href='null' className='connectButton'>
+				<button className='connectButton'>
 					{`${account.slice(0, 6)}..${account.slice(
 						account.length - 4,
 						account.length
 					)}`}
-				</a>
+				</button>
 			) : (
-				<a href='null' onClick={connect} className='connectButton'>
+				<button onClick={connect} className='connectButton'>
 					Connect
-				</a>
+				</button>
 			)}
 			<div className='social-icons'>
 				<a href='anchor' className='icon'>
