@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuLinks from './MenuLinks/MenuLinks';
 
-const BurgerMenu = ({ connect, account }) => {
+const BurgerMenu = ({ connect, account, admin }) => {
 	const [open, setOpen] = useState(false);
 
 	const toggleOpen = () => {
@@ -16,7 +16,14 @@ const BurgerMenu = ({ connect, account }) => {
 				<span></span>
 				<span></span>
 			</div>
-			{open && <MenuLinks connect={connect} account={account} open={open} />}
+			{open && (
+				<MenuLinks
+					connect={connect}
+					account={account}
+					open={open}
+					admin={admin}
+				/>
+			)}
 		</div>
 	);
 };

@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import MintModal from '../MintModal';
 
 // CONSTANTS
-const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const hunkzAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
 
 const Mint = ({ account, mintHunkz, getBalance, requestAccount }) => {
-
-
-	
 	const [modalIsOpen, setIsOpen] = useState(false);
 
 	function openModal() {
@@ -23,22 +20,24 @@ const Mint = ({ account, mintHunkz, getBalance, requestAccount }) => {
 		setIsOpen(false);
 	}
 
-    return (
-        <div>
-            <img id='kaiju' src="https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif" alt="hunk-gif" />
-            <MintModal 
-                mintHunkz={mintHunkz}
-                getBalance={getBalance}
-                account={account}
-                requestAccount={requestAccount}
-                
-                openModal={openModal} 
-                closeModal={closeModal} 
-                modalIsOpen={modalIsOpen}  
-            />
-            
-        </div>
-    );
+	return (
+		<div>
+			<img
+				id='kaiju'
+				src='https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif'
+				alt='hunk-gif'
+			/>
+			<MintModal
+				mintHunkz={mintHunkz}
+				getBalance={getBalance}
+				account={account}
+				requestAccount={requestAccount}
+				openModal={openModal}
+				closeModal={closeModal}
+				modalIsOpen={modalIsOpen}
+			/>
+		</div>
+	);
 };
 
 export default Mint;

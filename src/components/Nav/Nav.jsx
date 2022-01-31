@@ -4,7 +4,7 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 import BurgerMenu2 from '../BurgerMenu/BurgerMenu2';
 import BurgerMenu3 from '../BurgerMenu/BurgerMenu3';
 
-const Nav = ({ connect, account }) => {
+const Nav = ({ connect, account, admin }) => {
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
 			<h2>CRYPTO HUNKZ</h2>
@@ -22,7 +22,7 @@ const Nav = ({ connect, account }) => {
 			</Link> */}
 			{/* <BurgerMenu /> */}
 			{/* <BurgerMenu2 connect={connect} account={account} /> */}
-			<BurgerMenu3 connect={connect} account={account} />
+			<BurgerMenu3 connect={connect} account={account} admin={admin} />
 		</nav>
 	);
 };

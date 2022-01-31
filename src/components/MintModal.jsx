@@ -3,9 +3,10 @@ import Modal from 'react-modal';
 import { ethers } from 'ethers';
 import CryptoHunkz from '../utils/CryptoHunkz.json';
 import { fadeInDown } from 'react-animations';
+import axios from 'axios';
 
 // CONSTANTS
-const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const hunkzAddress = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707';
 
 const MintModal = ({
 	account,
@@ -17,6 +18,7 @@ const MintModal = ({
 }) => {
 	Modal.setAppElement('#root');
 
+	const [proof, setProof] = useState(null);
 	const [amount, setAmount] = useState(1);
 	const [balance, setBalance] = useState(null);
 
@@ -36,7 +38,7 @@ const MintModal = ({
 			console.log(amount);
 			let totalPrice = price * amount;
 			console.log(totalPrice);
-			let txn = contract.mintHunk(amount, {
+			let txn = contract.whitelistMint(proof, amount, {
 				value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
 				gasLimit: 3000000,
 			});
@@ -110,17 +112,34 @@ const MintModal = ({
 		fontSize: '1.5rem',
 	};
 
-	useEffect(() => {
-		if (typeof window.ethereum !== 'undefined') {
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const address = account;
-			provider.getBalance(address).then((bal) => {
-				const balInEth = ethers.utils.formatEther(bal);
-				console.log(`balance: ${balInEth} ETH`);
-				setBalance(balInEth);
+	// useEffect(() => {
+	// 	if (typeof window.ethereum !== 'undefined') {
+	// 		const provider = new ethers.providers.Web3Provider(window.ethereum);
+	// 		const address = account;
+	// 		provider.getBalance(address).then((bal) => {
+	// 			const balInEth = ethers.utils.formatEther(bal);
+	// 			console.log(`balance: ${balInEth} ETH`);
+	// 			setBalance(balInEth);
+	// 		});
+	// 	}
+	// }, [balance]);
+
+	const checkMintType = async () => {
+		try {
+			console.log(account);
+			const res = await axios.post(`http://localhost:7001/api/proof/`, {
+				address: account,
 			});
+			console.log(res);
+			setProof(res.data);
+		} catch (error) {
+			console.log(error);
 		}
-	}, [balance]);
+	};
+
+	useEffect(() => {
+		checkMintType();
+	}, []);
 
 	return (
 		<div className='modal-background'>

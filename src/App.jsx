@@ -10,10 +10,11 @@ import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
 
-const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const hunkzAddress = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
+	const [admin, setAdmin] = useState(false);
 
 	const requestAccount = async () => {
 		try {
@@ -126,13 +127,25 @@ function App() {
 		}
 	};
 
+	const checkAdmin = async () => {
+		const provider = new ethers.providers.Web3Provider(window.ethereum);
+		const signer = provider.getSigner();
+		const contract = new ethers.Contract(hunkzAddress, CryptoHunkz.abi, signer);
+		const adminCheck = await contract.admins(account);
+		console.log(adminCheck);
+		if (adminCheck) {
+			setAdmin(true);
+		}
+	};
+
 	useEffect(() => {
 		checkIfWalletIsConnected();
+		checkAdmin();
 	}, []);
 
 	return (
 		<div className='App'>
-			<Header connect={connectWallet} account={account} />
+			<Header connect={connectWallet} account={account} admin={admin} />
 			<Element name='mint'>
 				<Mint
 					// mintHunkz={mintHunkz}

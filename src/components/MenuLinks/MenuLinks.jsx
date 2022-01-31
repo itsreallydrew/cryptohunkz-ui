@@ -6,8 +6,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import opensea from '../../assets/Logomark-Transparent White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Admin from '../Admin';
 
-const MenuLinks = ({ connect, account, open, setOpen }) => {
+const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 	return (
 		<div className={`menu-links ${open ? 'menu-links-open' : null}`}>
 			<Link
@@ -73,6 +74,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 					Connect
 				</a>
 			)}
+			{admin && <Admin />}
 			<div className='social-icons'>
 				<a href='anchor' className='icon'>
 					<FontAwesomeIcon icon={discord} />
