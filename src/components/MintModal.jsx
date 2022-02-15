@@ -6,7 +6,7 @@ import { fadeInDown } from 'react-animations';
 import axios from 'axios';
 
 // CONSTANTS
-const hunkzAddress = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707';
+const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
 
 const MintModal = ({
 	account,

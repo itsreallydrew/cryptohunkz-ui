@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MintModal from '../MintModal';
 
 // CONSTANTS
-const hunkzAddress = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
+const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
 
 const Mint = ({ account, mintHunkz, getBalance, requestAccount }) => {
 	const [modalIsOpen, setIsOpen] = useState(false);
