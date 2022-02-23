@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, React } from 'react';
 import { Link } from 'react-scroll';
 import {
 	faDiscord as discord,
@@ -8,7 +8,7 @@ import opensea from '../../assets/Logomark-Transparent White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Admin from '../Admin';
 
-const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
+const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 	return (
 		<div className={`menu-links ${open ? 'menu-links-open' : null}`}>
 			<Link
@@ -18,8 +18,8 @@ const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
-				{' '}
+				className='bm-item'
+				onClick={toggleMenu}>
 				Home
 			</Link>
 			<Link
@@ -29,7 +29,8 @@ const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
+				className='bm-item'
+				onClick={toggleMenu}>
 				Mint
 			</Link>
 			<Link
@@ -39,7 +40,8 @@ const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
+				className='bm-item'
+				onClick={toggleMenu}>
 				Roadmap
 			</Link>
 			<Link
@@ -49,7 +51,8 @@ const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
+				className='bm-item'
+				onClick={toggleMenu}>
 				Team
 			</Link>
 			{/* <Link
@@ -74,7 +77,6 @@ const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 					Connect
 				</a>
 			)}
-			{admin && <Admin />}
 			<div className='social-icons'>
 				<a href='anchor' className='icon'>
 					<FontAwesomeIcon icon={discord} />
@@ -82,7 +84,7 @@ const MenuLinks = ({ connect, account, open, setOpen, admin }) => {
 				<a href='anchor' className='icon'>
 					<FontAwesomeIcon icon={twitter} />
 				</a>
-				<a className='os-icon icon'>
+				<a href='anchor' className='os-icon icon'>
 					<img src={opensea} alt='' />
 				</a>
 			</div>

@@ -10,7 +10,7 @@ import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
 
-const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
+const hunkzAddress = '0x7cf1200B9568E0b9B1bB240EDB926aE5655a0eCB';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
@@ -163,6 +163,7 @@ function App() {
 					// getBalance={getBalance}
 					requestAccount={requestAccount}
 					account={account}
+					contract={contract}
 				/>
 			</Element>
 			<Element name='roadmap'>

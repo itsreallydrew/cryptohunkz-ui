@@ -7,8 +7,12 @@ const BurgerMenu3 = ({ connect, account }) => {
 	const toggleOpen = () => {
 		setOpen(!open);
 	};
+
+	const toggleMenu = () => {
+		setOpen(false);
+	};
 	return (
-		<div>
+		<div className='mobile-menu'>
 			<div
 				className={`icon nav-icon-5 ${open ? 'open' : null}`}
 				onClick={toggleOpen}>
@@ -16,7 +20,14 @@ const BurgerMenu3 = ({ connect, account }) => {
 				<span></span>
 				<span></span>
 			</div>
-			{open && <MenuLinks connect={connect} account={account} open={open} />}
+			{open && (
+				<MenuLinks
+					connect={connect}
+					account={account}
+					open={open}
+					toggleMenu={toggleMenu}
+				/>
+			)}
 		</div>
 	);
 };

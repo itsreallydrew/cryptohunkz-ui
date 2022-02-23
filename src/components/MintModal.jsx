@@ -6,7 +6,7 @@ import { fadeInDown } from 'react-animations';
 import axios from 'axios';
 
 // CONSTANTS
-const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
+// const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
 
 const MintModal = ({
 	account,
@@ -15,6 +15,7 @@ const MintModal = ({
 	modalIsOpen,
 	getBalance,
 	requestAccount,
+	contract,
 }) => {
 	Modal.setAppElement('#root');
 
@@ -24,27 +25,53 @@ const MintModal = ({
 
 	const mintHunkz = async (e) => {
 		e.preventDefault();
-		if (typeof window.ethereum !== 'undefined') {
-			await requestAccount();
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const signer = provider.getSigner();
-			const contract = new ethers.Contract(
-				hunkzAddress,
-				CryptoHunkz.abi,
-				signer
-			);
+		const wlActive = await contract.whiteListActive();
+		if (wlActive) {
 			let price = await contract.price();
 			console.log(price);
 			console.log(amount);
 			let totalPrice = price * amount;
 			console.log(totalPrice);
 			let txn = contract.whitelistMint(proof, amount, {
-				value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
+				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
+				gasLimit: 3000000,
+			});
+			await txn.wait;
+			console.log(await txn, 'completed');
+		} else {
+			let price = await contract.price();
+			console.log(price);
+			console.log(amount);
+			let totalPrice = price * amount;
+			console.log(totalPrice);
+			let txn = contract.publicMint(amount, {
+				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
 				gasLimit: 3000000,
 			});
 			await txn.wait;
 			console.log(await txn, 'completed');
 		}
+		// if (typeof window.ethereum !== 'undefined') {
+		// 	await requestAccount();
+		// 	const provider = new ethers.providers.Web3Provider(window.ethereum);
+		// 	const signer = provider.getSigner();
+		// 	const contract = new ethers.Contract(
+		// 		hunkzAddress,
+		// 		CryptoHunkz.abi,
+		// 		signer
+		// 	);
+		// 	let price = await contract.price();
+		// 	console.log(price);
+		// 	console.log(amount);
+		// 	let totalPrice = price * amount;
+		// 	console.log(totalPrice);
+		// 	let txn = contract.whitelistMint(proof, amount, {
+		// 		value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
+		// 		gasLimit: 3000000,
+		// 	});
+		// 	await txn.wait;
+		// 	console.log(await txn, 'completed');
+		// }
 	};
 
 	const handleAmountChange = (e) => {
@@ -53,7 +80,7 @@ const MintModal = ({
 	};
 
 	const raiseAmount = () => {
-		if (amount < 3) {
+		if (amount < 6) {
 			setAmount(amount + 1);
 		}
 	};
@@ -139,7 +166,7 @@ const MintModal = ({
 
 	useEffect(() => {
 		checkMintType();
-	}, []);
+	}, [account]);
 
 	return (
 		<div className='modal-background'>
