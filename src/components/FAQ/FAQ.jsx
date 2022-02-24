@@ -3,12 +3,14 @@ import Accordion from 'react-bootstrap/esm/Accordion';
 import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 import AccordionItem from 'react-bootstrap/esm/AccordionItem';
+import info from '../../utils/Questions';
 
 const FAQ = () => {
-	const [revealed, setRevealed] = useState(false);
+	const [revealed, setRevealed] = useState(null);
 
-	const handleClick = () => {
-		setRevealed(!revealed);
+	const handleClick = (i) => {
+		if (revealed === i) return setRevealed(null);
+		setRevealed(i);
 	};
 
 	return (
@@ -160,7 +162,6 @@ const FAQ = () => {
 				<h4>Why should I buy?</h4>
 				<p>Because only the strong survive and Hunkz are the strongest</p>
 			</div> */}
-
 			{/* <button
 				className={`question-1 ${revealed ? 'active' : null}`}
 				onClick={handleClick}>
@@ -208,7 +209,7 @@ const FAQ = () => {
 			<div className={`panel ${revealed ? 'reveal' : null}`}>
 				<p>Because only the strong survive and Hunkz are the strongest</p>
 			</div> */}
-			<Accordion defaultActiveKey='0'>
+			{/* <Accordion defaultActiveKey='0'>
 				<AccordionItem eventKey='0'>
 					<AccordionHeader>What is this project about?</AccordionHeader>
 					<AccordionBody>Being pumped.</AccordionBody>
@@ -239,9 +240,46 @@ const FAQ = () => {
 						Because only the strong survive and Hunkz are the strongest.
 					</AccordionBody>
 				</AccordionItem>
-			</Accordion>
+			</Accordion> */}
+			<div className='accordion'>
+				{info.map((item, i) => (
+					<div className='item'>
+						<div className='item-title' onClick={() => handleClick(i)}>
+							<h4>{item.question}</h4>
+							<span>{revealed === i ? '-' : '+'}</span>
+						</div>
+						<div className={`content ${revealed === i ? 'show' : null}`}>
+							{item.answer}
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
+
+// const info = [
+// 	{
+// 		question: 'What is this project about?',
+// 		answer: 'Being Pumped.',
+// 	},
+// 	{
+// 		question: "What's the price?",
+// 		answer: '0.077E',
+// 	},
+// 	{
+// 		question: 'How many can we mint?',
+// 		answer: 'Max of 5 per wallet.',
+// 	},
+// 	{
+// 		question: 'Is there a roadmap?',
+// 		answer:
+// 			'Our roadmap is community driven. We have plans that we want to accomplish but our plans our only as strong as our holders.',
+// 	},
+// 	{
+// 		question: 'Why should I buy?',
+// 		answer: 'Because only the strong survive and Hunkz are the strongest.',
+// 	},
+// ];
 
 export default FAQ;

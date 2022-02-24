@@ -11601,6 +11601,43 @@ img {
   margin-bottom: 2rem;
 }
 
+.accordion {
+  width: 95vw;
+}
+
+.item {
+  background-color: steelblue;
+  margin: 3rem;
+  padding: 2rem;
+}
+
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-title span {
+  font-size: 3rem;
+}
+
+.item-title:hover {
+  cursor: pointer;
+}
+
+.content {
+  font-size: 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.show {
+  height: auto;
+  max-height: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
 .question-1,
 .question-2,
 .question-3,
