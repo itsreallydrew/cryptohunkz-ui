@@ -11389,18 +11389,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   .primary-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
   .bm-item {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 1.7rem;
+    text-decoration: none;
   }
 
   .social-icons {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
   }
 }
