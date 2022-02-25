@@ -7,10 +7,11 @@ import {
 import opensea from '../../assets/Logomark-Transparent White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Admin from '../Admin';
+import 'animate.css'
 
 const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 	return (
-		<div className={`menu-links ${open ? 'menu-links-open' : null}`}>
+		<div className={`menu-links animate__animated animate__fadeInLeft ${open ? 'menu-links-open' : null}`}>
 			<Link
 				activeClass='active'
 				to='home'
@@ -66,16 +67,16 @@ const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 				Links
 			</Link> */}
 			{account ? (
-				<a href='null' className='connectButton'>
+				<button className='connectButton'>
 					{`${account.slice(0, 6)}..${account.slice(
 						account.length - 4,
 						account.length
 					)}`}
-				</a>
+				</button>
 			) : (
-				<a href='null' onClick={connect} className='connectButton'>
+				<button onClick={connect} className='connectButton'>
 					Connect
-				</a>
+				</button>
 			)}
 			<div className='social-icons'>
 				<a href='anchor' className='icon'>

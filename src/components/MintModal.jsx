@@ -5,6 +5,7 @@ import CryptoHunkz from '../utils/CryptoHunkz.json';
 import { fadeInDown } from 'react-animations';
 import axios from 'axios';
 
+
 // CONSTANTS
 // const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
 
@@ -16,12 +17,14 @@ const MintModal = ({
 	getBalance,
 	requestAccount,
 	contract,
+	notifyMint
 }) => {
 	Modal.setAppElement('#root');
 
 	const [proof, setProof] = useState(null);
 	const [amount, setAmount] = useState(1);
 	const [balance, setBalance] = useState(null);
+
 
 	const mintHunkz = async (e) => {
 		e.preventDefault();
@@ -50,6 +53,7 @@ const MintModal = ({
 			});
 			await txn.wait;
 			console.log(await txn, 'completed');
+			notifyMint()
 		}
 		// if (typeof window.ethereum !== 'undefined') {
 		// 	await requestAccount();
@@ -162,11 +166,13 @@ const MintModal = ({
 		} catch (error) {
 			console.log(error);
 		}
+
 	};
 
 	useEffect(() => {
 		checkMintType();
 	}, [account]);
+
 
 	return (
 		<div className='modal-background'>
@@ -214,6 +220,7 @@ const MintModal = ({
 					Close
 				</button>
 			</Modal>
+			
 		</div>
 	);
 };
