@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, React } from 'react';
 import { Link } from 'react-scroll';
 import {
 	faDiscord as discord,
@@ -6,9 +6,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import opensea from '../../assets/Logomark-Transparent White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Admin from '../Admin';
 import 'animate.css'
 
-const MenuLinks = ({ connect, account, open, setOpen }) => {
+const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 	return (
 		<div className={`menu-links animate__animated animate__fadeInLeft ${open ? 'menu-links-open' : null}`}>
 			<Link
@@ -18,8 +19,8 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
-				{' '}
+				className='bm-item'
+				onClick={toggleMenu}>
 				Home
 			</Link>
 			<Link
@@ -29,7 +30,8 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
+				className='bm-item'
+				onClick={toggleMenu}>
 				Mint
 			</Link>
 			<Link
@@ -39,7 +41,8 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
+				className='bm-item'
+				onClick={toggleMenu}>
 				Roadmap
 			</Link>
 			<Link
@@ -49,7 +52,8 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				spy={true}
 				smooth={true}
 				duration={500}
-				className='bm-item'>
+				className='bm-item'
+				onClick={toggleMenu}>
 				Team
 			</Link>
 			{/* <Link
@@ -81,7 +85,7 @@ const MenuLinks = ({ connect, account, open, setOpen }) => {
 				<a href='anchor' className='icon'>
 					<FontAwesomeIcon icon={twitter} />
 				</a>
-				<a className='os-icon icon'>
+				<a href='anchor' className='os-icon icon'>
 					<img src={opensea} alt='' />
 				</a>
 			</div>

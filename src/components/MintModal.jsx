@@ -3,10 +3,11 @@ import Modal from 'react-modal';
 import { ethers } from 'ethers';
 import CryptoHunkz from '../utils/CryptoHunkz.json';
 import { fadeInDown } from 'react-animations';
+import axios from 'axios';
 
 
 // CONSTANTS
-const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+// const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
 
 const MintModal = ({
 	account,
@@ -15,38 +16,66 @@ const MintModal = ({
 	modalIsOpen,
 	getBalance,
 	requestAccount,
+	contract,
 	notifyMint
 }) => {
 	Modal.setAppElement('#root');
 
+	const [proof, setProof] = useState(null);
 	const [amount, setAmount] = useState(1);
 	const [balance, setBalance] = useState(null);
 
 
 	const mintHunkz = async (e) => {
 		e.preventDefault();
-		if (typeof window.ethereum !== 'undefined') {
-			await requestAccount();
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const signer = provider.getSigner();
-			const contract = new ethers.Contract(
-				hunkzAddress,
-				CryptoHunkz.abi,
-				signer
-			);
+		const wlActive = await contract.whiteListActive();
+		if (wlActive) {
 			let price = await contract.price();
 			console.log(price);
 			console.log(amount);
 			let totalPrice = price * amount;
 			console.log(totalPrice);
-			let txn = contract.mintHunk(amount, {
-				value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
+			let txn = contract.whitelistMint(proof, amount, {
+				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
+				gasLimit: 3000000,
+			});
+			await txn.wait;
+			console.log(await txn, 'completed');
+		} else {
+			let price = await contract.price();
+			console.log(price);
+			console.log(amount);
+			let totalPrice = price * amount;
+			console.log(totalPrice);
+			let txn = contract.publicMint(amount, {
+				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
 				gasLimit: 3000000,
 			});
 			await txn.wait;
 			console.log(await txn, 'completed');
 			notifyMint()
 		}
+		// if (typeof window.ethereum !== 'undefined') {
+		// 	await requestAccount();
+		// 	const provider = new ethers.providers.Web3Provider(window.ethereum);
+		// 	const signer = provider.getSigner();
+		// 	const contract = new ethers.Contract(
+		// 		hunkzAddress,
+		// 		CryptoHunkz.abi,
+		// 		signer
+		// 	);
+		// 	let price = await contract.price();
+		// 	console.log(price);
+		// 	console.log(amount);
+		// 	let totalPrice = price * amount;
+		// 	console.log(totalPrice);
+		// 	let txn = contract.whitelistMint(proof, amount, {
+		// 		value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
+		// 		gasLimit: 3000000,
+		// 	});
+		// 	await txn.wait;
+		// 	console.log(await txn, 'completed');
+		// }
 	};
 
 	const handleAmountChange = (e) => {
@@ -55,7 +84,7 @@ const MintModal = ({
 	};
 
 	const raiseAmount = () => {
-		if (amount < 3) {
+		if (amount < 6) {
 			setAmount(amount + 1);
 		}
 	};
@@ -114,17 +143,36 @@ const MintModal = ({
 		fontSize: '1.5rem',
 	};
 
-	useEffect(() => {
-		if (typeof window.ethereum !== 'undefined') {
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const address = account;
-			provider.getBalance(address).then((bal) => {
-				const balInEth = ethers.utils.formatEther(bal);
-				console.log(`balance: ${balInEth} ETH`);
-				setBalance(balInEth);
+	// useEffect(() => {
+	// 	if (typeof window.ethereum !== 'undefined') {
+	// 		const provider = new ethers.providers.Web3Provider(window.ethereum);
+	// 		const address = account;
+	// 		provider.getBalance(address).then((bal) => {
+	// 			const balInEth = ethers.utils.formatEther(bal);
+	// 			console.log(`balance: ${balInEth} ETH`);
+	// 			setBalance(balInEth);
+	// 		});
+	// 	}
+	// }, [balance]);
+
+	const checkMintType = async () => {
+		try {
+			console.log(account);
+			const res = await axios.post(`http://localhost:7001/api/proof/`, {
+				address: account,
 			});
+			console.log(res);
+			setProof(res.data);
+		} catch (error) {
+			console.log(error);
 		}
-	}, [account, balance]);
+
+	};
+
+	useEffect(() => {
+		checkMintType();
+	}, [account]);
+
 
 	return (
 		<div className='modal-background'>

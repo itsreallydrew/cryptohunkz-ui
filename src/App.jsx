@@ -12,10 +12,12 @@ import Links from './components/Links/Links';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const hunkzAddress = '0x7cf1200B9568E0b9B1bB240EDB926aE5655a0eCB';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
+	// const [admin, setAdmin] = useState(false);
+	const [contract, setContract] = useState(null);
 	const notifyMint = () => toast.success(`Transaction submitted successfully `)
 
 	const requestAccount = async () => {
@@ -26,33 +28,33 @@ function App() {
 		}
 	};
 
-	async function getBalance(e) {
-		e.preventDefault();
-		if (typeof window.ethereum !== 'undefined') {
-			const [account] = await window.ethereum.request({
-				method: 'eth_requestAccounts',
-			});
-			console.log({ account }); // outputs { account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266" }
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const signer = provider.getSigner();
-			const contract = new ethers.Contract(
-				hunkzAddress,
-				CryptoHunkz.abi,
-				signer
-			);
+	// async function getBalance(e) {
+	// 	e.preventDefault();
+	// 	if (typeof window.ethereum !== 'undefined') {
+	// 		const [account] = await window.ethereum.request({
+	// 			method: 'eth_requestAccounts',
+	// 		});
+	// 		console.log({ account }); // outputs { account: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266" }
+	// 		const provider = new ethers.providers.Web3Provider(window.ethereum);
+	// 		const signer = provider.getSigner();
+	// 		const contract = new ethers.Contract(
+	// 			hunkzAddress,
+	// 			CryptoHunkz.abi,
+	// 			signer
+	// 		);
 
-			// THIS THROWS
-			contract.TOTAL_SUPPLY().then((data) => {
-				console.log('total supply: ', data.toString());
-			});
-			contract.price().then((data) => {
-				console.log('price: ', data.toString());
-			});
-			contract.totalMinted().then((data) => {
-				console.log('minted ', data.toString());
-			});
-		}
-	}
+	// 		// THIS THROWS
+	// 		contract.TOTAL_SUPPLY().then((data) => {
+	// 			console.log('total supply: ', data.toString());
+	// 		});
+	// 		contract.price().then((data) => {
+	// 			console.log('price: ', data.toString());
+	// 		});
+	// 		contract.totalMinted().then((data) => {
+	// 			console.log('minted ', data.toString());
+	// 		});
+	// 	}
+	// }
 
 	const checkIfWalletIsConnected = async () => {
 		const { ethereum } = window;
@@ -62,6 +64,14 @@ function App() {
 			return;
 		} else {
 			console.log('We have the ethereum object', ethereum);
+			const provider = new ethers.providers.Web3Provider(window.ethereum);
+			const signer = provider.getSigner();
+			const connectedContract = new ethers.Contract(
+				hunkzAddress,
+				CryptoHunkz.abi,
+				signer
+			);
+			setContract(connectedContract);
 		}
 
 		const accounts = await ethereum.request({ method: 'eth_accounts' });
@@ -70,6 +80,7 @@ function App() {
 			const account = accounts[0];
 			console.log('Found an authorized account:', account);
 			setCurrentAccount(account);
+			// checkAdmin();
 
 			// setupEventListener();
 		} else {
@@ -96,38 +107,50 @@ function App() {
 		}
 	};
 
-	const setupEventListener = async () => {
-		try {
-			const { ethereum } = window;
+	// const setupEventListener = async () => {
+	// 	try {
+	// 		const { ethereum } = window;
 
-			if (ethereum) {
-				const provider = new ethers.providers.Web3Provider(ethereum);
-				const signer = provider.getSigner();
-				const connectedContract = new ethers.Contract(
-					hunkzAddress,
-					CryptoHunkz.abi,
-					signer
-				);
+	// 		if (ethereum) {
+	// 			const provider = new ethers.providers.Web3Provider(ethereum);
+	// 			const signer = provider.getSigner();
+	// 			const connectedContract = new ethers.Contract(
+	// 				hunkzAddress,
+	// 				CryptoHunkz.abi,
+	// 				signer
+	// 			);
 
-				// connectedContract.on('NewNFTMinted', (from, tokenId) => {
-				// console.log(from, tokenId.toNumber());
-				// let numMinted = tokenId.toNumber();
-				// let nftLink = `https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`;
-				// setLoading(!loading);
-				// setLink(nftLink);
-				// setTotalMinted(numMinted);
-				// renderInfoToast(tokenId);
-				// alert(`Hey there! We've minted your NFT and sent it to your wallet. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`)
-				// });
+	// connectedContract.on('NewNFTMinted', (from, tokenId) => {
+	// console.log(from, tokenId.toNumber());
+	// let numMinted = tokenId.toNumber();
+	// let nftLink = `https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`;
+	// setLoading(!loading);
+	// setLink(nftLink);
+	// setTotalMinted(numMinted);
+	// renderInfoToast(tokenId);
+	// alert(`Hey there! We've minted your NFT and sent it to your wallet. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`)
+	// });
 
-				console.log('Setup event listener!');
-			} else {
-				console.log("Ethereum object doesn't exist!");
-			}
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	// 		console.log('Setup event listener!');
+	// 	} else {
+	// 		console.log("Ethereum object doesn't exist!");
+	// 	}
+	// } catch (error) {
+	// 	console.log(error);
+	// }
+	// };
+
+	// const checkAdmin = async () => {
+	// 	const provider = new ethers.providers.Web3Provider(window.ethereum);
+	// 	const signer = provider.getSigner();
+	// 	const contract = new ethers.Contract(hunkzAddress, CryptoHunkz.abi, signer);
+	// 	// if address is listed as an admin then set admin setting to true
+	// 	const adminCheck = await contract.admins(account);
+	// 	console.log(adminCheck);
+	// 	if (adminCheck) {
+	// 		setAdmin(true);
+	// 	}
+	// };
 
 	useEffect(() => {
 		checkIfWalletIsConnected();
@@ -140,9 +163,10 @@ function App() {
 				<Mint
 					// mintHunkz={mintHunkz}
 					// handleAmountChange={handleAmountChange}
-					getBalance={getBalance}
+					// getBalance={getBalance}
 					requestAccount={requestAccount}
 					account={account}
+					contract={contract}
 					notifyMint={notifyMint}
 				/>
 			</Element>

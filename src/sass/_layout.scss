@@ -2,16 +2,31 @@
 // Nav Bar
 /*********************/
 .navbar {
+	width: 100vw;
 	padding: 1.5rem;
-	display: grid;
-	grid-template-columns: 70vw 1fr;
+	// display: grid;
+	// grid-template-columns: 70vw 1fr;
 	align-content: center;
-	// position: absolute;
-	// display: flex;
-	// justify-content: space-between;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
 }
 
-.navbar > div {
-	display: flex;
-	justify-content: flex-end;
+// .navbar > div {
+// 	display: flex;
+// 	justify-content: flex-end;
+// }
+
+.primary-nav {
+	display: none;
 }
+
+/*********************/
+// Media Queries
+/*********************/
+
+// @media (min-width: 60rem) {
+// 	.primary-nav {
+// 		display: contents;
+// 	}
+// }

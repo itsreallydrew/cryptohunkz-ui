@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import MintModal from '../MintModal';
 
 // CONSTANTS
-const hunkzAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+// const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
 
-const Mint = ({ account, mintHunkz, getBalance, requestAccount, notifyMint }) => {
+
+const Mint = ({ account, getBalance, requestAccount, contract }) => {
+
+// const Mint = ({ account, mintHunkz, getBalance, requestAccount, notifyMint }) => {
 
 
 	
+
 	const [modalIsOpen, setIsOpen] = useState(false);
 
 	function openModal() {
@@ -23,23 +27,44 @@ const Mint = ({ account, mintHunkz, getBalance, requestAccount, notifyMint }) =>
 		setIsOpen(false);
 	}
 
-    return (
-        <div>
-            <img id='kaiju' src="https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif" alt="hunk-gif" />
-            <MintModal 
-                mintHunkz={mintHunkz}
-                getBalance={getBalance}
-                account={account}
-                requestAccount={requestAccount}
-                notifyMint={notifyMint}
+
+	return (
+		<div>
+			<img
+				id='kaiju'
+				src='https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif'
+				alt='hunk-gif'
+			/>
+			{/* <MintModal
+				// mintHunkz={mintHunkz}
+				getBalance={getBalance}
+				account={account}
+				requestAccount={requestAccount}
+				openModal={openModal}
+				closeModal={closeModal}
+				modalIsOpen={modalIsOpen}
+				contract={contract}
+			/> */}
+		</div>
+	);
+
+//     return (
+//         <div>
+//             <img id='kaiju' src="https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif" alt="hunk-gif" />
+//             <MintModal 
+//                 mintHunkz={mintHunkz}
+//                 getBalance={getBalance}
+//                 account={account}
+//                 requestAccount={requestAccount}
+//                 notifyMint={notifyMint}
                 
-                openModal={openModal} 
-                closeModal={closeModal} 
-                modalIsOpen={modalIsOpen}  
-            />
+//                 openModal={openModal} 
+//                 closeModal={closeModal} 
+//                 modalIsOpen={modalIsOpen}  
+//             />
             
-        </div>
-    );
+//         </div>
+//     );
 };
 
 export default Mint;
