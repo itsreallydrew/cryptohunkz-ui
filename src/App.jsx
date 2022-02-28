@@ -9,6 +9,7 @@ import Roadmap from './components/Roadmap/Roadmap';
 import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
+import Hunkz from './components/Hunkz/Hunkz';
 
 const hunkzAddress = '0x7cf1200B9568E0b9B1bB240EDB926aE5655a0eCB';
 
@@ -166,9 +167,12 @@ function App() {
 					contract={contract}
 				/>
 			</Element>
-			<Element name='roadmap'>
-				<Roadmap />
+			<Element name='hunkz'>
+				<Hunkz />
 			</Element>
+			{/* <Element name='roadmap'>
+				<Roadmap />
+			</Element> */}
 			<Element name='team'>
 				<Team />
 			</Element>

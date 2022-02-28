@@ -5,7 +5,7 @@ import {
 	faDiscord as discord,
 	faTwitter as twitter,
 } from '@fortawesome/free-brands-svg-icons';
-import opensea from '../../assets/Logomark-Transparent White.svg';
+import opensea from '../../assets/Logomark-White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BurgerMenu3 from '../BurgerMenu/BurgerMenu3';
 
@@ -36,6 +36,16 @@ const Nav = ({ connect, account, admin }) => {
 				</Link>
 				<Link
 					activeClass='active'
+					to='hunkz'
+					data-text='hunkz'
+					spy={true}
+					smooth={true}
+					duration={500}
+					className='bm-item'>
+					Hunkz
+				</Link>
+				{/* <Link
+					activeClass='active'
 					to='roadmap'
 					data-text='roadmap'
 					spy={true}
@@ -43,7 +53,7 @@ const Nav = ({ connect, account, admin }) => {
 					duration={500}
 					className='bm-item'>
 					Roadmap
-				</Link>
+				</Link> */}
 				<Link
 					activeClass='active'
 					to='team'
@@ -68,10 +78,10 @@ const Nav = ({ connect, account, admin }) => {
 				)}
 				<div className='social-icons'>
 					<a href='anchor' className='icon'>
-						<FontAwesomeIcon icon={discord} />
+						<FontAwesomeIcon icon={discord} height='auto' />
 					</a>
 					<a href='anchor' className='icon'>
-						<FontAwesomeIcon icon={twitter} />
+						<FontAwesomeIcon icon={twitter} height='auto' />
 					</a>
 					<a href='anchor' className='os-icon icon'>
 						<img src={opensea} alt='' />
