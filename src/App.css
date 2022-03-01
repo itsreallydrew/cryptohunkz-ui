@@ -48,7 +48,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 173, 175, 174;
   --bs-body-bg-rgb: 6, 6, 6;
-  --bs-font-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bs-font-sans-serif: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -11542,15 +11542,27 @@ img {
     letter-spacing: 1px;
   }
 
+  .hunkz-card {
+    width: minmax(50rem, 1fr);
+    grid-column: 1;
+  }
+
   .hunkz-img {
     border: 10px solid orange;
-    grid-column: 1;
+    width: 100%;
   }
 
   .hunkz-img img {
     border: 10px solid yellowgreen;
     width: 100%;
-    transition: 1s;
+    transition: 0.5s;
+  }
+
+  .hunkz-card p {
+    font-size: 1.5rem;
+    font-family: "LCD Solid";
+    letter-spacing: 1px;
+    padding: 0.5rem;
   }
 
   .hunkz-selector {

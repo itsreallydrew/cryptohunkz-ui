@@ -8,34 +8,67 @@ import legend from '../../assets/red_mask.gif';
 
 const Hunkz = () => {
 	// Destructured object that holds the images for each item
-	const hunkz = { skin, alien, cyborg, zombie, legend };
+	// const hunkz = { skin, alien, cyborg, zombie, legend };
+	const hunkz2 = [
+		{
+			image: skin,
+			description:
+				'The most prevalent group of Hunkz. These are the humanoids.',
+		},
+		{
+			image: alien,
+			description:
+				'These beings have existed for eons and are distinguished by their gills, which allow them to lift ridiculously large amounts of weight.',
+		},
+		{
+			image: cyborg,
+			description:
+				'The cyborg Hunkz are those who chose to augment parts of their bodies in order to increase the amount of physical activity they could perform. ',
+		},
+		{
+			image: zombie,
+			description:
+				'The zombie Hunkz would be known as those whose desire to pump outlasted even death, furthering the reputation of the Hunkz being the strongest in the metaverse.',
+		},
+		{
+			image: legend,
+			description:
+				'The legendary Hunkz are the most elite of all the Hunkz. Each of them is known for accomplishing a feat that is considered impossible to surpass.',
+		},
+	];
 
 	// store the selected image to be displayed in state
 	const [selected, setSelected] = useState();
 
-	console.log(selected);
+	console.log(selected, selected.description, selected.image);
 
 	// On click function placed on each button that sets the displayed image to the selected image
 	return (
 		<div className='hunkz-display'>
 			<div className='hunkz-title'>Hunkz</div>
-			<div className='hunkz-img'>
+			{/* <div className='hunkz-img'>
 				<img src={selected} alt='' />
+			</div> */}
+			<div className='hunkz-card'>
+				<div className='hunkz-img'>
+					<img src={selected.image} alt='' />
+				</div>
+				<p>{selected.description}</p>
 			</div>
 			<div className='hunkz-selector'>
-				<button onClick={() => setSelected(hunkz.skin)} id='skin'>
+				<button onClick={() => setSelected(hunkz2[0])} id='skin'>
 					Skin
 				</button>
-				<button onClick={() => setSelected(hunkz.alien)} id='alien'>
+				<button onClick={() => setSelected(hunkz2[1])} id='alien'>
 					Alien
 				</button>
-				<button onClick={() => setSelected(hunkz.zombie)} id='zombie'>
-					Zombie
-				</button>
-				<button onClick={() => setSelected(hunkz.cyborg)} id='cyborg'>
+				<button onClick={() => setSelected(hunkz2[2])} id='cyborg'>
 					Cyborg
 				</button>
-				<button onClick={() => setSelected(hunkz.legend)} id='legend'>
+				<button onClick={() => setSelected(hunkz2[3])} id='zombie'>
+					Zombie
+				</button>
+				<button onClick={() => setSelected(hunkz2[4])} id='legend'>
 					Legendary
 				</button>
 			</div>
