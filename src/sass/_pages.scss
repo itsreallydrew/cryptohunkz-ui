@@ -104,6 +104,18 @@ img {
 }
 
 /*********************/
+// Hunkz Page
+/*********************/
+
+.hunkz-img * {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+/*********************/
 // Roadmap Page
 /*********************/
 .roadmap {

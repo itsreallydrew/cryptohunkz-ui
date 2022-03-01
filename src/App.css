@@ -11506,6 +11506,16 @@ img {
 
 /*********************/
 /*********************/
+.hunkz-img * {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/*********************/
+/*********************/
 .roadmap {
   padding: 0 1rem;
   display: grid;
