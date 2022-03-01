@@ -6,10 +6,20 @@
 	padding: 1.5rem;
 	// display: grid;
 	// grid-template-columns: 70vw 1fr;
-	align-content: center;
+	// align-content: center;
 	position: absolute;
 	display: flex;
 	justify-content: space-between;
+}
+
+.nav-title {
+	display: flex;
+
+	& h2 {
+		font-family: $title-font;
+		letter-spacing: 1px;
+		align-self: center;
+	}
 }
 
 // .navbar > div {

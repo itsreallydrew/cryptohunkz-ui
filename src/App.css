@@ -11155,10 +11155,18 @@ body {
 .navbar {
   width: 100vw;
   padding: 1.5rem;
-  align-content: center;
   position: absolute;
   display: flex;
   justify-content: space-between;
+}
+
+.nav-title {
+  display: flex;
+}
+.nav-title h2, .nav-title .h2 {
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
+  align-self: center;
 }
 
 .primary-nav {
@@ -11229,6 +11237,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: inline-block;
   font-size: 1.4rem;
   font-weight: 600;
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
 }
 
 .bm-item:hover {
@@ -11348,6 +11358,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: relative;
   border-radius: 2rem;
   overflow: hidden;
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
 }
 
 /*********************/
@@ -11437,6 +11449,8 @@ img {
   border-radius: 0.5rem;
   margin-top: 2rem;
   overflow: hidden;
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
 }
 
 .discord:hover {
@@ -11446,6 +11460,8 @@ img {
 
 .discord::before {
   content: "GET PUMPED";
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
   color: #fff;
   font-size: 2rem;
   display: grid;
@@ -11506,35 +11522,52 @@ img {
 
 /*********************/
 /*********************/
-.hunkz-display {
-  border: 10px solid blueviolet;
-  display: grid;
-  grid-template-rows: repeat(2, min-content);
-  grid-template-columns: repeat(2, 1fr);
-}
+@media (min-width: 60rem) {
+  .hunkz-display {
+    margin: 5rem;
+    border: 10px solid blueviolet;
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.hunkz-title {
-  border: 10px solid skyblue;
-  grid-column: span 2;
-}
+  .hunkz-title {
+    border: 10px solid skyblue;
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-family: "LCD Solid";
+    letter-spacing: 1px;
+  }
 
-.hunkz-img {
-  border: 10px solid orange;
-  width: 50rem;
-  grid-column: 1;
-}
+  .hunkz-img {
+    border: 10px solid orange;
+    grid-column: 1;
+  }
 
-.hunkz-img img {
-  border: 10px solid yellowgreen;
-  width: 100%;
-}
+  .hunkz-img img {
+    border: 10px solid yellowgreen;
+    width: 100%;
+    transition: 1s;
+  }
 
-.hunkz-selector {
-  border: 10px solid red;
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  .hunkz-selector {
+    border: 10px solid red;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .hunkz-selector button {
+    font-size: 2rem;
+    border: none;
+    background: none;
+    color: #2a9fd6;
+  }
+  .hunkz-selector button:hover {
+    background-color: azure;
+  }
 }
-
 /*********************/
 /*********************/
 .roadmap {

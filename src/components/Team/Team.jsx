@@ -33,7 +33,7 @@ const Team = () => {
 					<img src={testImage} alt='' />
 				</div>
 				<div className='dox'>
-					<h3>Junji</h3>
+					<h3>Elly_Loe</h3>
 					<a href='anchor'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>

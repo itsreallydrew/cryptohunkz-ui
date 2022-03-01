@@ -12,7 +12,9 @@ import BurgerMenu3 from '../BurgerMenu/BurgerMenu3';
 const Nav = ({ connect, account, admin }) => {
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-			<h2>CRYPTO HUNKZ</h2>
+			<div className='nav-title'>
+				<h2>CRYPTOHUNKZ</h2>
+			</div>
 			<div className='primary-nav'>
 				<Link
 					activeClass='active'
