@@ -11506,12 +11506,33 @@ img {
 
 /*********************/
 /*********************/
-.hunkz-img * {
-  display: none;
+.hunkz-display {
+  border: 10px solid blueviolet;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.active {
-  display: block;
+.hunkz-title {
+  border: 10px solid skyblue;
+  grid-column: span 2;
+}
+
+.hunkz-img {
+  border: 10px solid orange;
+  width: 50rem;
+  grid-column: 1;
+}
+
+.hunkz-img img {
+  border: 10px solid yellowgreen;
+  width: 100%;
+}
+
+.hunkz-selector {
+  border: 10px solid red;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
 }
 
 /*********************/

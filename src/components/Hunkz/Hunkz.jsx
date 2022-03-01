@@ -7,56 +7,35 @@ import skin from '../../assets/skin.gif';
 import legend from '../../assets/red_mask.gif';
 
 const Hunkz = () => {
-	const [active, setActive] = useState(false);
+	// Destructured object that holds the images for each item
+	const hunkz = { skin, alien, cyborg, zombie, legend };
 
-	const onClick = (e) => {
-		console.log(e.target.id, e.target.className);
-		if (e.target.id === e.target.className) setActive(true);
-	};
+	// store the selected image to be displayed in state
+	const [selected, setSelected] = useState();
+
+	console.log(selected);
+
+	// On click function placed on each button that sets the displayed image to the selected image
 	return (
 		<div className='hunkz-display'>
-			Hunkz
+			<div className='hunkz-title'>Hunkz</div>
 			<div className='hunkz-img'>
-				<img
-					src={skin}
-					alt=''
-					className={`skin ${active ? 'active' : null} `}
-				/>
-				<img
-					src={alien}
-					alt=''
-					className={`alien ${active ? 'active' : null} `}
-				/>
-				<img
-					src={zombie}
-					alt=''
-					className={`zombie ${active ? 'active' : null} `}
-				/>
-				<img
-					src={cyborg}
-					alt=''
-					className={`cyborg ${active ? 'active' : null} `}
-				/>
-				<img
-					src={legend}
-					alt=''
-					className={`legend ${active ? 'active' : null} `}
-				/>
+				<img src={selected} alt='' />
 			</div>
 			<div className='hunkz-selector'>
-				<button onClick={onClick} id='skin' className='skin'>
+				<button onClick={() => setSelected(hunkz.skin)} id='skin'>
 					Skin
 				</button>
-				<button onClick={onClick} id='alien' className='alien'>
+				<button onClick={() => setSelected(hunkz.alien)} id='alien'>
 					Alien
 				</button>
-				<button onClick={onClick} id='zombie' className='zombie'>
+				<button onClick={() => setSelected(hunkz.zombie)} id='zombie'>
 					Zombie
 				</button>
-				<button onClick={onClick} id='cyborg' className='cyborg'>
+				<button onClick={() => setSelected(hunkz.cyborg)} id='cyborg'>
 					Cyborg
 				</button>
-				<button onClick={onClick} id='legend' className='legend'>
+				<button onClick={() => setSelected(hunkz.legend)} id='legend'>
 					Legendary
 				</button>
 			</div>
