@@ -13,12 +13,12 @@ const Hunkz = () => {
 		{
 			image: skin,
 			description:
-				'The most prevalent group of Hunkz. These are the humanoids.',
+				'The humanoids are the most prevalent group of Hunkz. They are the benchmark for strength in the metaverse and none can match their supremacy.',
 		},
 		{
 			image: alien,
 			description:
-				'These beings have existed for eons and are distinguished by their gills, which allow them to lift ridiculously large amounts of weight.',
+				'The alien Hunkz are beings have existed for eons and are distinguished by their gills, which allow them to lift ridiculously large amounts of weight.',
 		},
 		{
 			image: cyborg,
@@ -28,7 +28,7 @@ const Hunkz = () => {
 		{
 			image: zombie,
 			description:
-				'The zombie Hunkz would be known as those whose desire to pump outlasted even death, furthering the reputation of the Hunkz being the strongest in the metaverse.',
+				'The zombie Hunkz are those whose desire to pump outlasted even death,  furthering the reputation of the Hunkz being the strongest in the metaverse.',
 		},
 		{
 			image: legend,
@@ -57,7 +57,7 @@ const Hunkz = () => {
 			</div>
 			<div className='hunkz-selector'>
 				<button onClick={() => setSelected(hunkz2[0])} id='skin'>
-					Skin
+					Humanoid
 				</button>
 				<button onClick={() => setSelected(hunkz2[1])} id='alien'>
 					Alien
