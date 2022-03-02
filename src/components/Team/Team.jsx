@@ -44,7 +44,7 @@ const Team = () => {
 					<img src={testImage} alt='' />
 				</div>
 				<div className='dox'>
-					<h3>itsreallydrew</h3>
+					<h3>_itsreallydrew</h3>
 					<a href='anchor'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>

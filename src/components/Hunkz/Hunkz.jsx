@@ -18,7 +18,7 @@ const Hunkz = () => {
 		{
 			image: alien,
 			description:
-				'The alien Hunkz are beings have existed for eons and are distinguished by their gills, which allow them to lift ridiculously large amounts of weight.',
+				'The alien Hunkz are beings that have existed for eons and are distinguished by their gills, which allow them to lift ridiculously large amounts of weight.',
 		},
 		{
 			image: cyborg,
