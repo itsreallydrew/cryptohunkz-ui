@@ -46,16 +46,6 @@ const Nav = ({ connect, account, admin }) => {
 					className='bm-item'>
 					Hunkz
 				</Link>
-				{/* <Link
-					activeClass='active'
-					to='roadmap'
-					data-text='roadmap'
-					spy={true}
-					smooth={true}
-					duration={500}
-					className='bm-item'>
-					Roadmap
-				</Link> */}
 				<Link
 					activeClass='active'
 					to='team'
@@ -65,6 +55,16 @@ const Nav = ({ connect, account, admin }) => {
 					duration={500}
 					className='bm-item'>
 					Team
+				</Link>
+				<Link
+					activeClass='active'
+					to='faq'
+					data-text='faq'
+					spy={true}
+					smooth={true}
+					duration={500}
+					className='bm-item'>
+					FAQ
 				</Link>
 				{account ? (
 					<a href='null' className='connectButton'>

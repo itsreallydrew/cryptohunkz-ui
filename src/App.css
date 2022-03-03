@@ -11396,6 +11396,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 
   .navbar {
+    position: fixed;
     display: grid;
     grid-template-columns: 50vw 1fr;
   }
@@ -11412,9 +11413,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 
   .social-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     align-items: center;
+    gap: 1rem;
   }
 
   a {
@@ -11743,13 +11744,11 @@ img {
   .hunkz-display {
     width: 60vw;
     margin: 0 auto;
-    border: 10px solid blueviolet;
     grid-template-rows: repeat(2, min-content);
     grid-template-columns: repeat(2, 1fr);
   }
 
   .hunkz-title {
-    border: 10px solid skyblue;
     grid-column: span 2;
     display: flex;
     justify-content: center;
@@ -11765,12 +11764,10 @@ img {
   }
 
   .hunkz-img {
-    border: 10px solid orange;
     width: 100%;
   }
 
   .hunkz-img img {
-    border: 10px solid yellowgreen;
     width: 100%;
     transition: 0.5s;
   }
@@ -11783,7 +11780,6 @@ img {
   }
 
   .hunkz-selector {
-    border: 10px solid red;
     height: 100%;
     grid-template-columns: auto;
     grid-template-rows: repeat(5, 1fr);
