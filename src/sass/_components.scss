@@ -274,15 +274,25 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		display: flex;
 		// grid-template-columns: repeat(3, 1fr);
 		align-items: center;
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	a {
 		color: white;
 	}
 
-	.icon > svg {
-		// height: 5rem;
-		// width: 5rem;
+	#discord,
+	#twitter {
+		font-size: 2rem;
 	}
+
+	.os-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	// .os-icon:hover {
+	// 	background-color: $blue;
+	// }
 }

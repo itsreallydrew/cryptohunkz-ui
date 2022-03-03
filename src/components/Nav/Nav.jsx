@@ -79,11 +79,11 @@ const Nav = ({ connect, account, admin }) => {
 					</a>
 				)}
 				<div className='social-icons'>
-					<a href='anchor' className='icon'>
-						<FontAwesomeIcon icon={discord} height='auto' />
+					<a href='anchor' id='discord' className='icon'>
+						<FontAwesomeIcon icon={discord} className='fa-sm' />
 					</a>
-					<a href='anchor' className='icon'>
-						<FontAwesomeIcon icon={twitter} height='auto' />
+					<a href='anchor' id='twitter' className='icon'>
+						<FontAwesomeIcon icon={twitter} />
 					</a>
 					<a href='anchor' className='os-icon icon'>
 						<img src={opensea} alt='' />
