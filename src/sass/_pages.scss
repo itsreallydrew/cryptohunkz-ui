@@ -52,12 +52,17 @@ img {
 	height: 100%;
 	width: 100%;
 	background-color: black;
-	// z-index: -1;
+	z-index: -1;
 	transform: translateY(-100%);
-	transition: all 1s;
+	transition: all 0.5s ease-out;
 }
 
-.discord-button:hover::before {
+.discord-button:hover {
+	color: transparent;
+}
+
+.discord-button:hover::before,
+.discord-button:focus::before {
 	transform: translateY(0);
 	cursor: pointer;
 }
@@ -112,17 +117,33 @@ img {
 /*********************/
 
 .hunkz-display {
-	width: 100vw;
+	width: 90vw;
+}
+
+.hunkz-wrapper {
+	width: min-content;
+	margin: 0 auto;
 	padding: 2rem;
 
 	display: grid;
+	grid-template-columns: 1fr min-content 1fr;
 	grid-template-rows: repeat(4, min-content);
 	place-items: center;
 	gap: 0.5rem;
 }
 
 .hunkz-title {
+	grid-column: 2;
 	font-size: 3rem;
+}
+
+.hunkz-card {
+	grid-column: 2;
+	width: 90%;
+}
+
+.hunkz-card p {
+	font-size: 1.6rem;
 }
 
 .hunkz-img {
@@ -132,18 +153,15 @@ img {
 	}
 }
 
-.hunkz-card p {
-	font-size: 1.8rem;
-}
-
 .hunkz-selector {
+	grid-column: 2;
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	gap: 0.5rem;
+	gap: 1rem;
 
 	& button {
-		font-size: 1.7rem;
+		font-size: 1.3rem;
 		border: none;
 		background: none;
 		color: $blue;
@@ -337,8 +355,8 @@ img {
 // Media Queries
 /*********************/
 @media (min-width: 40rem) {
-	.hunkz-display {
-		width: 60vw;
+	.hunkz-wrapper {
+		width: 80vw;
 		margin: 0 auto;
 		// border: 10px solid blueviolet;
 		// display: grid;

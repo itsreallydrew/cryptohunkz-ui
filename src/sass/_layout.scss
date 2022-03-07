@@ -8,6 +8,7 @@
 	// grid-template-columns: 70vw 1fr;
 	// align-content: center;
 	position: absolute;
+	z-index: 200;
 	display: flex;
 	justify-content: space-between;
 }
