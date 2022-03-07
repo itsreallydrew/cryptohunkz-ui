@@ -18,7 +18,7 @@ img {
 	display: block;
 }
 
-.discord {
+.discord-button {
 	font-size: 2rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
@@ -33,12 +33,12 @@ img {
 	letter-spacing: 1px;
 }
 
-.discord:hover {
-	color: transparent;
-	transition: all 2.5s;
-}
+// .discord-button {
+// 	color: transparent;
+// 	transition: all 2.5s;
+// }
 
-.discord::before {
+.discord-button::before {
 	content: 'GET PUMPED';
 	font-family: $title-font;
 	letter-spacing: 1px;
@@ -57,7 +57,7 @@ img {
 	transition: all 1s;
 }
 
-.discord:hover::before {
+.discord-button:hover::before {
 	transform: translateY(0);
 	cursor: pointer;
 }
@@ -147,6 +147,7 @@ img {
 		border: none;
 		background: none;
 		color: $blue;
+		text-shadow: 0.1rem 0.1rem $white;
 
 		&:hover {
 			background-color: azure;
@@ -255,6 +256,7 @@ img {
 
 	h1 {
 		margin-bottom: 2rem;
+		text-align: center;
 	}
 }
 

@@ -11166,8 +11166,10 @@ body {
 }
 .nav-title h2, .nav-title .h2 {
   font-family: "LCD Solid";
-  letter-spacing: 1px;
+  font-size: 3.5rem;
+  letter-spacing: 0.3rem;
   align-self: center;
+  text-shadow: 0.2rem 0.2rem #2a9fd6;
 }
 
 .primary-nav {
@@ -11236,15 +11238,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 600;
   font-family: "LCD Solid";
   letter-spacing: 1px;
+  text-shadow: 0.1rem 0.1rem #2a9fd6;
 }
 
 .bm-item:hover {
   cursor: pointer;
   color: #2a9fd6;
+  text-shadow: 0.1rem 0.1rem #fff;
 }
 
 /* Styling of overlay */
@@ -11452,7 +11456,7 @@ img {
   display: block;
 }
 
-.discord {
+.discord-button {
   font-size: 2rem;
   text-decoration: none;
   border-radius: 0.2rem;
@@ -11466,12 +11470,7 @@ img {
   letter-spacing: 1px;
 }
 
-.discord:hover {
-  color: transparent;
-  transition: all 2.5s;
-}
-
-.discord::before {
+.discord-button::before {
   content: "GET PUMPED";
   font-family: "LCD Solid";
   letter-spacing: 1px;
@@ -11489,7 +11488,7 @@ img {
   transition: all 1s;
 }
 
-.discord:hover::before {
+.discord-button:hover::before {
   transform: translateY(0);
   cursor: pointer;
 }
@@ -11570,6 +11569,7 @@ img {
   border: none;
   background: none;
   color: #2a9fd6;
+  text-shadow: 0.1rem 0.1rem #fff;
 }
 .hunkz-selector button:hover {
   background-color: azure;
@@ -11674,6 +11674,7 @@ img {
 }
 .faq-page h1, .faq-page .h1 {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .accordion {

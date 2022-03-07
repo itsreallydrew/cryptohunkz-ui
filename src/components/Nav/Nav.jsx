@@ -13,7 +13,7 @@ const Nav = ({ connect, account, admin }) => {
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
 			<div className='nav-title'>
-				<h2>CRYPTOHUNKZ</h2>
+				<h2 className='nav-title-h2'>CRYPTOHUNKZ</h2>
 			</div>
 			<div className='primary-nav'>
 				<Link
@@ -28,16 +28,6 @@ const Nav = ({ connect, account, admin }) => {
 				</Link>
 				<Link
 					activeClass='active'
-					to='mint'
-					data-text='mint'
-					spy={true}
-					smooth={true}
-					duration={500}
-					className='bm-item'>
-					Mint
-				</Link>
-				<Link
-					activeClass='active'
 					to='hunkz'
 					data-text='hunkz'
 					spy={true}
@@ -45,6 +35,16 @@ const Nav = ({ connect, account, admin }) => {
 					duration={500}
 					className='bm-item'>
 					Hunkz
+				</Link>
+				<Link
+					activeClass='active'
+					to='mint'
+					data-text='mint'
+					spy={true}
+					smooth={true}
+					duration={500}
+					className='bm-item'>
+					Mint
 				</Link>
 				<Link
 					activeClass='active'

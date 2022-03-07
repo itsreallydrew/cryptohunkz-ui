@@ -157,6 +157,9 @@ function App() {
 	return (
 		<div className='App'>
 			<Header connect={connectWallet} account={account} />
+			<Element name='hunkz'>
+				<Hunkz />
+			</Element>
 			<Element name='mint'>
 				<Mint
 					// mintHunkz={mintHunkz}
@@ -166,9 +169,6 @@ function App() {
 					account={account}
 					contract={contract}
 				/>
-			</Element>
-			<Element name='hunkz'>
-				<Hunkz />
 			</Element>
 			{/* <Element name='roadmap'>
 				<Roadmap />

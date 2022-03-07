@@ -27,7 +27,7 @@ const Mint = ({ account, getBalance, requestAccount, contract }) => {
 				src='https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif'
 				alt='hunk-gif'
 			/>
-			{/* <MintModal
+			<MintModal
 				// mintHunkz={mintHunkz}
 				getBalance={getBalance}
 				account={account}
@@ -36,7 +36,7 @@ const Mint = ({ account, getBalance, requestAccount, contract }) => {
 				closeModal={closeModal}
 				modalIsOpen={modalIsOpen}
 				contract={contract}
-			/> */}
+			/>
 		</div>
 	);
 };

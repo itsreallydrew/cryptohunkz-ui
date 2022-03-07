@@ -17,8 +17,10 @@
 
 	& h2 {
 		font-family: $title-font;
-		letter-spacing: 1px;
+		font-size: 3.5rem;
+		letter-spacing: 0.3rem;
 		align-self: center;
+		text-shadow: 0.2rem 0.2rem $blue;
 	}
 }
 
