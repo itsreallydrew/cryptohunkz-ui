@@ -39,7 +39,7 @@ img {
 // }
 
 .discord-button::before {
-	content: 'GET PUMPED';
+	content: 'GET PUMPED!!!';
 	font-family: $title-font;
 	letter-spacing: 1px;
 	color: $white;
@@ -54,11 +54,12 @@ img {
 	background-color: black;
 	z-index: -1;
 	transform: translateY(-100%);
-	transition: all 0.5s ease-out;
+	transition: all 0.5s;
 }
 
 .discord-button:hover {
 	color: transparent;
+	transition: all 0.5s;
 }
 
 .discord-button:hover::before,

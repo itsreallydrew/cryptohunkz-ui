@@ -25,6 +25,11 @@
 	}
 }
 
+.active {
+	color: $blue;
+	background-color: transparent;
+}
+
 // .navbar > div {
 // 	display: flex;
 // 	justify-content: flex-end;

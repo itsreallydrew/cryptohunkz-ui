@@ -11173,6 +11173,11 @@ body {
   text-shadow: 0.2rem 0.2rem #2a9fd6;
 }
 
+.active {
+  color: #2a9fd6;
+  background-color: transparent;
+}
+
 .primary-nav {
   display: none;
 }
@@ -11472,7 +11477,7 @@ img {
 }
 
 .discord-button::before {
-  content: "GET PUMPED";
+  content: "GET PUMPED!!!";
   font-family: "LCD Solid";
   letter-spacing: 1px;
   color: #fff;
@@ -11487,11 +11492,12 @@ img {
   background-color: black;
   z-index: -1;
   transform: translateY(-100%);
-  transition: all 0.5s ease-out;
+  transition: all 0.5s;
 }
 
 .discord-button:hover {
   color: transparent;
+  transition: all 0.5s;
 }
 
 .discord-button:hover::before,
@@ -11825,4 +11831,9 @@ img {
   .hunkz-selector button:hover {
     background-color: azure;
   }
+}
+.active {
+  color: #2a9fd6;
+  background-color: transparent;
+  text-shadow: 0.1rem 0.1rem #fff;
 }

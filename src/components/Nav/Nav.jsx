@@ -19,6 +19,7 @@ const Nav = ({ connect, account, admin }) => {
 				<Link
 					activeClass='active'
 					to='home'
+					onClick={scroll.scrollToTop}
 					data-text='home'
 					spy={true}
 					smooth={true}
