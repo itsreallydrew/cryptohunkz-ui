@@ -10,6 +10,9 @@ import Team from './components/Team/Team';
 import FAQ from './components/FAQ/FAQ';
 import Links from './components/Links/Links';
 import Hunkz from './components/Hunkz/Hunkz';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const hunkzAddress = '0x7cf1200B9568E0b9B1bB240EDB926aE5655a0eCB';
 
@@ -17,6 +20,7 @@ function App() {
 	const [account, setCurrentAccount] = useState(null);
 	// const [admin, setAdmin] = useState(false);
 	const [contract, setContract] = useState(null);
+	const notifyMint = () => toast.success(`Transaction submitted successfully `)
 
 	const requestAccount = async () => {
 		try {
@@ -168,6 +172,7 @@ function App() {
 					requestAccount={requestAccount}
 					account={account}
 					contract={contract}
+					notifyMint={notifyMint}
 				/>
 			</Element>
 			{/* <Element name='roadmap'>
@@ -182,6 +187,7 @@ function App() {
 			{/* <Element name='links'>
 				<Links />
 			</Element> */}
+			<ToastContainer />
 		</div>
 	);
 }
