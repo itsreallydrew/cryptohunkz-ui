@@ -62,13 +62,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
 	display: inline-block;
-	font-size: 1.4rem;
+	font-size: 1.7rem;
 	font-weight: 600;
+	font-family: $title-font;
+	letter-spacing: 1px;
+	text-shadow: 0.1rem 0.1rem $blue;
 }
 
 .bm-item:hover {
 	cursor: pointer;
 	color: $blue;
+	text-shadow: 0.1rem 0.1rem $white;
 }
 
 /* Styling of overlay */
@@ -203,6 +207,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	border-radius: 2rem;
 	// margin-top: 2rem;
 	overflow: hidden;
+	font-family: $title-font;
+	letter-spacing: 1px;
 }
 
 // .connectButton:hover {
@@ -240,30 +246,55 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // Media Queries
 /**********************/
 
+// iPad to Desktop Display
 @media (min-width: 60rem) {
 	.mobile-menu {
 		display: none;
 	}
 
 	.navbar {
+		position: fixed;
 		display: grid;
 		grid-template-columns: 50vw 1fr;
 	}
 
 	.primary-nav {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-evenly;
 		align-items: center;
+		// margin-inline: 1rem;
 	}
 
 	.bm-item {
-		font-size: 2rem;
-		padding: 1rem;
+		font-size: 1.7rem;
+		// padding: 0.5rem;
+		text-decoration: none;
 	}
 
 	.social-icons {
+		// display: grid;
 		display: flex;
-		justify-content: center;
+		// grid-template-columns: repeat(3, 1fr);
 		align-items: center;
+		gap: 2rem;
 	}
+
+	a {
+		color: white;
+	}
+
+	#discord,
+	#twitter {
+		font-size: 2rem;
+	}
+
+	.os-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	// .os-icon:hover {
+	// 	background-color: $blue;
+	// }
 }

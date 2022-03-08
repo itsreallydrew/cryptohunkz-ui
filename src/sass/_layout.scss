@@ -6,10 +6,23 @@
 	padding: 1.5rem;
 	// display: grid;
 	// grid-template-columns: 70vw 1fr;
-	align-content: center;
+	// align-content: center;
 	position: absolute;
+	z-index: 200;
 	display: flex;
 	justify-content: space-between;
+}
+
+.nav-title {
+	display: flex;
+
+	& h2 {
+		font-family: $title-font;
+		font-size: 3.5rem;
+		letter-spacing: 0.3rem;
+		align-self: center;
+		text-shadow: 0.2rem 0.2rem $blue;
+	}
 }
 
 // .navbar > div {

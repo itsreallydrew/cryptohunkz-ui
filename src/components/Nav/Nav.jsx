@@ -5,24 +5,37 @@ import {
 	faDiscord as discord,
 	faTwitter as twitter,
 } from '@fortawesome/free-brands-svg-icons';
-import opensea from '../../assets/Logomark-Transparent White.svg';
+import opensea from '../../assets/Logomark-White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BurgerMenu3 from '../BurgerMenu/BurgerMenu3';
 
 const Nav = ({ connect, account, admin }) => {
 	return (
 		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-			<h2>CRYPTO HUNKZ</h2>
+			<div className='nav-title'>
+				<h2 className='nav-title-h2'>CRYPTOHUNKZ</h2>
+			</div>
 			<div className='primary-nav'>
 				<Link
 					activeClass='active'
 					to='home'
+					onClick={scroll.scrollToTop}
 					data-text='home'
 					spy={true}
 					smooth={true}
 					duration={500}
 					className='bm-item'>
 					Home
+				</Link>
+				<Link
+					activeClass='active'
+					to='hunkz'
+					data-text='hunkz'
+					spy={true}
+					smooth={true}
+					duration={500}
+					className='bm-item'>
+					Hunkz
 				</Link>
 				<Link
 					activeClass='active'
@@ -36,16 +49,6 @@ const Nav = ({ connect, account, admin }) => {
 				</Link>
 				<Link
 					activeClass='active'
-					to='roadmap'
-					data-text='roadmap'
-					spy={true}
-					smooth={true}
-					duration={500}
-					className='bm-item'>
-					Roadmap
-				</Link>
-				<Link
-					activeClass='active'
 					to='team'
 					data-text='team'
 					spy={true}
@@ -53,6 +56,16 @@ const Nav = ({ connect, account, admin }) => {
 					duration={500}
 					className='bm-item'>
 					Team
+				</Link>
+				<Link
+					activeClass='active'
+					to='faq'
+					data-text='faq'
+					spy={true}
+					smooth={true}
+					duration={500}
+					className='bm-item'>
+					FAQ
 				</Link>
 				{account ? (
 					<a href='null' className='connectButton'>
@@ -67,10 +80,10 @@ const Nav = ({ connect, account, admin }) => {
 					</a>
 				)}
 				<div className='social-icons'>
-					<a href='anchor' className='icon'>
-						<FontAwesomeIcon icon={discord} />
+					<a href='anchor' id='discord' className='icon'>
+						<FontAwesomeIcon icon={discord} className='fa-sm' />
 					</a>
-					<a href='anchor' className='icon'>
+					<a href='anchor' id='twitter' className='icon'>
 						<FontAwesomeIcon icon={twitter} />
 					</a>
 					<a href='anchor' className='os-icon icon'>

@@ -48,7 +48,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 173, 175, 174;
   --bs-body-bg-rgb: 6, 6, 6;
-  --bs-font-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bs-font-sans-serif: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -11148,6 +11148,7 @@ html {
 
 body {
   background-color: #000;
+  font-family: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 /*********************/
@@ -11155,10 +11156,21 @@ body {
 .navbar {
   width: 100vw;
   padding: 1.5rem;
-  align-content: center;
   position: absolute;
+  z-index: 200;
   display: flex;
   justify-content: space-between;
+}
+
+.nav-title {
+  display: flex;
+}
+.nav-title h2, .nav-title .h2 {
+  font-family: "LCD Solid";
+  font-size: 3.5rem;
+  letter-spacing: 0.3rem;
+  align-self: center;
+  text-shadow: 0.2rem 0.2rem #2a9fd6;
 }
 
 .primary-nav {
@@ -11227,13 +11239,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 600;
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
+  text-shadow: 0.1rem 0.1rem #2a9fd6;
 }
 
 .bm-item:hover {
   cursor: pointer;
   color: #2a9fd6;
+  text-shadow: 0.1rem 0.1rem #fff;
 }
 
 /* Styling of overlay */
@@ -11348,6 +11364,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: relative;
   border-radius: 2rem;
   overflow: hidden;
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
 }
 
 /*********************/
@@ -11383,25 +11401,41 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 
   .navbar {
+    position: fixed;
     display: grid;
     grid-template-columns: 50vw 1fr;
   }
 
   .primary-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
   .bm-item {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 1.7rem;
+    text-decoration: none;
   }
 
   .social-icons {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 2rem;
+  }
+
+  a {
+    color: white;
+  }
+
+  #discord,
+#twitter {
+    font-size: 2rem;
+  }
+
+  .os-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 /*********************/
@@ -11411,10 +11445,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   text-align: center;
   font-size: 1.3rem;
+  margin-bottom: 20vh;
+}
+
+.video-container {
+  height: 60vh;
+}
+.video-container > video {
+  width: 100%;
 }
 
 img {
@@ -11423,7 +11465,7 @@ img {
   display: block;
 }
 
-.discord {
+.discord-button {
   font-size: 2rem;
   text-decoration: none;
   border-radius: 0.2rem;
@@ -11433,15 +11475,14 @@ img {
   border-radius: 0.5rem;
   margin-top: 2rem;
   overflow: hidden;
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
 }
 
-.discord:hover {
-  color: transparent;
-  transition: all 2.5s;
-}
-
-.discord::before {
-  content: "GET PUMPED";
+.discord-button::before {
+  content: "GET PUMPED!!!";
+  font-family: "LCD Solid";
+  letter-spacing: 1px;
   color: #fff;
   font-size: 2rem;
   display: grid;
@@ -11452,11 +11493,18 @@ img {
   height: 100%;
   width: 100%;
   background-color: black;
+  z-index: -1;
   transform: translateY(-100%);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
-.discord:hover::before {
+.discord-button:hover {
+  color: transparent;
+  transition: all 0.5s;
+}
+
+.discord-button:hover::before,
+.discord-button:focus::before {
   transform: translateY(0);
   cursor: pointer;
 }
@@ -11498,6 +11546,62 @@ img {
   font-size: 4rem;
   color: lightgreen;
   text-align: center;
+}
+
+/*********************/
+/*********************/
+.hunkz-display {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.hunkz-wrapper {
+  width: min-content;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  grid-template-rows: repeat(4, min-content);
+  place-items: center;
+  gap: 0.5rem;
+}
+
+.hunkz-title {
+  grid-column: 2;
+  font-size: 3rem;
+}
+
+.hunkz-card {
+  grid-column: 2;
+  width: 90%;
+}
+
+.hunkz-card p {
+  font-size: 1.6rem;
+}
+
+.hunkz-img {
+  margin-bottom: 1rem;
+}
+.hunkz-img img {
+  width: 100%;
+}
+
+.hunkz-selector {
+  grid-column: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.hunkz-selector button {
+  font-size: 1.3rem;
+  border: none;
+  background: none;
+  color: #2a9fd6;
+  text-shadow: 0.1rem 0.1rem #fff;
+}
+.hunkz-selector button:hover {
+  background-color: azure;
 }
 
 /*********************/
@@ -11585,7 +11689,7 @@ img {
   align-items: center;
 }
 .dox h3, .dox .h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .dox .img {
   height: 2rem;
@@ -11599,6 +11703,7 @@ img {
 }
 .faq-page h1, .faq-page .h1 {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .accordion {
@@ -11672,4 +11777,66 @@ img {
 
 .reveal {
   display: block;
+}
+
+/*********************/
+/*********************/
+@media (min-width: 40rem) {
+  .hunkz-wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hunkz-title {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-family: "LCD Solid";
+    letter-spacing: 1px;
+  }
+
+  .hunkz-card {
+    width: minmax(50rem, 1fr);
+    grid-column: 1;
+  }
+
+  .hunkz-img {
+    width: 100%;
+  }
+
+  .hunkz-img img {
+    width: 100%;
+    transition: 0.5s;
+  }
+
+  .hunkz-card p {
+    font-size: 2rem;
+    font-family: "LCD Solid";
+    letter-spacing: 1px;
+    padding: 0.5rem;
+  }
+
+  .hunkz-selector {
+    height: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .hunkz-selector button {
+    font-size: 3rem;
+    border: none;
+    background: none;
+    color: #2a9fd6;
+  }
+  .hunkz-selector button:hover {
+    background-color: azure;
+  }
+}
+.active {
+  color: #2a9fd6;
+  background-color: transparent;
+  text-shadow: 0.1rem 0.1rem #fff;
 }

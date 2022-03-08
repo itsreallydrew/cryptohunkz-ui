@@ -6,10 +6,21 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	padding: 1rem 2rem;
 	text-align: center;
 	font-size: 1.3rem;
+
+	margin-bottom: 20vh;
+}
+
+.video-container {
+	height: 60vh;
+	// margin-bottom: 30vh;
+
+	& > video {
+		width: 100%;
+	}
 }
 
 img {
@@ -18,7 +29,7 @@ img {
 	display: block;
 }
 
-.discord {
+.discord-button {
 	font-size: 2rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
@@ -29,15 +40,19 @@ img {
 	border-radius: 0.5rem;
 	margin-top: 2rem;
 	overflow: hidden;
+	font-family: $title-font;
+	letter-spacing: 1px;
 }
 
-.discord:hover {
-	color: transparent;
-	transition: all 2.5s;
-}
+// .discord-button {
+// 	color: transparent;
+// 	transition: all 2.5s;
+// }
 
-.discord::before {
-	content: 'GET PUMPED';
+.discord-button::before {
+	content: 'GET PUMPED!!!';
+	font-family: $title-font;
+	letter-spacing: 1px;
 	color: $white;
 	font-size: 2rem;
 	display: grid;
@@ -48,12 +63,18 @@ img {
 	height: 100%;
 	width: 100%;
 	background-color: black;
-	// z-index: -1;
+	z-index: -1;
 	transform: translateY(-100%);
-	transition: all 1s;
+	transition: all 0.5s;
 }
 
-.discord:hover::before {
+.discord-button:hover {
+	color: transparent;
+	transition: all 0.5s;
+}
+
+.discord-button:hover::before,
+.discord-button:focus::before {
 	transform: translateY(0);
 	cursor: pointer;
 }
@@ -101,6 +122,68 @@ img {
 	font-size: 4rem;
 	color: lightgreen;
 	text-align: center;
+}
+
+/*********************/
+// Hunkz Page
+/*********************/
+
+.hunkz-display {
+	width: 90vw;
+	margin: 0 auto;
+}
+
+.hunkz-wrapper {
+	width: min-content;
+	// margin: 0 auto;
+	padding: 2rem;
+
+	display: grid;
+	grid-template-columns: 1fr min-content 1fr;
+	grid-template-rows: repeat(4, min-content);
+	place-items: center;
+	gap: 0.5rem;
+}
+
+.hunkz-title {
+	grid-column: 2;
+	font-size: 3rem;
+}
+
+.hunkz-card {
+	grid-column: 2;
+	width: 90%;
+}
+
+.hunkz-card p {
+	font-size: 1.6rem;
+}
+
+.hunkz-img {
+	margin-bottom: 1rem;
+	& img {
+		width: 100%;
+	}
+}
+
+.hunkz-selector {
+	grid-column: 2;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1rem;
+
+	& button {
+		font-size: 1.3rem;
+		border: none;
+		background: none;
+		color: $blue;
+		text-shadow: 0.1rem 0.1rem $white;
+
+		&:hover {
+			background-color: azure;
+		}
+	}
 }
 
 /*********************/
@@ -187,7 +270,7 @@ img {
 	align-items: center;
 
 	h3 {
-		font-size: 2rem;
+		font-size: 1.7rem;
 	}
 
 	.img {
@@ -204,6 +287,7 @@ img {
 
 	h1 {
 		margin-bottom: 2rem;
+		text-align: center;
 	}
 }
 
@@ -278,4 +362,82 @@ img {
 
 .reveal {
 	display: block;
+}
+
+/*********************/
+// Media Queries
+/*********************/
+@media (min-width: 40rem) {
+	.hunkz-wrapper {
+		width: 80vw;
+		margin: 0 auto;
+		// border: 10px solid blueviolet;
+		// display: grid;
+		grid-template-rows: repeat(2, min-content);
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.hunkz-title {
+		// border: 10px solid skyblue;
+		grid-column: span 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		font-size: 5rem;
+		font-family: $title-font;
+		letter-spacing: 1px;
+	}
+
+	.hunkz-card {
+		// position: relative;
+		width: minmax(50rem, 1fr);
+		grid-column: 1;
+	}
+
+	// .hunkz-img {
+	// 	position: relative;
+	// 	border: 10px solid orange;
+	// 	width: minmax(50rem, 1fr);
+	// 	grid-column: 1;
+	// }
+
+	.hunkz-img {
+		// position: absolute;
+		// border: 10px solid orange;
+		width: 100%;
+		// grid-column: 1;
+	}
+
+	.hunkz-img img {
+		// border: 10px solid yellowgreen;
+		width: 100%;
+		transition: 0.5s;
+	}
+
+	.hunkz-card p {
+		font-size: 2rem;
+		font-family: $title-font;
+		letter-spacing: 1px;
+		padding: 0.5rem;
+	}
+
+	.hunkz-selector {
+		// border: 10px solid red;
+		// display: grid;
+		height: 100%;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(5, 1fr);
+
+		& button {
+			font-size: 3rem;
+			border: none;
+			background: none;
+			color: $blue;
+
+			&:hover {
+				background-color: azure;
+			}
+		}
+	}
 }
