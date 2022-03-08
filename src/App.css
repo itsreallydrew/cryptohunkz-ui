@@ -11577,6 +11577,7 @@ img {
 
 .hunkz-card p {
   font-size: 1.6rem;
+  text-transform: uppercase;
 }
 
 .hunkz-img {
@@ -11787,6 +11788,7 @@ img {
     margin: 0 auto;
     grid-template-rows: repeat(2, min-content);
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
   }
 
   .hunkz-title {
@@ -11833,6 +11835,14 @@ img {
   }
   .hunkz-selector button:hover {
     background-color: azure;
+  }
+
+  .content {
+    font-size: 2rem;
+  }
+
+  .bm-item {
+    font-size: 2rem;
   }
 }
 .active {

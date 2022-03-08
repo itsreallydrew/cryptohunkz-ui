@@ -187,7 +187,7 @@ const MintModal = ({
 				// className='mint-modal'
 				contentLabel='Example Modal'>
 				<h2 style={pStyles} className='text-warning'>
-					GET PAMP'd
+					GET YOUR HUNK!!!
 				</h2>
 				{/* <div className="progress">
                     <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
@@ -207,18 +207,24 @@ const MintModal = ({
 					</div>
 					<button className='btn btn-success'>Mint</button>
 				</form>
-				<button onClick={raiseAmount} className='btn'>
-					up
-				</button>
-				<button onClick={lowerAmount} className='btn'>
-					down
-				</button>
-				<button className='btn btn-info' onClick={getBalance}>
-					Balance
-				</button>
-				<button className='btn btn-danger' onClick={closeModal}>
-					Close
-				</button>
+				{/* Div to separate up and down button */}
+				<div>
+					<button onClick={raiseAmount} className='btn'>
+						up
+					</button>
+					<button onClick={lowerAmount} className='btn'>
+						down
+					</button>
+				</div>
+				{/* Div to separate close and balance buttons */}
+				<div>
+					<button className='btn btn-info' onClick={getBalance}>
+						Balance
+					</button>
+					<button className='btn btn-danger' onClick={closeModal}>
+						Close
+					</button>
+				</div>
 			</Modal>
 			
 		</div>
