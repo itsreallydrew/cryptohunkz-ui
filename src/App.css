@@ -11173,11 +11173,6 @@ body {
   text-shadow: 0.2rem 0.2rem #2a9fd6;
 }
 
-.active {
-  color: #2a9fd6;
-  background-color: transparent;
-}
-
 .primary-nav {
   display: none;
 }
@@ -11450,10 +11445,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   text-align: center;
   font-size: 1.3rem;
+  margin-bottom: 20vh;
+}
+
+.video-container {
+  height: 60vh;
+}
+.video-container > video {
+  width: 100%;
 }
 
 img {
@@ -11549,11 +11552,11 @@ img {
 /*********************/
 .hunkz-display {
   width: 90vw;
+  margin: 0 auto;
 }
 
 .hunkz-wrapper {
   width: min-content;
-  margin: 0 auto;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
