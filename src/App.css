@@ -11167,7 +11167,7 @@ body {
 }
 .nav-title h2, .nav-title .h2 {
   font-family: "LCD Solid";
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 20vw, 3.5rem);
   letter-spacing: 0.3rem;
   align-self: center;
   text-shadow: 0.2rem 0.2rem #2a9fd6;
@@ -11318,7 +11318,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   inset: 0 35% 0 0;
   background-color: steelblue;
   backdrop-filter: blur(100rem);
-  transition: all 0.5s ease-in-out;
   transform: translateX(-100%);
   z-index: 700;
   display: flex;
@@ -11364,6 +11363,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: relative;
   border-radius: 2rem;
   overflow: hidden;
+  color: #2a9fd6;
   font-family: "LCD Solid";
   letter-spacing: 1px;
 }
@@ -11453,7 +11453,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .video-container {
-  height: 60vh;
+  height: 20vh;
+  width: 50vw;
 }
 .video-container > video {
   width: 100%;

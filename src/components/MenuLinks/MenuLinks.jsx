@@ -7,11 +7,16 @@ import {
 import opensea from '../../assets/Logomark-Transparent White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Admin from '../Admin';
-import 'animate.css'
+import 'animate.css';
 
 const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 	return (
-		<div className={`menu-links animate__animated animate__fadeInLeft ${open ? 'menu-links-open' : null}`}>
+		<div
+			className={`menu-links ${
+				open
+					? 'animate__animated animate__fadeInLeft'
+					: 'menu-links-open animate__animated animate__fadeOutLeft'
+			}`}>
 			<Link
 				activeClass='active'
 				to='home'
@@ -22,6 +27,17 @@ const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 				className='bm-item'
 				onClick={toggleMenu}>
 				Home
+			</Link>
+			<Link
+				activeClass='active'
+				to='hunkz'
+				data-text='hunkz'
+				spy={true}
+				smooth={true}
+				duration={500}
+				className='bm-item'
+				onClick={toggleMenu}>
+				Hunkz
 			</Link>
 			<Link
 				activeClass='active'
@@ -36,17 +52,6 @@ const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 			</Link>
 			<Link
 				activeClass='active'
-				to='roadmap'
-				data-text='roadmap'
-				spy={true}
-				smooth={true}
-				duration={500}
-				className='bm-item'
-				onClick={toggleMenu}>
-				Roadmap
-			</Link>
-			<Link
-				activeClass='active'
 				to='team'
 				data-text='team'
 				spy={true}
@@ -56,16 +61,16 @@ const MenuLinks = ({ connect, account, open, toggleMenu, admin }) => {
 				onClick={toggleMenu}>
 				Team
 			</Link>
-			{/* <Link
+			<Link
 				activeClass='active'
-				to='links'
-				data-text='links'
+				to='faq'
+				data-text='faq'
 				spy={true}
 				smooth={true}
 				duration={500}
 				className='bm-item'>
-				Links
-			</Link> */}
+				FAQ
+			</Link>
 			{account ? (
 				<button className='connectButton'>
 					{`${account.slice(0, 6)}..${account.slice(
