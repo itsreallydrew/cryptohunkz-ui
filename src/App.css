@@ -11466,6 +11466,11 @@ img {
   display: block;
 }
 
+#lore {
+  font-size: 1.7rem;
+  text-shadow: 0.05rem 0.05rem #2a9fd6;
+}
+
 .discord-button {
   font-size: 2rem;
   text-decoration: none;
