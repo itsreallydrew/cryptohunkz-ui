@@ -13,14 +13,13 @@ import Hunkz from './components/Hunkz/Hunkz';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const hunkzAddress = '0x7cf1200B9568E0b9B1bB240EDB926aE5655a0eCB';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
 	// const [admin, setAdmin] = useState(false);
 	const [contract, setContract] = useState(null);
-	const notifyMint = () => toast.success(`Transaction submitted successfully `)
+	const notifyMint = () => toast.success(`Transaction submitted successfully `);
 
 	const requestAccount = async () => {
 		try {
@@ -175,9 +174,9 @@ function App() {
 					notifyMint={notifyMint}
 				/>
 			</Element>
-			{/* <Element name='roadmap'>
+			<Element name='roadmap'>
 				<Roadmap />
-			</Element> */}
+			</Element>
 			<Element name='team'>
 				<Team />
 			</Element>

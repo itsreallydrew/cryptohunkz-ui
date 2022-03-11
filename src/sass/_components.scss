@@ -138,13 +138,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // Menu Links
 /*********************/
 .menu-links {
-	// height: 50vh;
-	// width: 30vh;
-	// background-color: rgba(6, 7, 7, 0.762);
-	// bottom: 0;
-	// left: 0;
-	// right: 0;
-	// top: 8rem;
 	opacity: 0;
 	overflow-y: hidden;
 	padding: 15rem 3rem;
@@ -153,19 +146,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	background-color: steelblue;
 	backdrop-filter: blur(100rem);
 	transform: translateX(-100%);
-	// transition: transform 500ms ease-in-out;
 	z-index: 700;
 
-	display: flex;
-	flex-direction: column;
-	// grid-template-columns: repeat(1fr);
-	// justify-items: start;
-	align-items: flex-start;
-	grid-gap: 1.5rem;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: flex-start;
+	display: grid;
+	grid-template-rows: repeat(9, min-content);
+	justify-content: flex-start;
+	row-gap: 1.5rem;
 }
 .menu-links-open {
 	transform: translateX(0%);
-	// transition: transform 500ms ease-in-out;
 	opacity: 0.8;
 }
 
@@ -180,19 +172,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // .social-icons {
 // 	display: flex;
 // 	flex-direction: column;
-// 	justify-content: space-between;
+// 	row-gap: 1rem;
+// 	font-size: 1.5rem;
 // }
-
-.social-icons {
-	display: grid;
-	gap: 1rem 0;
-}
 
 .icon:hover {
 	cursor: pointer;
 }
 
 .os-icon {
+	aspect-ratio: 1;
 	height: 2.6rem;
 	width: 2.66rem;
 }
@@ -204,18 +193,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	border: 0.1rem solid $blue;
 	font-weight: 700;
 	padding: 1rem;
-	position: relative;
+	// position: relative;
 	border-radius: 2rem;
-	// margin-top: 2rem;
 	overflow: hidden;
 	color: $blue;
 	font-family: $title-font;
 	letter-spacing: 1px;
 }
-
-// .connectButton:hover {
-
-// }
 
 /*********************/
 // Mint Button
@@ -264,19 +248,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		// margin-inline: 1rem;
 	}
 
 	.bm-item {
 		font-size: 1.7rem;
-		// padding: 0.5rem;
 		text-decoration: none;
 	}
 
 	.social-icons {
-		// display: grid;
 		display: flex;
-		// grid-template-columns: repeat(3, 1fr);
 		align-items: center;
 		gap: 2rem;
 	}
@@ -290,13 +270,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		font-size: 2rem;
 	}
 
+	.connectButton {
+		color: $white;
+	}
 	.os-icon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-
-	// .os-icon:hover {
-	// 	background-color: $blue;
-	// }
 }

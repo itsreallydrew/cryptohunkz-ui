@@ -6,7 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	padding: 1rem 2rem;
 	text-align: center;
 	font-size: 1.3rem;
@@ -31,6 +31,7 @@ img {
 }
 
 #lore {
+	margin-top: 20vh;
 	font-size: 1.7rem;
 	text-shadow: 0.05rem 0.05rem $blue;
 }
@@ -40,7 +41,6 @@ img {
 	text-decoration: none;
 	border-radius: 0.2rem;
 	border: 0.1rem solid $blue;
-	// font-weight: 700;
 	padding: 1rem;
 	position: relative;
 	border-radius: 0.5rem;
@@ -49,11 +49,6 @@ img {
 	font-family: $title-font;
 	letter-spacing: 1px;
 }
-
-// .discord-button {
-// 	color: transparent;
-// 	transition: all 2.5s;
-// }
 
 .discord-button::before {
 	content: 'GET PUMPED!!!';
@@ -135,13 +130,14 @@ img {
 /*********************/
 
 .hunkz-display {
-	width: 90vw;
+	width: 100vw;
 	margin: 0 auto;
+	display: grid;
+	place-items: center;
 }
 
 .hunkz-wrapper {
 	width: min-content;
-	// margin: 0 auto;
 	padding: 2rem;
 
 	display: grid;
@@ -170,6 +166,7 @@ img {
 	margin-bottom: 1rem;
 	& img {
 		width: 100%;
+		height: auto;
 	}
 }
 
@@ -192,6 +189,30 @@ img {
 		}
 	}
 }
+
+// .hunkz-selector-large {
+// 	display: none;
+// }
+
+// .hunkz-selector-mobile {
+// 	grid-column: 2;
+// 	width: 100%;
+// 	display: grid;
+// 	grid-template-columns: repeat(5, 1fr);
+// 	gap: 1rem;
+
+// 	& button {
+// 		border: none;
+// 		background: none;
+// 		border-radius: 50%;
+// 		background-color: $blue;
+// 		padding: 0.5rem;
+
+// 		&:hover {
+// 			background-color: azure;
+// 		}
+// 	}
+// }
 
 /*********************/
 // Roadmap Page
@@ -254,7 +275,6 @@ img {
 	gap: 3rem;
 
 	&-member {
-		// height: 100
 		width: 100%;
 		border-radius: 1rem;
 		border: 0.2rem solid $blue;
@@ -265,6 +285,7 @@ img {
 
 			img {
 				width: 100%;
+				height: auto;
 			}
 		}
 	}
@@ -375,18 +396,20 @@ img {
 // Media Queries
 /*********************/
 @media (min-width: 40rem) {
+	#lore {
+		font-size: 2.5rem;
+		text-shadow: 0.05rem 0.05rem $blue;
+		line-height: 1.7;
+	}
 	.hunkz-wrapper {
 		width: 80vw;
 		margin: 0 auto;
-		// border: 10px solid blueviolet;
-		// display: grid;
 		grid-template-rows: repeat(2, min-content);
 		grid-template-columns: repeat(2, 1fr);
 		row-gap: 3rem;
 	}
 
 	.hunkz-title {
-		// border: 10px solid skyblue;
 		grid-column: span 2;
 		display: flex;
 		justify-content: center;
@@ -398,27 +421,15 @@ img {
 	}
 
 	.hunkz-card {
-		// position: relative;
 		width: minmax(50rem, 1fr);
 		grid-column: 1;
 	}
 
-	// .hunkz-img {
-	// 	position: relative;
-	// 	border: 10px solid orange;
-	// 	width: minmax(50rem, 1fr);
-	// 	grid-column: 1;
-	// }
-
 	.hunkz-img {
-		// position: absolute;
-		// border: 10px solid orange;
 		width: 100%;
-		// grid-column: 1;
 	}
 
 	.hunkz-img img {
-		// border: 10px solid yellowgreen;
 		width: 100%;
 		transition: 0.5s;
 	}
@@ -431,8 +442,6 @@ img {
 	}
 
 	.hunkz-selector {
-		// border: 10px solid red;
-		// display: grid;
 		height: 100%;
 		grid-template-columns: auto;
 		grid-template-rows: repeat(5, 1fr);
@@ -449,11 +458,37 @@ img {
 		}
 	}
 
+	// .hunkz-selector-mobile {
+	// 	display: none;
+	// }
+
+	// .hunkz-selector-large {
+	// 	height: 100%;
+	// 	grid-template-columns: auto;
+	// 	grid-template-rows: repeat(5, 1fr);
+
+	// 	& button {
+	// 		font-size: 3rem;
+	// 		border: none;
+	// 		background: none;
+	// 		color: $blue;
+	// 		text-shadow: 0.1rem 0.1rem $white;
+
+	// 		&:hover {
+	// 			background-color: azure;
+	// 		}
+	// 	}
+	// }
+
 	.content {
 		font-size: 2rem;
 	}
 
 	.bm-item {
 		font-size: 2rem;
+	}
+
+	.social-icons {
+		flex-direction: row;
 	}
 }

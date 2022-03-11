@@ -36,6 +36,30 @@ const Hunkz = () => {
 						Legendary
 					</button>
 				</div>
+				{/* <div className='hunkz-selector-large'>
+					<button onClick={() => setSelected(hunkz[0])} id='skin'>
+						Humanoid
+					</button>
+					<button onClick={() => setSelected(hunkz[1])} id='alien'>
+						Alien
+					</button>
+					<button onClick={() => setSelected(hunkz[2])} id='cyborg'>
+						Cyborg
+					</button>
+					<button onClick={() => setSelected(hunkz[3])} id='zombie'>
+						Zombie
+					</button>
+					<button onClick={() => setSelected(hunkz[4])} id='legend'>
+						Legendary
+					</button>
+				</div>
+				<div className='hunkz-selector-mobile'>
+					<button onClick={() => setSelected(hunkz[0])} id='skin'></button>
+					<button onClick={() => setSelected(hunkz[1])} id='alien'></button>
+					<button onClick={() => setSelected(hunkz[2])} id='cyborg'></button>
+					<button onClick={() => setSelected(hunkz[3])} id='zombie'></button>
+					<button onClick={() => setSelected(hunkz[4])} id='legend'></button>
+				</div> */}
 			</div>
 		</div>
 	);

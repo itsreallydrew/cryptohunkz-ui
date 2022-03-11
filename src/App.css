@@ -1,4 +1,9 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap");
+@font-face {
+  font-family: "Pixel";
+  src: local("../assets/LcdSolid-VPzB.woff2") format("woff2");
+}
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -48,7 +53,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 173, 175, 174;
   --bs-body-bg-rgb: 6, 6, 6;
-  --bs-font-sans-serif: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bs-font-sans-serif: "LCD Solid", "Orbitron", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -11148,7 +11153,8 @@ html {
 
 body {
   background-color: #000;
-  font-family: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Pixel", "LCD Solid", "Orbitron", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /*********************/
@@ -11166,8 +11172,7 @@ body {
   display: flex;
 }
 .nav-title h2, .nav-title .h2 {
-  font-family: "LCD Solid";
-  font-size: clamp(2rem, 20vw, 3.5rem);
+  font-size: 2.8rem;
   letter-spacing: 0.3rem;
   align-self: center;
   text-shadow: 0.2rem 0.2rem #2a9fd6;
@@ -11177,8 +11182,6 @@ body {
   display: none;
 }
 
-/*********************/
-/*********************/
 /*********************/
 /*********************/
 /* Position and sizing of burger button */
@@ -11320,10 +11323,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   backdrop-filter: blur(100rem);
   transform: translateX(-100%);
   z-index: 700;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  grid-gap: 1.5rem;
+  display: grid;
+  grid-template-rows: repeat(9, min-content);
+  justify-content: flex-start;
+  row-gap: 1.5rem;
 }
 
 .menu-links-open {
@@ -11339,16 +11342,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: relative;
 }
 
-.social-icons {
-  display: grid;
-  gap: 1rem 0;
-}
-
 .icon:hover {
   cursor: pointer;
 }
 
 .os-icon {
+  aspect-ratio: 1;
   height: 2.6rem;
   width: 2.66rem;
 }
@@ -11360,7 +11359,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   border: 0.1rem solid #2a9fd6;
   font-weight: 700;
   padding: 1rem;
-  position: relative;
   border-radius: 2rem;
   overflow: hidden;
   color: #2a9fd6;
@@ -11432,6 +11430,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
     font-size: 2rem;
   }
 
+  .connectButton {
+    color: #fff;
+  }
+
   .os-icon {
     display: flex;
     align-items: center;
@@ -11445,7 +11447,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 2rem;
   text-align: center;
   font-size: 1.3rem;
@@ -11467,6 +11469,7 @@ img {
 }
 
 #lore {
+  margin-top: 20vh;
   font-size: 1.7rem;
   text-shadow: 0.05rem 0.05rem #2a9fd6;
 }
@@ -11557,8 +11560,10 @@ img {
 /*********************/
 /*********************/
 .hunkz-display {
-  width: 90vw;
+  width: 100vw;
   margin: 0 auto;
+  display: grid;
+  place-items: center;
 }
 
 .hunkz-wrapper {
@@ -11591,6 +11596,7 @@ img {
 }
 .hunkz-img img {
   width: 100%;
+  height: auto;
 }
 
 .hunkz-selector {
@@ -11687,6 +11693,7 @@ img {
 }
 .team-member-frame img {
   width: 100%;
+  height: auto;
 }
 
 .dox {
@@ -11789,6 +11796,12 @@ img {
 /*********************/
 /*********************/
 @media (min-width: 40rem) {
+  #lore {
+    font-size: 2.5rem;
+    text-shadow: 0.05rem 0.05rem #2a9fd6;
+    line-height: 1.7;
+  }
+
   .hunkz-wrapper {
     width: 80vw;
     margin: 0 auto;
@@ -11849,6 +11862,10 @@ img {
 
   .bm-item {
     font-size: 2rem;
+  }
+
+  .social-icons {
+    flex-direction: row;
   }
 }
 .active {
