@@ -8,9 +8,6 @@ const LandingPage = () => {
 				src='https://kaijukingz.io/static/media/KaijuKingz-1000px.6d41b11e.png'
 				alt='cryptohunkz'
 			/> */}
-			{/* <div className='video-container'>
-				<video src={HunkzLogo} autoPlay loop></video>
-			</div> */}
 			<p id='lore'>
 				The CryptoHunkz are originally from PLANIT PHITNEZZ. They have dedicated
 				their entire lives to being the strongest in the universe and have taken

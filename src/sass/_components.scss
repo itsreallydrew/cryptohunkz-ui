@@ -62,9 +62,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
 	display: inline-block;
-	font-size: 1.7rem;
-	font-weight: 600;
-	font-family: $title-font;
+	font-size: 1.5rem;
+	// font-weight: 600;
+	// font-family: $title-font;
 	letter-spacing: 1px;
 	text-shadow: 0.1rem 0.1rem $blue;
 }
@@ -197,7 +197,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	border-radius: 2rem;
 	overflow: hidden;
 	color: $blue;
-	font-family: $title-font;
+	// font-family: $title-font;
 	letter-spacing: 1px;
 }
 
@@ -228,6 +228,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	transition: opacity 400ms ease-in-out;
 }
 
+// #modal-button {
+// 	justify-self: center;
+// }
+
 /**********************/
 // Media Queries
 /**********************/
@@ -241,7 +245,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	.navbar {
 		position: fixed;
 		display: grid;
-		grid-template-columns: 50vw 1fr;
+		// grid-template-columns: 50vw 1fr;
+		grid-template-columns: 30vw 1fr;
 	}
 
 	.primary-nav {
@@ -251,7 +256,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	}
 
 	.bm-item {
-		font-size: 1.7rem;
 		text-decoration: none;
 	}
 

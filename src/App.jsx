@@ -174,9 +174,9 @@ function App() {
 					notifyMint={notifyMint}
 				/>
 			</Element>
-			<Element name='roadmap'>
+			{/* <Element name='roadmap'>
 				<Roadmap />
-			</Element>
+			</Element> */}
 			<Element name='team'>
 				<Team />
 			</Element>
