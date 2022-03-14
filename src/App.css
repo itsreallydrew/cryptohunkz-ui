@@ -11172,6 +11172,7 @@ body {
   letter-spacing: 0.3rem;
   align-self: center;
   text-shadow: 0.2rem 0.2rem #2a9fd6;
+  margin: 0.5rem;
 }
 
 .primary-nav {
@@ -11363,7 +11364,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /*********************/
 .btn {
   border-radius: 5rem;
-  width: 8rem;
+  width: 40vw;
+  height: 8vh;
   font-size: 1.1rem;
   text-align: center;
 }
@@ -11382,6 +11384,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .ReactModal__Overlay--before-close {
   opacity: 0;
   transition: opacity 400ms ease-in-out;
+}
+
+.modal-background {
+  display: flex;
+  justify-content: center;
 }
 
 /**********************/
@@ -11774,6 +11781,10 @@ img {
 /*********************/
 /*********************/
 @media (min-width: 40rem) {
+  .nav-title-h2 {
+    margin: 1rem;
+  }
+
   #lore {
     font-size: 2.5rem;
     text-shadow: 0.05rem 0.05rem #2a9fd6;

@@ -206,7 +206,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /*********************/
 .btn {
 	border-radius: 5rem;
-	width: 8rem;
+	// width: 8rem;
+	width: 40vw;
+	height: 8vh;
 	font-size: 1.1rem;
 	text-align: center;
 }
@@ -228,9 +230,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	transition: opacity 400ms ease-in-out;
 }
 
-// #modal-button {
-// 	justify-self: center;
-// }
+.modal-background {
+	display: flex;
+	justify-content: center;
+}
 
 /**********************/
 // Media Queries
