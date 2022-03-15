@@ -2,6 +2,7 @@ import React from 'react';
 import testImage from '../../assets/Arnold-breathing-animation-2.gif';
 import { faTwitter as twitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import rkhavoc from '../../assets/6.png';
 
 const Team = () => {
 	return (
@@ -19,7 +20,7 @@ const Team = () => {
 			</div>
 			<div className='team-member'>
 				<div className='team-member-frame'>
-					<img src={testImage} alt='' />
+					<img src={rkhavoc} alt='' />
 				</div>
 				<div className='dox'>
 					<h3>RKhavoc</h3>

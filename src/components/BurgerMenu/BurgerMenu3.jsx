@@ -20,14 +20,13 @@ const BurgerMenu3 = ({ connect, account }) => {
 				<span></span>
 				<span></span>
 			</div>
-			{open && (
-				<MenuLinks
-					connect={connect}
-					account={account}
-					open={open}
-					toggleMenu={toggleMenu}
-				/>
-			)}
+
+			<MenuLinks
+				connect={connect}
+				account={account}
+				open={open}
+				toggleMenu={toggleMenu}
+			/>
 		</div>
 	);
 };

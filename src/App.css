@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Press+Start+2P&display=swap");
+/**************************/
+/**************************/
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -48,7 +51,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 173, 175, 174;
   --bs-body-bg-rgb: 6, 6, 6;
-  --bs-font-sans-serif: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bs-font-sans-serif: "Press Start 2P", "Orbitron", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -11147,8 +11150,10 @@ html {
 }
 
 body {
-  background-color: #000;
-  font-family: "LCD Solid", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background-color: #0a090c;
+  color: #e9f1ee;
+  font-family: "Pixel", "Press Start 2P", "Orbitron", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /*********************/
@@ -11166,19 +11171,17 @@ body {
   display: flex;
 }
 .nav-title h2, .nav-title .h2 {
-  font-family: "LCD Solid";
-  font-size: 3.5rem;
+  font-size: 2.3rem;
   letter-spacing: 0.3rem;
   align-self: center;
-  text-shadow: 0.2rem 0.2rem #2a9fd6;
+  text-shadow: 0.2rem 0.2rem #1b97de;
+  margin: 0.5rem;
 }
 
 .primary-nav {
   display: none;
 }
 
-/*********************/
-/*********************/
 /*********************/
 /*********************/
 /* Position and sizing of burger button */
@@ -11239,16 +11242,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
-  font-size: 1.7rem;
-  font-weight: 600;
-  font-family: "LCD Solid";
+  font-size: 1.5rem;
   letter-spacing: 1px;
   text-shadow: 0.1rem 0.1rem #2a9fd6;
 }
 
 .bm-item:hover {
   cursor: pointer;
-  color: #2a9fd6;
+  color: #1b97de;
   text-shadow: 0.1rem 0.1rem #fff;
 }
 
@@ -11316,15 +11317,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 15rem 3rem;
   position: fixed;
   inset: 0 35% 0 0;
-  background-color: steelblue;
+  background-color: #1b97de;
   backdrop-filter: blur(100rem);
-  transition: all 0.5s ease-in-out;
   transform: translateX(-100%);
   z-index: 700;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  grid-gap: 1.5rem;
+  display: grid;
+  grid-template-rows: repeat(9, min-content);
+  justify-content: flex-start;
+  row-gap: 1.5rem;
 }
 
 .menu-links-open {
@@ -11340,16 +11340,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
   position: relative;
 }
 
-.social-icons {
-  display: grid;
-  gap: 1rem 0;
-}
-
 .icon:hover {
   cursor: pointer;
 }
 
 .os-icon {
+  aspect-ratio: 1;
   height: 2.6rem;
   width: 2.66rem;
 }
@@ -11358,25 +11354,49 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 1.5rem;
   text-decoration: none;
   border-radius: 0.2rem;
-  border: 0.1rem solid #2a9fd6;
+  border: 0.1rem solid #741dd7;
   font-weight: 700;
   padding: 1rem;
-  position: relative;
   border-radius: 2rem;
   overflow: hidden;
-  font-family: "LCD Solid";
+  color: #2a9fd6;
   letter-spacing: 1px;
 }
 
 /*********************/
 /*********************/
-.btn {
+#modal-button {
   border-radius: 5rem;
-  width: 8rem;
-  font-size: 1.1rem;
+  width: 40vw;
+  height: 8vh;
+  font-size: 1.5rem;
   text-align: center;
+  background-size: 200%;
+  border-color: #0cca4b;
+  color: #e9f1ee;
+  background: linear-gradient(to right, #0a090c, #0cca4b);
+  text-transform: uppercase;
+  animation: changeGradient 3s ease-in-out infinite;
 }
 
+#modal-button:hover,
+#modal-button:focus {
+  color: #741dd7;
+  background-color: #0cca4b;
+  border-color: #741dd7;
+}
+
+@keyframes changeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /*********************/
 /**********************/
 .ReactModal__Overlay {
@@ -11393,6 +11413,28 @@ Note: Beware of modifying this element as it can break the animations - you shou
   transition: opacity 400ms ease-in-out;
 }
 
+.modal-background {
+  display: flex;
+  justify-content: center;
+}
+
+.selection-div .btn {
+  width: 20vw;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.extra-buttons .btn {
+  width: 40vw;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.mint-div + button {
+  width: 40vw;
+  font-size: 2rem;
+}
+
 /**********************/
 /**********************/
 @media (min-width: 60rem) {
@@ -11403,7 +11445,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .navbar {
     position: fixed;
     display: grid;
-    grid-template-columns: 50vw 1fr;
+    grid-template-columns: 30vw 1fr;
   }
 
   .primary-nav {
@@ -11413,7 +11455,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 
   .bm-item {
-    font-size: 1.7rem;
     text-decoration: none;
   }
 
@@ -11432,6 +11473,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
     font-size: 2rem;
   }
 
+  .connectButton {
+    color: #fff;
+  }
+
   .os-icon {
     display: flex;
     align-items: center;
@@ -11445,18 +11490,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 2rem;
   text-align: center;
   font-size: 1.3rem;
   margin-bottom: 20vh;
-}
-
-.video-container {
-  height: 60vh;
-}
-.video-container > video {
-  width: 100%;
 }
 
 img {
@@ -11465,23 +11503,30 @@ img {
   display: block;
 }
 
+#lore {
+  margin-top: 20vh;
+  font-size: 1.4rem;
+  text-shadow: 0.05rem 0.05rem #2a9fd6;
+}
+
 .discord-button {
   font-size: 2rem;
   text-decoration: none;
   border-radius: 0.2rem;
-  border: 0.1rem solid #2a9fd6;
+  border: 0.1rem solid #741dd7;
+  background: linear-gradient(to right, #0a090c, #741dd7);
+  background-size: 150%;
   padding: 1rem;
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   margin-top: 2rem;
   overflow: hidden;
-  font-family: "LCD Solid";
   letter-spacing: 1px;
+  animation: gradientChange 3s ease-in-out infinite;
 }
 
 .discord-button::before {
   content: "GET PUMPED!!!";
-  font-family: "LCD Solid";
   letter-spacing: 1px;
   color: #fff;
   font-size: 2rem;
@@ -11493,9 +11538,9 @@ img {
   height: 100%;
   width: 100%;
   background-color: black;
-  z-index: -1;
+  z-index: 2;
   transform: translateY(-100%);
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .discord-button:hover {
@@ -11518,24 +11563,6 @@ img {
 
 /*********************/
 /*********************/
-.mint-modal {
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  height: 75%;
-  width: 75%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 1.5rem;
-  background-color: black;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
 .mint-title {
   color: black;
   text-align: center;
@@ -11550,23 +11577,17 @@ img {
 
 /*********************/
 /*********************/
-.hunkz-display {
-  width: 90vw;
-  margin: 0 auto;
-}
-
 .hunkz-wrapper {
-  width: min-content;
+  grid-column: 2;
+  width: 100%;
   padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-  grid-template-rows: repeat(4, min-content);
-  place-items: center;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
 }
 
 .hunkz-title {
-  grid-column: 2;
   font-size: 3rem;
 }
 
@@ -11575,15 +11596,21 @@ img {
   width: 90%;
 }
 
+.hunkz-type {
+  display: none;
+}
+
 .hunkz-card p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 .hunkz-img {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .hunkz-img img {
   width: 100%;
+  height: auto;
 }
 
 .hunkz-selector {
@@ -11594,14 +11621,18 @@ img {
   gap: 1rem;
 }
 .hunkz-selector button {
-  font-size: 1.3rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
   border: none;
-  background: none;
-  color: #2a9fd6;
+  background-color: #2a9fd6;
   text-shadow: 0.1rem 0.1rem #fff;
 }
 .hunkz-selector button:hover {
-  background-color: azure;
+  background-color: #e9f1ee;
+}
+
+.active-class {
+  background-color: #e9f1ee;
 }
 
 /*********************/
@@ -11672,7 +11703,7 @@ img {
 .team-member {
   width: 100%;
   border-radius: 1rem;
-  border: 0.2rem solid #2a9fd6;
+  border: 0.2rem solid #741dd7;
   overflow: hidden;
 }
 .team-member-frame {
@@ -11680,6 +11711,7 @@ img {
 }
 .team-member-frame img {
   width: 100%;
+  height: auto;
 }
 
 .dox {
@@ -11711,7 +11743,9 @@ img {
 }
 
 .item {
-  background-color: steelblue;
+  background-color: #1b97de;
+  border: 0.2rem solid #741dd7;
+  border-radius: 1rem;
   margin: 3rem;
   padding: 2rem;
 }
@@ -11735,6 +11769,7 @@ img {
   max-height: 0;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  color: #0a090c;
 }
 
 .show {
@@ -11782,11 +11817,23 @@ img {
 /*********************/
 /*********************/
 @media (min-width: 40rem) {
+  .nav-title-h2 {
+    margin: 1rem;
+  }
+
+  #lore {
+    font-size: 2.5rem;
+    text-shadow: 0.05rem 0.05rem #2a9fd6;
+    line-height: 1.7;
+  }
+
   .hunkz-wrapper {
     width: 80vw;
     margin: 0 auto;
+    display: grid;
     grid-template-rows: repeat(2, min-content);
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
   }
 
   .hunkz-title {
@@ -11795,7 +11842,6 @@ img {
     justify-content: center;
     align-items: center;
     font-size: 5rem;
-    font-family: "LCD Solid";
     letter-spacing: 1px;
   }
 
@@ -11821,18 +11867,48 @@ img {
   }
 
   .hunkz-selector {
+    grid-column: 2;
     height: 100%;
     grid-template-columns: auto;
     grid-template-rows: repeat(5, 1fr);
   }
   .hunkz-selector button {
     font-size: 3rem;
+    border-radius: 0%;
+    aspect-ratio: 0;
     border: none;
     background: none;
     color: #2a9fd6;
   }
   .hunkz-selector button:hover {
     background-color: azure;
+  }
+
+  .hunkz-type {
+    display: inline;
+  }
+
+  .content {
+    font-size: 2rem;
+  }
+
+  .bm-item {
+    font-size: 1.8rem;
+  }
+
+  .social-icons {
+    flex-direction: row;
+  }
+}
+@keyframes gradientChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 .active {

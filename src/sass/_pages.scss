@@ -6,21 +6,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	padding: 1rem 2rem;
 	text-align: center;
 	font-size: 1.3rem;
 
 	margin-bottom: 20vh;
-}
-
-.video-container {
-	height: 60vh;
-	// margin-bottom: 30vh;
-
-	& > video {
-		width: 100%;
-	}
 }
 
 img {
@@ -29,29 +20,38 @@ img {
 	display: block;
 }
 
+#lore {
+	margin-top: 20vh;
+	font-size: 1.4rem;
+	text-shadow: 0.05rem 0.05rem $blue;
+}
+
 .discord-button {
 	font-size: 2rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
-	border: 0.1rem solid $blue;
-	// font-weight: 700;
+	// border: 0.1rem solid $blue;
+	border: 0.1rem solid hsl($coolor-purple);
+	background: linear-gradient(
+		to right,
+		hsl($coolor-black),
+		hsl($coolor-purple)
+	);
+	background-size: 150%;
 	padding: 1rem;
 	position: relative;
-	border-radius: 0.5rem;
+	// border-radius: 0.5rem;
+	border-radius: 2rem;
 	margin-top: 2rem;
 	overflow: hidden;
-	font-family: $title-font;
+	// font-family: $title-font;
 	letter-spacing: 1px;
-}
 
-// .discord-button {
-// 	color: transparent;
-// 	transition: all 2.5s;
-// }
+	animation: gradientChange 3s ease-in-out infinite;
+}
 
 .discord-button::before {
 	content: 'GET PUMPED!!!';
-	font-family: $title-font;
 	letter-spacing: 1px;
 	color: $white;
 	font-size: 2rem;
@@ -63,9 +63,10 @@ img {
 	height: 100%;
 	width: 100%;
 	background-color: black;
-	z-index: -1;
+	// z-index: -1;
+	z-index: 2;
 	transform: translateY(-100%);
-	transition: all 0.5s;
+	transition: all 0.5s ease;
 }
 
 .discord-button:hover {
@@ -90,27 +91,6 @@ img {
 /*********************/
 // Mint Modal Page
 /*********************/
-.mint-modal {
-	top: 50%;
-	left: 50%;
-	right: auto;
-	bottom: auto;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	height: 75%;
-	width: 75%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	border-radius: 1.5rem;
-	background-color: black;
-	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-		rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-		rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-		rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-		rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
 
 .mint-title {
 	color: black;
@@ -128,25 +108,43 @@ img {
 // Hunkz Page
 /*********************/
 
-.hunkz-display {
-	width: 90vw;
-	margin: 0 auto;
-}
+// .hunkz-display {
+// 	width: 100vw;
+// 	margin: 0 auto;
+// 	display: grid;
+// 	// place-items: center;
+// 	grid-template-columns: 1fr min-content 1fr;
+// }
+
+// .hunkz-wrapper {
+// 	grid-column: 2;
+// 	// width: min-content;
+// 	width: 100%;
+// 	// padding: 2rem;
+// 	margin: 2rem;
+
+// 	display: grid;
+// 	grid-template-columns: 1fr min-content 1fr;
+// 	grid-template-rows: repeat(4, min-content);
+// 	place-items: center;
+// 	gap: 0.5rem;
+// }
 
 .hunkz-wrapper {
-	width: min-content;
-	// margin: 0 auto;
+	grid-column: 2;
+	// width: min-content;
+	width: 100%;
 	padding: 2rem;
+	// margin: 2rem;
 
-	display: grid;
-	grid-template-columns: 1fr min-content 1fr;
-	grid-template-rows: repeat(4, min-content);
-	place-items: center;
-	gap: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 2rem;
 }
 
 .hunkz-title {
-	grid-column: 2;
+	// grid-column: 2;
 	font-size: 3rem;
 }
 
@@ -155,14 +153,20 @@ img {
 	width: 90%;
 }
 
+.hunkz-type {
+	display: none;
+}
+
 .hunkz-card p {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
+	text-transform: uppercase;
 }
 
 .hunkz-img {
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	& img {
 		width: 100%;
+		height: auto;
 	}
 }
 
@@ -174,16 +178,23 @@ img {
 	gap: 1rem;
 
 	& button {
-		font-size: 1.3rem;
+		// font-size: 1.3rem;
+		border-radius: 50%;
+		aspect-ratio: 1;
 		border: none;
-		background: none;
-		color: $blue;
+		// background: none;
+		background-color: $blue;
+		// color: $blue;
 		text-shadow: 0.1rem 0.1rem $white;
 
 		&:hover {
-			background-color: azure;
+			background-color: hsl($coolor-cream);
 		}
 	}
+}
+
+.active-class {
+	background-color: hsl($coolor-cream);
 }
 
 /*********************/
@@ -247,10 +258,10 @@ img {
 	gap: 3rem;
 
 	&-member {
-		// height: 100
 		width: 100%;
 		border-radius: 1rem;
-		border: 0.2rem solid $blue;
+		// border: 0.2rem solid $blue;
+		border: 0.2rem solid hsl($coolor-purple);
 		overflow: hidden;
 
 		&-frame {
@@ -258,6 +269,7 @@ img {
 
 			img {
 				width: 100%;
+				height: auto;
 			}
 		}
 	}
@@ -296,7 +308,9 @@ img {
 }
 
 .item {
-	background-color: steelblue;
+	background-color: hsl($coolor-blue);
+	border: 0.2rem solid hsl($coolor-purple);
+	border-radius: 1rem;
 	margin: 3rem;
 	padding: 2rem;
 }
@@ -320,6 +334,7 @@ img {
 	max-height: 0;
 	overflow: hidden;
 	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+	color: hsl($coolor-black);
 }
 
 .show {
@@ -368,49 +383,46 @@ img {
 // Media Queries
 /*********************/
 @media (min-width: 40rem) {
+	.nav-title-h2 {
+		margin: 1rem;
+	}
+
+	#lore {
+		font-size: 2.5rem;
+		text-shadow: 0.05rem 0.05rem $blue;
+		line-height: 1.7;
+	}
+
 	.hunkz-wrapper {
 		width: 80vw;
 		margin: 0 auto;
-		// border: 10px solid blueviolet;
-		// display: grid;
+		display: grid;
 		grid-template-rows: repeat(2, min-content);
 		grid-template-columns: repeat(2, 1fr);
+		row-gap: 3rem;
 	}
 
 	.hunkz-title {
-		// border: 10px solid skyblue;
 		grid-column: span 2;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 		font-size: 5rem;
-		font-family: $title-font;
+		// font-family: $title-font;
 		letter-spacing: 1px;
 	}
 
 	.hunkz-card {
-		// position: relative;
 		width: minmax(50rem, 1fr);
 		grid-column: 1;
 	}
 
-	// .hunkz-img {
-	// 	position: relative;
-	// 	border: 10px solid orange;
-	// 	width: minmax(50rem, 1fr);
-	// 	grid-column: 1;
-	// }
-
 	.hunkz-img {
-		// position: absolute;
-		// border: 10px solid orange;
 		width: 100%;
-		// grid-column: 1;
 	}
 
 	.hunkz-img img {
-		// border: 10px solid yellowgreen;
 		width: 100%;
 		transition: 0.5s;
 	}
@@ -423,14 +435,15 @@ img {
 	}
 
 	.hunkz-selector {
-		// border: 10px solid red;
-		// display: grid;
+		grid-column: 2;
 		height: 100%;
 		grid-template-columns: auto;
 		grid-template-rows: repeat(5, 1fr);
 
 		& button {
 			font-size: 3rem;
+			border-radius: 0%;
+			aspect-ratio: 0;
 			border: none;
 			background: none;
 			color: $blue;
@@ -439,5 +452,55 @@ img {
 				background-color: azure;
 			}
 		}
+	}
+
+	.hunkz-type {
+		display: inline;
+	}
+
+	// .hunkz-selector-mobile {
+	// 	display: none;
+	// }
+
+	// .hunkz-selector-large {
+	// 	height: 100%;
+	// 	grid-template-columns: auto;
+	// 	grid-template-rows: repeat(5, 1fr);
+
+	// 	& button {
+	// 		font-size: 3rem;
+	// 		border: none;
+	// 		background: none;
+	// 		color: $blue;
+	// 		text-shadow: 0.1rem 0.1rem $white;
+
+	// 		&:hover {
+	// 			background-color: azure;
+	// 		}
+	// 	}
+	// }
+
+	.content {
+		font-size: 2rem;
+	}
+
+	.bm-item {
+		font-size: 1.8rem;
+	}
+
+	.social-icons {
+		flex-direction: row;
+	}
+}
+
+@keyframes gradientChange {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
 	}
 }
