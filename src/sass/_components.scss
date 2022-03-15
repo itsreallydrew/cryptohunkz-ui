@@ -71,7 +71,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .bm-item:hover {
 	cursor: pointer;
-	color: $blue;
+	// color: $blue;
+	color: hsl($coolor-blue);
 	text-shadow: 0.1rem 0.1rem $white;
 }
 
@@ -143,7 +144,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	padding: 15rem 3rem;
 	position: fixed;
 	inset: 0 35% 0 0;
-	background-color: steelblue;
+	// background-color: steelblue;
+	background-color: hsl($coolor-blue);
 	backdrop-filter: blur(100rem);
 	transform: translateX(-100%);
 	z-index: 700;
@@ -190,7 +192,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	font-size: 1.5rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
-	border: 0.1rem solid $blue;
+	// border: 0.1rem solid $blue;
+	border: 0.1rem solid hsl($coolor-purple);
 	font-weight: 700;
 	padding: 1rem;
 	// position: relative;
@@ -204,13 +207,48 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /*********************/
 // Mint Button
 /*********************/
-.btn {
+// .btn {
+// 	border-radius: 5rem;
+// 	// width: 8rem;
+// 	width: 40vw;
+// 	height: 8vh;
+// 	font-size: 1.1rem;
+// 	text-align: center;
+// }
+
+#modal-button {
 	border-radius: 5rem;
 	// width: 8rem;
 	width: 40vw;
 	height: 8vh;
-	font-size: 1.1rem;
+	font-size: 1.5rem;
 	text-align: center;
+	background-size: 200%;
+	border-color: hsl($coolor-green);
+	color: hsl($coolor-cream);
+	background: linear-gradient(to right, hsl($coolor-black), hsl($coolor-green));
+	text-transform: uppercase;
+
+	animation: changeGradient 3s ease-in-out infinite;
+}
+
+#modal-button:hover,
+#modal-button:focus {
+	color: hsl($coolor-purple);
+	background-color: hsl($coolor-green);
+	border-color: hsl($coolor-purple);
+}
+
+@keyframes changeGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /*********************/
@@ -235,6 +273,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	justify-content: center;
 }
 
+.selection-div .btn {
+	width: 20vw;
+	margin: 1rem;
+	font-size: 2rem;
+}
+
+.extra-buttons .btn {
+	width: 40vw;
+	margin: 1rem;
+	font-size: 2rem;
+}
+
+.mint-div + button {
+	width: 40vw;
+	font-size: 2rem;
+}
+
 /**********************/
 // Media Queries
 /**********************/
@@ -250,6 +305,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		display: grid;
 		// grid-template-columns: 50vw 1fr;
 		grid-template-columns: 30vw 1fr;
+		// background-color: hsl($coolor-purple);
 	}
 
 	.primary-nav {

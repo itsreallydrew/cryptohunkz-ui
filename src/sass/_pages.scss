@@ -30,14 +30,24 @@ img {
 	font-size: 2rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
-	border: 0.1rem solid $blue;
+	// border: 0.1rem solid $blue;
+	border: 0.1rem solid hsl($coolor-purple);
+	background: linear-gradient(
+		to right,
+		hsl($coolor-black),
+		hsl($coolor-purple)
+	);
+	background-size: 150%;
 	padding: 1rem;
 	position: relative;
-	border-radius: 0.5rem;
+	// border-radius: 0.5rem;
+	border-radius: 2rem;
 	margin-top: 2rem;
 	overflow: hidden;
 	// font-family: $title-font;
 	letter-spacing: 1px;
+
+	animation: gradientChange 3s ease-in-out infinite;
 }
 
 .discord-button::before {
@@ -53,9 +63,10 @@ img {
 	height: 100%;
 	width: 100%;
 	background-color: black;
-	z-index: -1;
+	// z-index: -1;
+	z-index: 2;
 	transform: translateY(-100%);
-	transition: all 0.5s;
+	transition: all 0.5s ease;
 }
 
 .discord-button:hover {
@@ -80,27 +91,6 @@ img {
 /*********************/
 // Mint Modal Page
 /*********************/
-.mint-modal {
-	top: 50%;
-	left: 50%;
-	right: auto;
-	bottom: auto;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	height: 75%;
-	width: 75%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	border-radius: 1.5rem;
-	background-color: black;
-	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-		rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-		rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-		rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-		rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
 
 .mint-title {
 	color: black;
@@ -198,34 +188,14 @@ img {
 		text-shadow: 0.1rem 0.1rem $white;
 
 		&:hover {
-			background-color: azure;
+			background-color: hsl($coolor-cream);
 		}
 	}
 }
 
-// .hunkz-selector-large {
-// 	display: none;
-// }
-
-// .hunkz-selector-mobile {
-// 	grid-column: 2;
-// 	width: 100%;
-// 	display: grid;
-// 	grid-template-columns: repeat(5, 1fr);
-// 	gap: 1rem;
-
-// 	& button {
-// 		border: none;
-// 		background: none;
-// 		border-radius: 50%;
-// 		background-color: $blue;
-// 		padding: 0.5rem;
-
-// 		&:hover {
-// 			background-color: azure;
-// 		}
-// 	}
-// }
+.active-class {
+	background-color: hsl($coolor-cream);
+}
 
 /*********************/
 // Roadmap Page
@@ -290,7 +260,8 @@ img {
 	&-member {
 		width: 100%;
 		border-radius: 1rem;
-		border: 0.2rem solid $blue;
+		// border: 0.2rem solid $blue;
+		border: 0.2rem solid hsl($coolor-purple);
 		overflow: hidden;
 
 		&-frame {
@@ -337,7 +308,9 @@ img {
 }
 
 .item {
-	background-color: steelblue;
+	background-color: hsl($coolor-blue);
+	border: 0.2rem solid hsl($coolor-purple);
+	border-radius: 1rem;
 	margin: 3rem;
 	padding: 2rem;
 }
@@ -361,6 +334,7 @@ img {
 	max-height: 0;
 	overflow: hidden;
 	transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+	color: hsl($coolor-black);
 }
 
 .show {
@@ -516,5 +490,17 @@ img {
 
 	.social-icons {
 		flex-direction: row;
+	}
+}
+
+@keyframes gradientChange {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
 	}
 }

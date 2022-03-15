@@ -12,7 +12,10 @@ html {
 }
 
 body {
-	background-color: $black;
+	// background-color: $black;
+	background-color: hsl($coolor-black);
+	color: hsl($coolor-cream);
+	// background-color: hsl($coolor-cream);
 	font-family: 'Pixel', $font-family-sans-serif;
 	overflow-x: hidden;
 }
