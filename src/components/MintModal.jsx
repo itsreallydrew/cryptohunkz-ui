@@ -21,20 +21,23 @@ const MintModal = ({
 }) => {
 	Modal.setAppElement('#root');
 
-	const [proof, setProof] = useState(null);
+	// const [proof, setProof] = useState(null);
+	const [hashedMessage, setHashedMessage] = useState(null);
 	const [amount, setAmount] = useState(1);
 	const [balance, setBalance] = useState(null);
 
 	const mintHunkz = async (e) => {
 		e.preventDefault();
+		const signer = new ethers.Wallet(process.env.PRIVATE_KEY);
 		const wlActive = await contract.whiteListActive();
 		if (wlActive) {
 			let price = await contract.price();
 			console.log(price);
 			console.log(amount);
 			let totalPrice = price * amount;
+			let signature = await signer.signMessage(hashedMessage);
 			console.log(totalPrice);
-			let txn = contract.whitelistMint(proof, amount, {
+			let txn = contract.whitelistMint(signature, amount, {
 				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
 				gasLimit: 3000000,
 			});
@@ -113,11 +116,11 @@ const MintModal = ({
 	const checkMintType = async () => {
 		try {
 			console.log(account);
-			const res = await axios.post(`http://localhost:7001/api/proof/`, {
+			const res = await axios.post(`http://localhost:7001/api/message/`, {
 				address: account,
 			});
 			console.log(res);
-			setProof(res.data);
+			setHashedMessage(res.data);
 		} catch (error) {
 			console.log(error);
 		}

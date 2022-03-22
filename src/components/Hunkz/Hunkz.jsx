@@ -54,7 +54,9 @@ const Hunkz = () => {
 						data-number='0'
 						data-selected='false'
 						id='skin'
-						className={`${index === '0' ? 'active-class' : null}`}>
+						className={`hunkz-button ${
+							index === '0' ? 'selected-hunk' : null
+						}`}>
 						<span className='hunkz-type'>Humanoid</span>
 					</button>
 					<button
@@ -62,7 +64,9 @@ const Hunkz = () => {
 						data-number='1'
 						data-selected='false'
 						id='alien'
-						className={`${index === '1' ? 'active-class' : null}`}>
+						className={`hunkz-button ${
+							index === '1' ? 'selected-hunk' : null
+						}`}>
 						<span className='hunkz-type'>Alien</span>
 					</button>
 					<button
@@ -70,7 +74,9 @@ const Hunkz = () => {
 						data-number='2'
 						data-selected='false'
 						id='cyborg'
-						className={`${index === '2' ? 'active-class' : null}`}>
+						className={`hunkz-button ${
+							index === '2' ? 'selected-hunk' : null
+						}`}>
 						<span className='hunkz-type'>Cyborg</span>
 					</button>
 					<button
@@ -78,7 +84,9 @@ const Hunkz = () => {
 						data-number='3'
 						data-selected='false'
 						id='zombie'
-						className={`${index === '3' ? 'active-class' : null}`}>
+						className={`hunkz-button ${
+							index === '3' ? 'selected-hunk' : null
+						}`}>
 						<span className='hunkz-type'>Zombie</span>
 					</button>
 					<button
@@ -86,7 +94,9 @@ const Hunkz = () => {
 						data-number='4'
 						data-selected='false'
 						id='legend'
-						className={`${index === '4' ? 'active-class' : null}`}>
+						className={`hunkz-button ${
+							index === '4' ? 'selected-hunk' : null
+						}`}>
 						<span className='hunkz-type'>Legendary</span>
 					</button>
 				</div>
