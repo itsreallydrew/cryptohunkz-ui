@@ -34,21 +34,6 @@ const Hunkz = () => {
 					<p>{selected.description}</p>
 				</div>
 				<div className='hunkz-selector'>
-					{/* <button onClick={() => setSelected(hunkz[0])} id='skin'>
-						<span className='hunkz-type'>Humanoid</span>
-					</button>
-					<button onClick={() => setSelected(hunkz[1])} id='alien'>
-						<span className='hunkz-type'>Alien</span>
-					</button>
-					<button onClick={() => setSelected(hunkz[2])} id='cyborg'>
-						<span className='hunkz-type'>Cyborg</span>
-					</button>
-					<button onClick={() => setSelected(hunkz[3])} id='zombie'>
-						<span className='hunkz-type'>Zombie</span>
-					</button>
-					<button onClick={() => setSelected(hunkz[4])} id='legend'>
-						<span className='hunkz-type'>Legendary</span>
-					</button> */}
 					<button
 						onClick={onClick}
 						data-number='0'
@@ -100,23 +85,6 @@ const Hunkz = () => {
 						<span className='hunkz-type'>Legendary</span>
 					</button>
 				</div>
-				{/* <div className='hunkz-selector'>
-					<button onClick={() => setSelected(hunkz[0])} id='skin'>
-						Humanoid
-					</button>
-					<button onClick={() => setSelected(hunkz[1])} id='alien'>
-						Alien
-					</button>
-					<button onClick={() => setSelected(hunkz[2])} id='cyborg'>
-						Cyborg
-					</button>
-					<button onClick={() => setSelected(hunkz[3])} id='zombie'>
-						Zombie
-					</button>
-					<button onClick={() => setSelected(hunkz[4])} id='legend'>
-						Legendary
-					</button>
-				</div> */}
 			</div>
 		</div>
 	);

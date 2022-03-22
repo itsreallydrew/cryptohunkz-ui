@@ -22,7 +22,7 @@ img {
 
 #lore {
 	margin-top: 20vh;
-	font-size: 1.2rem;
+	font-size: clamp(1.2rem, 2.5vw, 2rem);
 	text-shadow: 0.05rem 0.05rem $blue;
 }
 
@@ -110,34 +110,10 @@ img {
 // Hunkz Page
 /*********************/
 
-// .hunkz-display {
-// 	width: 100vw;
-// 	margin: 0 auto;
-// 	display: grid;
-// 	// place-items: center;
-// 	grid-template-columns: 1fr min-content 1fr;
-// }
-
-// .hunkz-wrapper {
-// 	grid-column: 2;
-// 	// width: min-content;
-// 	width: 100%;
-// 	// padding: 2rem;
-// 	margin: 2rem;
-
-// 	display: grid;
-// 	grid-template-columns: 1fr min-content 1fr;
-// 	grid-template-rows: repeat(4, min-content);
-// 	place-items: center;
-// 	gap: 0.5rem;
-// }
-
 .hunkz-wrapper {
 	grid-column: 2;
-	// width: min-content;
 	width: 100%;
 	padding: 2rem;
-	// margin: 2rem;
 
 	display: flex;
 	flex-direction: column;
@@ -146,7 +122,6 @@ img {
 }
 
 .hunkz-title {
-	// grid-column: 2;
 	font-size: 3rem;
 }
 
@@ -178,31 +153,13 @@ img {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 1rem;
-
-	// & button {
-	// 	// font-size: 1.3rem;
-	// 	border-radius: 50%;
-	// 	aspect-ratio: 1;
-	// 	border: none;
-	// 	// background: none;
-	// 	background-color: $blue;
-	// 	// color: $blue;
-	// 	text-shadow: 0.1rem 0.1rem $white;
-	// 	outline: 0.1rem solid hsl($coolor-cream);
-
-	// 	&:hover {
-	// 		background-color: hsl($coolor-cream);
-	// 	}
 }
 
 .hunkz-button {
-	// font-size: 1.3rem;
 	border-radius: 50%;
 	aspect-ratio: 1;
 	border: none;
-	// background: none;
 	background-color: hsl($coolor-blue);
-	// color: $blue;
 	text-shadow: 0.1rem 0.1rem $white;
 	outline: 0.1rem solid hsl($coolor-cream);
 
@@ -219,13 +176,9 @@ img {
 // Roadmap Page
 /*********************/
 .roadmap {
-	// height: min-content;
 	padding: 0 1rem;
 
 	display: grid;
-	// grid-template-rows: repeat(5, min-content);
-	// grid-template-columns: repeat(2, 1fr);
-	// place-content: center;
 	gap: 2rem;
 }
 
@@ -278,7 +231,6 @@ img {
 	&-member {
 		width: 100%;
 		border-radius: 1rem;
-		// border: 0.2rem solid $blue;
 		border: 0.2rem solid hsl($coolor-purple);
 		overflow: hidden;
 
@@ -400,18 +352,10 @@ img {
 /*********************/
 // Media Queries
 /*********************/
-@media (min-width: 60rem) {
-	.nav-title-h2 {
-		margin: 1rem;
-	}
 
-	#lore {
-		margin-top: 20vh;
-		font-size: 2.5rem;
-		text-shadow: 0.05rem 0.05rem $blue;
-		line-height: 1.7;
-	}
+// ******* EDIT MEDIA QUERIES SO THAT REDUNDANT INFO IS REMOVED *******
 
+@media (min-width: 48.75rem) {
 	.hunkz-wrapper {
 		width: 80vw;
 		margin: 0 auto;
@@ -428,7 +372,6 @@ img {
 		align-items: center;
 
 		font-size: 5rem;
-		// font-family: $title-font;
 		letter-spacing: 1px;
 	}
 
@@ -447,8 +390,7 @@ img {
 	}
 
 	.hunkz-card p {
-		font-size: 2rem;
-		font-family: $title-font;
+		font-size: 1.5rem;
 		letter-spacing: 1px;
 		padding: 0.5rem;
 	}
@@ -482,27 +424,90 @@ img {
 		display: inline;
 	}
 
-	// .hunkz-selector-mobile {
-	// 	display: none;
-	// }
+	.content {
+		font-size: 2rem;
+	}
+}
 
-	// .hunkz-selector-large {
-	// 	height: 100%;
-	// 	grid-template-columns: auto;
-	// 	grid-template-rows: repeat(5, 1fr);
+@media (min-width: 60rem) {
+	.nav-title-h2 {
+		margin: 1rem;
+	}
 
-	// 	& button {
-	// 		font-size: 3rem;
-	// 		border: none;
-	// 		background: none;
-	// 		color: $blue;
-	// 		text-shadow: 0.1rem 0.1rem $white;
+	#lore {
+		margin-top: 20vh;
+		font-size: clamp(2rem, 2.1vw, 2.5rem);
+		text-shadow: 0.05rem 0.05rem $blue;
+		line-height: 1.7;
+	}
 
-	// 		&:hover {
-	// 			background-color: azure;
-	// 		}
-	// 	}
-	// }
+	.hunkz-wrapper {
+		width: 80vw;
+		margin: 0 auto;
+		display: grid;
+		grid-template-rows: repeat(2, min-content);
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 3rem;
+	}
+
+	.hunkz-title {
+		grid-column: span 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		font-size: 5rem;
+		letter-spacing: 1px;
+	}
+
+	.hunkz-card {
+		width: minmax(50rem, 1fr);
+		grid-column: 1;
+	}
+
+	.hunkz-img {
+		width: 100%;
+	}
+
+	.hunkz-img img {
+		width: 100%;
+		transition: 0.5s;
+	}
+
+	.hunkz-card p {
+		font-size: 2rem;
+		letter-spacing: 1px;
+		padding: 0.5rem;
+	}
+
+	.hunkz-selector {
+		grid-column: 2;
+		height: 100%;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(5, 1fr);
+	}
+
+	.hunkz-button {
+		font-size: 3rem;
+		border-radius: 2rem;
+		aspect-ratio: 0;
+		border: none;
+		background: none;
+		color: $blue;
+		outline: 0.1rem solid hsl($coolor-cream);
+
+		&:hover {
+			background-color: hsl($coolor-cream);
+		}
+	}
+
+	.selected-hunk {
+		background-color: hsl($coolor-purple);
+	}
+
+	.hunkz-type {
+		display: inline;
+	}
 
 	.content {
 		font-size: 2rem;

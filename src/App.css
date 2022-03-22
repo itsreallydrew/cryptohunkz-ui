@@ -311,7 +311,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .navbar {
     position: fixed;
     display: grid;
-    grid-template-columns: 30vw 1fr;
+    grid-template-columns: 40vw 1fr;
   }
 
   .primary-nav {
@@ -371,7 +371,7 @@ img {
 
 #lore {
   margin-top: 20vh;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   text-shadow: 0.05rem 0.05rem #2a9fd6;
 }
 
@@ -682,6 +682,77 @@ img {
 
 /*********************/
 /*********************/
+@media (min-width: 48.75rem) {
+  .hunkz-wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
+
+  .hunkz-title {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    letter-spacing: 1px;
+  }
+
+  .hunkz-card {
+    width: minmax(50rem, 1fr);
+    grid-column: 1;
+  }
+
+  .hunkz-img {
+    width: 100%;
+  }
+
+  .hunkz-img img {
+    width: 100%;
+    transition: 0.5s;
+  }
+
+  .hunkz-card p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0.5rem;
+  }
+
+  .hunkz-selector {
+    grid-column: 2;
+    height: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .hunkz-button {
+    font-size: 3rem;
+    border-radius: 2rem;
+    aspect-ratio: 0;
+    border: none;
+    background: none;
+    color: #2a9fd6;
+    outline: 0.1rem solid #e9f1ee;
+  }
+  .hunkz-button:hover {
+    background-color: #e9f1ee;
+  }
+
+  .selected-hunk {
+    background-color: #741dd7;
+  }
+
+  .hunkz-type {
+    display: inline;
+  }
+
+  .content {
+    font-size: 2rem;
+  }
+}
 @media (min-width: 60rem) {
   .nav-title-h2 {
     margin: 1rem;
@@ -689,7 +760,7 @@ img {
 
   #lore {
     margin-top: 20vh;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 2.1vw, 2.5rem);
     text-shadow: 0.05rem 0.05rem #2a9fd6;
     line-height: 1.7;
   }
@@ -728,7 +799,6 @@ img {
 
   .hunkz-card p {
     font-size: 2rem;
-    font-family: "LCD Solid";
     letter-spacing: 1px;
     padding: 0.5rem;
   }
