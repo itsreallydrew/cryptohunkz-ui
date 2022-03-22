@@ -22,7 +22,7 @@ img {
 
 #lore {
 	margin-top: 20vh;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	text-shadow: 0.05rem 0.05rem $blue;
 }
 
@@ -400,12 +400,13 @@ img {
 /*********************/
 // Media Queries
 /*********************/
-@media (min-width: 40rem) {
+@media (min-width: 60rem) {
 	.nav-title-h2 {
 		margin: 1rem;
 	}
 
 	#lore {
+		margin-top: 20vh;
 		font-size: 2.5rem;
 		text-shadow: 0.05rem 0.05rem $blue;
 		line-height: 1.7;
