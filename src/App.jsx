@@ -13,7 +13,7 @@ import Hunkz from './components/Hunkz/Hunkz';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const hunkzAddress = '0x7cf1200B9568E0b9B1bB240EDB926aE5655a0eCB';
+const hunkzAddress = '0x4BDb69C7d8798ea075cAfA085Fc8CE0812c8e21F';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);

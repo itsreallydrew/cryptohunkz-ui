@@ -14,7 +14,7 @@ const info = [
 	{
 		question: 'Is there a roadmap?',
 		answer:
-			'Our roadmap is community driven. We have plans that we want to accomplish but our plans our only as strong as our holders.',
+			'Our roadmap is community driven. We have plans that we want to accomplish but our plans are only as strong as our holders.',
 	},
 	{
 		question: 'Why should I buy?',
@@ -22,4 +22,4 @@ const info = [
 	},
 ];
 
-export default info
+export default info;

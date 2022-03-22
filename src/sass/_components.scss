@@ -217,9 +217,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 // }
 
 #modal-button {
-	border-radius: 5rem;
+	margin-block: 10rem;
+	border-radius: 2rem;
 	// width: 8rem;
-	width: 40vw;
+	width: 50vw;
 	height: 8vh;
 	font-size: 1.5rem;
 	text-align: center;

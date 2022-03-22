@@ -51,6 +51,17 @@ const Team = () => {
 					</a>
 				</div>
 			</div>
+			<div className='team-member'>
+				<div className='team-member-frame'>
+					<img src={testImage} alt='' />
+				</div>
+				<div className='dox'>
+					<h3>Junji</h3>
+					<a href='anchor'>
+						<FontAwesomeIcon icon={twitter} className='img' />
+					</a>
+				</div>
+			</div>
 		</div>
 	);
 };
