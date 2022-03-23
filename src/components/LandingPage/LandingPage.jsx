@@ -22,6 +22,7 @@ const LandingPage = () => {
 			<a href='https://discord.gg/xEzS3xaw' className='discord-button'>
 				Join our discord
 			</a>
+			{/* <button>Join Discord</button> */}
 		</div>
 	);
 };

@@ -66,14 +66,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	// font-weight: 600;
 	// font-family: $title-font;
 	letter-spacing: 1px;
-	text-shadow: 0.1rem 0.1rem $blue;
+	text-shadow: 0.15rem 0.15rem hsl($coolor-blue);
 }
 
 .bm-item:hover {
 	cursor: pointer;
 	// color: $blue;
 	color: hsl($coolor-blue);
-	text-shadow: 0.1rem 0.1rem $white;
+	text-shadow: 0.1rem 0.1rem hsl($coolor-cream);
 }
 
 /* Styling of overlay */
@@ -192,15 +192,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	font-size: 1.5rem;
 	text-decoration: none;
 	border-radius: 0.2rem;
-	// border: 0.1rem solid $blue;
 	border: 0.1rem solid hsl($coolor-purple);
 	font-weight: 700;
 	padding: 1rem;
 	// position: relative;
 	border-radius: 2rem;
 	overflow: hidden;
-	color: $blue;
-	// font-family: $title-font;
+	color: hsl($coolor-blue);
 	letter-spacing: 1px;
 }
 
@@ -305,7 +303,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		position: fixed;
 		display: grid;
 		// grid-template-columns: 50vw 1fr;
-		grid-template-columns: 30vw 1fr;
+		grid-template-columns: 40vw 1fr;
 		// background-color: hsl($coolor-purple);
 	}
 
@@ -335,7 +333,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	}
 
 	.connectButton {
-		color: $white;
+		color: hsl($coolor-cream);
 	}
 	.os-icon {
 		display: flex;

@@ -86,9 +86,9 @@ const Nav = ({ connect, account, admin }) => {
 					<a href='anchor' id='twitter' className='icon'>
 						<FontAwesomeIcon icon={twitter} />
 					</a>
-					<a href='anchor' className='os-icon icon'>
+					{/* <a href='anchor' className='os-icon icon'>
 						<img src={opensea} alt='' />
-					</a>
+					</a> */}
 				</div>
 			</div>
 			<BurgerMenu3 connect={connect} account={account} admin={admin} />

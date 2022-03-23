@@ -5,6 +5,8 @@ import CryptoHunkz from '../utils/CryptoHunkz.json';
 import { fadeInDown } from 'react-animations';
 import axios from 'axios';
 import { customStyle } from '../utils/customStyle';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // CONSTANTS
 // const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
@@ -37,47 +39,70 @@ const MintModal = ({
 			let totalPrice = price * amount;
 			let signature = await signer.signMessage(hashedMessage);
 			console.log(totalPrice);
-			let txn = contract.whitelistMint(signature, amount, {
+			let txn = await contract.whitelistMint(signature, amount, {
 				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
 				gasLimit: 3000000,
 			});
-			await txn.wait;
-			console.log(await txn, 'completed');
+
+			toast('NFT is being minted...', {
+				position: 'top-right',
+				autoClose: 12000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+
+			await txn.wait();
+
+			txn &&
+				toast.success('Your NFT has been minted!', {
+					position: 'top-right',
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
+			console.log(txn, 'completed');
 		} else {
 			let price = await contract.price();
 			console.log(price);
 			console.log(amount);
 			let totalPrice = price * amount;
 			console.log(totalPrice);
-			let txn = contract.publicMint(amount, {
+			let txn = await contract.publicMint(amount, {
 				value: ethers.utils.parseUnits(String(totalPrice), 'wei'),
 				gasLimit: 3000000,
 			});
 			await txn.wait;
+
+			toast('NFT is being minted...', {
+				position: 'top-right',
+				autoClose: 12000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+
+			await txn.wait();
+
+			txn &&
+				toast.success('Your NFT has been minted!', {
+					position: 'top-right',
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
 			console.log(await txn, 'completed');
-			notifyMint();
 		}
-		// if (typeof window.ethereum !== 'undefined') {
-		// 	await requestAccount();
-		// 	const provider = new ethers.providers.Web3Provider(window.ethereum);
-		// 	const signer = provider.getSigner();
-		// 	const contract = new ethers.Contract(
-		// 		hunkzAddress,
-		// 		CryptoHunkz.abi,
-		// 		signer
-		// 	);
-		// 	let price = await contract.price();
-		// 	console.log(price);
-		// 	console.log(amount);
-		// 	let totalPrice = price * amount;
-		// 	console.log(totalPrice);
-		// 	let txn = contract.whitelistMint(proof, amount, {
-		// 		value: ethers.utils.parseUnits(totalPrice.toString(), 'wei'),
-		// 		gasLimit: 3000000,
-		// 	});
-		// 	await txn.wait;
-		// 	console.log(await txn, 'completed');
-		// }
 	};
 
 	const handleAmountChange = (e) => {
@@ -86,7 +111,7 @@ const MintModal = ({
 	};
 
 	const raiseAmount = () => {
-		if (amount < 6) {
+		if (amount < 5) {
 			setAmount(amount + 1);
 		}
 	};
@@ -152,7 +177,8 @@ const MintModal = ({
                     </div>
                 </div> */}
 				<p style={pStyles}>price per Hunkz: .077 ETH</p>
-				<p style={pStyles}>balance: {Number(balance).toFixed(4)}</p>
+				{/* <p style={pStyles}>balance: {Number(balance).toFixed(4)}</p> */}
+				<p style={pStyles}>Total: {Number(0.077 * amount).toFixed(3)} ETH</p>
 				<form onSubmit={mintHunkz}>
 					<div
 						className='mint-div'
@@ -167,10 +193,10 @@ const MintModal = ({
 				{/* Div to separate up and down button */}
 				<div className='selection-div'>
 					<button onClick={raiseAmount} className='btn'>
-						up
+						+
 					</button>
 					<button onClick={lowerAmount} className='btn'>
-						down
+						-
 					</button>
 				</div>
 				{/* Div to separate close and balance buttons */}
