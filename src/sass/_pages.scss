@@ -23,7 +23,7 @@ img {
 #lore {
 	margin-top: 20vh;
 	font-size: clamp(1.2rem, 2.5vw, 2rem);
-	text-shadow: 0.05rem 0.05rem $blue;
+	text-shadow: 0.1rem 0.1rem hsl($coolor-blue);
 }
 
 .discord-button {
@@ -123,6 +123,7 @@ img {
 
 .hunkz-title {
 	font-size: 3rem;
+	text-shadow: 0.2rem 0.2rem hsl($coolor-blue);
 }
 
 .hunkz-card {
@@ -137,6 +138,7 @@ img {
 .hunkz-card p {
 	font-size: 1.4rem;
 	text-transform: uppercase;
+	text-shadow: 0.15rem 0.15rem hsl($coolor-blue);
 }
 
 .hunkz-img {
@@ -161,10 +163,10 @@ img {
 	border: none;
 	background-color: hsl($coolor-blue);
 	text-shadow: 0.1rem 0.1rem $white;
-	outline: 0.1rem solid hsl($coolor-cream);
 
 	&:hover {
-		background-color: hsl($coolor-cream);
+		outline: 0.1rem solid hsl($coolor-cream);
+		// background-color: hsl($coolor-cream);
 	}
 }
 
@@ -270,6 +272,7 @@ img {
 	h1 {
 		margin-bottom: 2rem;
 		text-align: center;
+		text-shadow: 0.2rem 0.2rem hsl($coolor-blue);
 	}
 }
 
@@ -356,6 +359,12 @@ img {
 // ******* EDIT MEDIA QUERIES SO THAT REDUNDANT INFO IS REMOVED *******
 
 @media (min-width: 48.75rem) {
+	#lore {
+		margin-top: 20vh;
+		font-size: clamp(2rem, 2.1vw, 2.5rem);
+		text-shadow: 0.2rem 0.2rem hsl($coolor-blue);
+		line-height: 1.7;
+	}
 	.hunkz-wrapper {
 		width: 80vw;
 		margin: 0 auto;
@@ -409,15 +418,17 @@ img {
 		border: none;
 		background: none;
 		color: $blue;
-		outline: 0.1rem solid hsl($coolor-cream);
 
 		&:hover {
-			background-color: hsl($coolor-cream);
+			outline: 0.1rem solid hsl($coolor-cream);
+			color: hsl($coolor-cream);
+			text-shadow: 0.2rem 0.2rem hsl($coolor-blue);
 		}
 	}
 
 	.selected-hunk {
-		background-color: hsl($coolor-purple);
+		background-color: hsl($coolor-cream);
+		border: 0.2rem solid hsl($coolor-purple);
 	}
 
 	.hunkz-type {
@@ -437,7 +448,7 @@ img {
 	#lore {
 		margin-top: 20vh;
 		font-size: clamp(2rem, 2.1vw, 2.5rem);
-		text-shadow: 0.05rem 0.05rem $blue;
+		text-shadow: 0.2rem 0.2rem hsl($coolor-blue);
 		line-height: 1.7;
 	}
 
@@ -494,15 +505,15 @@ img {
 		border: none;
 		background: none;
 		color: $blue;
-		outline: 0.1rem solid hsl($coolor-cream);
 
 		&:hover {
-			background-color: hsl($coolor-cream);
+			outline: 0.1rem solid hsl($coolor-cream);
 		}
 	}
 
 	.selected-hunk {
-		background-color: hsl($coolor-purple);
+		background-color: hsl($coolor-cream);
+		border: 0.2rem solid hsl($coolor-purple);
 	}
 
 	.hunkz-type {
