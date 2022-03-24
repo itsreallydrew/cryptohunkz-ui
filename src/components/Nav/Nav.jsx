@@ -1,11 +1,9 @@
 import React from 'react';
-// import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import {
 	faDiscord as discord,
 	faTwitter as twitter,
 } from '@fortawesome/free-brands-svg-icons';
-import opensea from '../../assets/Logomark-White.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BurgerMenu3 from '../BurgerMenu/BurgerMenu3';
 

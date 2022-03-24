@@ -4,7 +4,6 @@ import zombie from '../assets/zombie.gif';
 import skin from '../assets/skin.gif';
 import legend from '../assets/red_mask.gif';
 
-// const hunkImage = [{ skin }, { alien }, { zombie }, { cyborg }, { legend }];
 const hunkz = [
 	{
 		image: skin,
@@ -19,17 +18,17 @@ const hunkz = [
 	{
 		image: cyborg,
 		description:
-			'The cyborg Hunkz are those who chose to augment parts of their bodies in order to increase the amount of physical activity they could perform. ',
+			'The android Hunkz are those who chose to augment parts of their bodies in order to increase the amount of physical activity they could perform. ',
 	},
 	{
 		image: zombie,
 		description:
-			'The zombie Hunkz are those whose desire to pump outlasted even death,  furthering the reputation of the Hunkz being the strongest in the metaverse.',
+			'The zombie Hunkz are those whose desire to pump outlasted even death.',
 	},
 	{
 		image: legend,
 		description:
-			'The legendary Hunkz are the most elite of all the Hunkz. Each of them is known for accomplishing a feat that is considered impossible to surpass.',
+			'The legendary Hunkz are the most elite of all Hunkz. Each of them is known for accomplishing a feat that is considered impossible to surpass.',
 	},
 ];
 

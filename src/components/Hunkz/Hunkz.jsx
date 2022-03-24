@@ -7,19 +7,10 @@ const Hunkz = () => {
 	const [selected, setSelected] = useState(hunkz[0]);
 	const [index, setIndex] = useState(0);
 
-	console.log(selected, index);
-
 	const onClick = (e) => {
-		// console.log(e.target.attributes[1].value);
-		// console.log(e.target.attributes[2].value);
-		// console.log(e);
-		// const active = e.target.attributes[2].value;
 		const index = e.target.attributes[0].value;
-		// console.log(index);
 		setSelected(hunkz[index]);
 		setIndex(index);
-		// if (active === 'false') {
-		// }
 	};
 
 	// On click function placed on each button that sets the displayed image to the selected image
@@ -62,7 +53,7 @@ const Hunkz = () => {
 						className={`hunkz-button ${
 							index === '2' ? 'selected-hunk' : null
 						}`}>
-						<span className='hunkz-type'>Cyborg</span>
+						<span className='hunkz-type'>Android</span>
 					</button>
 					<button
 						onClick={onClick}
