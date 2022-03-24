@@ -13,7 +13,7 @@ import Hunkz from './components/Hunkz/Hunkz';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const hunkzAddress = '0x4BDb69C7d8798ea075cAfA085Fc8CE0812c8e21F';
+const hunkzAddress = '0x78C20581569C230f9d27417244BbF20BdB0762B3';
 
 function App() {
 	const [account, setCurrentAccount] = useState(null);
@@ -81,9 +81,6 @@ function App() {
 			const account = accounts[0];
 			console.log('Found an authorized account:', account);
 			setCurrentAccount(account);
-			// checkAdmin();
-
-			// setupEventListener();
 		} else {
 			console.log('No authorized account found');
 		}
@@ -107,51 +104,6 @@ function App() {
 			console.log(error);
 		}
 	};
-
-	// const setupEventListener = async () => {
-	// 	try {
-	// 		const { ethereum } = window;
-
-	// 		if (ethereum) {
-	// 			const provider = new ethers.providers.Web3Provider(ethereum);
-	// 			const signer = provider.getSigner();
-	// 			const connectedContract = new ethers.Contract(
-	// 				hunkzAddress,
-	// 				CryptoHunkz.abi,
-	// 				signer
-	// 			);
-
-	// connectedContract.on('NewNFTMinted', (from, tokenId) => {
-	// console.log(from, tokenId.toNumber());
-	// let numMinted = tokenId.toNumber();
-	// let nftLink = `https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`;
-	// setLoading(!loading);
-	// setLink(nftLink);
-	// setTotalMinted(numMinted);
-	// renderInfoToast(tokenId);
-	// alert(`Hey there! We've minted your NFT and sent it to your wallet. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`)
-	// });
-
-	// 		console.log('Setup event listener!');
-	// 	} else {
-	// 		console.log("Ethereum object doesn't exist!");
-	// 	}
-	// } catch (error) {
-	// 	console.log(error);
-	// }
-	// };
-
-	// const checkAdmin = async () => {
-	// 	const provider = new ethers.providers.Web3Provider(window.ethereum);
-	// 	const signer = provider.getSigner();
-	// 	const contract = new ethers.Contract(hunkzAddress, CryptoHunkz.abi, signer);
-	// 	// if address is listed as an admin then set admin setting to true
-	// 	const adminCheck = await contract.admins(account);
-	// 	console.log(adminCheck);
-	// 	if (adminCheck) {
-	// 		setAdmin(true);
-	// 	}
-	// };
 
 	useEffect(() => {
 		checkIfWalletIsConnected();

@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MintModal from '../MintModal';
-
-// CONSTANTS
-// const hunkzAddress = '0x01EB7513d611C20ed9E2E6f2C552A13D9E8013b6';
+import axios from 'axios';
+import { checkVerification } from '../../utils/Functions';
 
 const Mint = ({ account, getBalance, requestAccount, contract }) => {
-	// const Mint = ({ account, mintHunkz, getBalance, requestAccount, notifyMint }) => {
-
 	const [modalIsOpen, setIsOpen] = useState(false);
+	const [verified, setVerified] = useState(false);
 
 	function openModal() {
 		setIsOpen(true);
 	}
 
-	function afterOpenModal() {
-		// references are now sync'd and can be accessed.
-		// subtitle.style.color = '#f00';
-	}
-
 	function closeModal() {
 		setIsOpen(false);
 	}
+
+	async function checkStatus() {
+		try {
+			const res = await axios.post(`http://localhost:7001/api/message/`, {
+				address: account,
+			});
+			let hash = res.data;
+			const status = checkVerification(account, hash);
+			setVerified(status);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	useEffect(() => {
+		checkStatus();
+	}, [account]);
+
+	console.log(`Is user verified?: ${verified}`);
 
 	return (
 		<div>
@@ -38,27 +50,10 @@ const Mint = ({ account, getBalance, requestAccount, contract }) => {
 				closeModal={closeModal}
 				modalIsOpen={modalIsOpen}
 				contract={contract}
+				verified={verified}
 			/>
 		</div>
 	);
-
-	//     return (
-	//         <div>
-	//             <img id='kaiju' src="https://kaijukingz.io/static/media/TextBoxAnimation.7bf70956.gif" alt="hunk-gif" />
-	//             <MintModal
-	//                 mintHunkz={mintHunkz}
-	//                 getBalance={getBalance}
-	//                 account={account}
-	//                 requestAccount={requestAccount}
-	//                 notifyMint={notifyMint}
-
-	//                 openModal={openModal}
-	//                 closeModal={closeModal}
-	//                 modalIsOpen={modalIsOpen}
-	//             />
-
-	//         </div>
-	//     );
 };
 
 export default Mint;

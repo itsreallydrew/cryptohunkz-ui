@@ -13,7 +13,7 @@ const Team = () => {
 				</div>
 				<div className='dox'>
 					<h3>Vanilla Face</h3>
-					<a href='anchor'>
+					<a href='https://twitter.com/0xVanillaFace'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>
 				</div>
@@ -24,7 +24,7 @@ const Team = () => {
 				</div>
 				<div className='dox'>
 					<h3>RKhavoc</h3>
-					<a href='anchor'>
+					<a href='https://twitter.com/kizz2222'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>
 				</div>
@@ -35,7 +35,7 @@ const Team = () => {
 				</div>
 				<div className='dox'>
 					<h3>Elly_Loe</h3>
-					<a href='anchor'>
+					<a href='https://twitter.com/elly_loe'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>
 				</div>
@@ -46,7 +46,7 @@ const Team = () => {
 				</div>
 				<div className='dox'>
 					<h3>_itsreallydrew</h3>
-					<a href='anchor'>
+					<a href='https://twitter.com/_itsreallydrew'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>
 				</div>
@@ -57,7 +57,7 @@ const Team = () => {
 				</div>
 				<div className='dox'>
 					<h3>Junji</h3>
-					<a href='anchor'>
+					<a href='https://twitter.com/Zzz_Junji'>
 						<FontAwesomeIcon icon={twitter} className='img' />
 					</a>
 				</div>
