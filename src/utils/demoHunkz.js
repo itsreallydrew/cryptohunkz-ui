@@ -23,7 +23,7 @@ const hunkz = [
 	{
 		image: zombie,
 		description:
-			'The zombie Hunkz are those whose desire to pump outlasted even death.',
+			'The zombie Hunkz are those whose desire to pump outlasted even death. Their goal is to surpass all of their records they set while they were alive.',
 	},
 	{
 		image: legend,

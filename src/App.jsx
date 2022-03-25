@@ -19,7 +19,6 @@ function App() {
 	const [account, setCurrentAccount] = useState(null);
 	// const [admin, setAdmin] = useState(false);
 	const [contract, setContract] = useState(null);
-	const notifyMint = () => toast.success(`Transaction submitted successfully `);
 
 	const requestAccount = async () => {
 		try {
@@ -123,7 +122,6 @@ function App() {
 					requestAccount={requestAccount}
 					account={account}
 					contract={contract}
-					notifyMint={notifyMint}
 				/>
 			</Element>
 			{/* <Element name='roadmap'>

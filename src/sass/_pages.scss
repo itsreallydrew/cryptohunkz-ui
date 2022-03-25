@@ -129,6 +129,7 @@ img {
 .hunkz-card {
 	grid-column: 2;
 	width: 90%;
+	// height: 50rem;
 }
 
 .hunkz-type {
@@ -163,10 +164,10 @@ img {
 	border: none;
 	background-color: hsl($coolor-blue);
 	text-shadow: 0.1rem 0.1rem $white;
+	height: 5rem;
 
 	&:hover {
 		outline: 0.1rem solid hsl($coolor-cream);
-		// background-color: hsl($coolor-cream);
 	}
 }
 
@@ -417,7 +418,8 @@ img {
 		aspect-ratio: 0;
 		border: none;
 		background: none;
-		color: $blue;
+		color: hsl($coolor-blue);
+		height: auto;
 
 		&:hover {
 			outline: 0.1rem solid hsl($coolor-cream);
@@ -433,6 +435,7 @@ img {
 
 	.hunkz-type {
 		display: inline;
+		pointer-events: none;
 	}
 
 	.content {
@@ -489,6 +492,7 @@ img {
 		font-size: 2rem;
 		letter-spacing: 1px;
 		padding: 0.5rem;
+		line-height: 1.7;
 	}
 
 	.hunkz-selector {
@@ -504,7 +508,8 @@ img {
 		aspect-ratio: 0;
 		border: none;
 		background: none;
-		color: $blue;
+		color: hsl($coolor-blue);
+		height: auto;
 
 		&:hover {
 			outline: 0.1rem solid hsl($coolor-cream);
@@ -518,6 +523,7 @@ img {
 
 	.hunkz-type {
 		display: inline;
+		pointer-events: none;
 	}
 
 	.content {
