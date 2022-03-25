@@ -175,7 +175,7 @@ const MintModal = ({
 				</h2>
 				<p>Total Minted: {Number(minted)} / 7777</p>
 				{/* <div className="progress">
-                    <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                    <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="7777" style="width: 75%;">
                     </div>
                 </div> */}
 				<p style={pStyles}>price per Hunkz: .077 ETH</p>

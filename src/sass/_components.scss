@@ -144,15 +144,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	padding: 15rem 3rem;
 	position: fixed;
 	inset: 0 35% 0 0;
-	// background-color: steelblue;
 	background-color: hsl($coolor-blue);
 	backdrop-filter: blur(100rem);
 	transform: translateX(-100%);
 	z-index: 700;
 
-	// display: flex;
-	// flex-direction: column;
-	// align-items: flex-start;
 	display: grid;
 	grid-template-rows: repeat(9, min-content);
 	justify-content: flex-start;
@@ -195,7 +191,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	border: 0.1rem solid hsl($coolor-purple);
 	font-weight: 700;
 	padding: 1rem;
-	// position: relative;
 	border-radius: 2rem;
 	overflow: hidden;
 	color: hsl($coolor-blue);
@@ -294,6 +289,54 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /**********************/
 
 // iPad to Desktop Display
+@media (min-width: 48.75rem) {
+	.mobile-menu {
+		display: none;
+	}
+
+	.navbar {
+		position: fixed;
+		display: grid;
+		grid-template-columns: 40vw 1fr;
+	}
+
+	.primary-nav {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		column-gap: 1rem;
+	}
+
+	.bm-item {
+		text-decoration: none;
+		font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+	}
+
+	.social-icons {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	a {
+		color: white;
+	}
+
+	#discord,
+	#twitter {
+		font-size: 2rem;
+	}
+
+	.connectButton {
+		color: hsl($coolor-cream);
+	}
+	.os-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
 @media (min-width: 60rem) {
 	.mobile-menu {
 		display: none;
@@ -311,10 +354,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
+		column-gap: 1rem;
 	}
 
 	.bm-item {
 		text-decoration: none;
+		font-size: clamp(1.2rem, 1.5vw, 1.8rem);
 	}
 
 	.social-icons {

@@ -303,6 +303,54 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /**********************/
 /**********************/
+@media (min-width: 48.75rem) {
+  .mobile-menu {
+    display: none;
+  }
+
+  .navbar {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 40vw 1fr;
+  }
+
+  .primary-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  .bm-item {
+    text-decoration: none;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  a {
+    color: white;
+  }
+
+  #discord,
+#twitter {
+    font-size: 2rem;
+  }
+
+  .connectButton {
+    color: #e9f1ee;
+  }
+
+  .os-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media (min-width: 60rem) {
   .mobile-menu {
     display: none;
@@ -318,10 +366,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    column-gap: 1rem;
   }
 
   .bm-item {
     text-decoration: none;
+    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
   }
 
   .social-icons {
@@ -497,6 +547,7 @@ img {
   border: none;
   background-color: #1b97de;
   text-shadow: 0.1rem 0.1rem #fff;
+  height: 5rem;
 }
 .hunkz-button:hover {
   outline: 0.1rem solid #e9f1ee;
@@ -743,7 +794,8 @@ img {
     aspect-ratio: 0;
     border: none;
     background: none;
-    color: #2a9fd6;
+    color: #1b97de;
+    height: auto;
   }
   .hunkz-button:hover {
     outline: 0.1rem solid #e9f1ee;
@@ -758,6 +810,7 @@ img {
 
   .hunkz-type {
     display: inline;
+    pointer-events: none;
   }
 
   .content {
@@ -812,6 +865,7 @@ img {
     font-size: 2rem;
     letter-spacing: 1px;
     padding: 0.5rem;
+    line-height: 1.7;
   }
 
   .hunkz-selector {
@@ -827,7 +881,8 @@ img {
     aspect-ratio: 0;
     border: none;
     background: none;
-    color: #2a9fd6;
+    color: #1b97de;
+    height: auto;
   }
   .hunkz-button:hover {
     outline: 0.1rem solid #e9f1ee;
@@ -840,6 +895,7 @@ img {
 
   .hunkz-type {
     display: inline;
+    pointer-events: none;
   }
 
   .content {
