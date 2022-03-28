@@ -28,12 +28,12 @@ img {
 
 .discord-button {
 	font-size: 1.5rem;
-	display: inline-block;
-	// margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-decoration: none;
 	color: hsl($coolor-cream);
 	border-radius: 0.2rem;
-	// border: 0.1rem solid $blue;
 	border: 0.1rem solid hsl($coolor-purple);
 	background: linear-gradient(
 		to right,
@@ -71,7 +71,8 @@ img {
 	transition: all 0.5s ease;
 }
 
-.discord-button:hover {
+.discord-button:hover,
+.discord-button:focus {
 	color: transparent;
 	transition: all 0.5s;
 }
@@ -166,7 +167,8 @@ img {
 	text-shadow: 0.1rem 0.1rem $white;
 	height: 5rem;
 
-	&:hover {
+	&:hover,
+	:focus {
 		outline: 0.1rem solid hsl($coolor-cream);
 	}
 }
@@ -214,7 +216,8 @@ img {
 		font-size: 1.4rem;
 	}
 
-	&:hover {
+	&:hover,
+	:focus {
 		box-shadow: 0rem 0.05rem 0.1rem $teal;
 		color: $teal;
 	}
@@ -299,7 +302,8 @@ img {
 	font-size: 3rem;
 }
 
-.item-title:hover {
+.item-title:hover,
+.item-title:focus {
 	cursor: pointer;
 }
 
@@ -335,11 +339,15 @@ img {
 
 .active,
 .question-1:hover,
+.question-1:focus,
 .question-2:hover,
+.question-2:focus,
 .question-3:hover,
+.question-3:focus,
 .question-4:hover,
-.question-5:hover {
-	background-color: $blue;
+.question-4:focus,
+.question-5:hover .question-5:focus {
+	background-color: hsl($coolor-blue);
 }
 
 .panel {
@@ -421,7 +429,8 @@ img {
 		color: hsl($coolor-blue);
 		height: auto;
 
-		&:hover {
+		&:hover,
+		:focus {
 			outline: 0.1rem solid hsl($coolor-cream);
 			color: hsl($coolor-cream);
 			text-shadow: 0.2rem 0.2rem hsl($coolor-blue);
@@ -511,7 +520,8 @@ img {
 		color: hsl($coolor-blue);
 		height: auto;
 
-		&:hover {
+		&:hover,
+		:focus {
 			outline: 0.1rem solid hsl($coolor-cream);
 		}
 	}
