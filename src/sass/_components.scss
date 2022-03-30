@@ -297,7 +297,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	.navbar {
 		position: fixed;
 		display: grid;
-		grid-template-columns: 40vw 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2rem;
 	}
 
 	.primary-nav {
@@ -309,7 +310,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 	.bm-item {
 		text-decoration: none;
-		font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+		font-size: 1.2rem;
 	}
 
 	.social-icons {
@@ -329,6 +330,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 	.connectButton {
 		color: hsl($coolor-cream);
+		font-size: 1.2rem;
 	}
 	.os-icon {
 		display: flex;

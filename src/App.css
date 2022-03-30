@@ -12,6 +12,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -311,7 +312,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .navbar {
     position: fixed;
     display: grid;
-    grid-template-columns: 40vw 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
   }
 
   .primary-nav {
@@ -323,7 +325,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   .bm-item {
     text-decoration: none;
-    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    font-size: 1.2rem;
   }
 
   .social-icons {
@@ -343,6 +345,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   .connectButton {
     color: #e9f1ee;
+    font-size: 1.2rem;
   }
 
   .os-icon {
@@ -427,7 +430,9 @@ img {
 
 .discord-button {
   font-size: 1.5rem;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: #e9f1ee;
   border-radius: 0.2rem;
@@ -461,7 +466,8 @@ img {
   transition: all 0.5s ease;
 }
 
-.discord-button:hover {
+.discord-button:hover,
+.discord-button:focus {
   color: transparent;
   transition: all 0.5s;
 }
@@ -549,7 +555,8 @@ img {
   text-shadow: 0.1rem 0.1rem #fff;
   height: 5rem;
 }
-.hunkz-button:hover {
+.hunkz-button:hover,
+.hunkz-button :focus {
   outline: 0.1rem solid #e9f1ee;
 }
 
@@ -601,10 +608,15 @@ img {
   font-size: 1.4rem;
 }
 .item-1-content:hover,
+.item-1-content :focus,
 .item-2-content:hover,
+.item-2-content :focus,
 .item-3-content:hover,
+.item-3-content :focus,
 .item-4-content:hover,
-.item-5-content:hover {
+.item-4-content :focus,
+.item-5-content:hover,
+.item-5-content :focus {
   box-shadow: 0rem 0.05rem 0.1rem #20c997;
   color: #20c997;
 }
@@ -679,7 +691,8 @@ img {
   font-size: 3rem;
 }
 
-.item-title:hover {
+.item-title:hover,
+.item-title:focus {
   cursor: pointer;
 }
 
@@ -715,11 +728,15 @@ img {
 
 .active,
 .question-1:hover,
+.question-1:focus,
 .question-2:hover,
+.question-2:focus,
 .question-3:hover,
+.question-3:focus,
 .question-4:hover,
-.question-5:hover {
-  background-color: #2a9fd6;
+.question-4:focus,
+.question-5:hover .question-5:focus {
+  background-color: #1b97de;
 }
 
 .panel {
@@ -797,7 +814,8 @@ img {
     color: #1b97de;
     height: auto;
   }
-  .hunkz-button:hover {
+  .hunkz-button:hover,
+.hunkz-button :focus {
     outline: 0.1rem solid #e9f1ee;
     color: #e9f1ee;
     text-shadow: 0.2rem 0.2rem #1b97de;
@@ -884,7 +902,8 @@ img {
     color: #1b97de;
     height: auto;
   }
-  .hunkz-button:hover {
+  .hunkz-button:hover,
+.hunkz-button :focus {
     outline: 0.1rem solid #e9f1ee;
   }
 
