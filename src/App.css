@@ -109,6 +109,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item {
   display: inline-block;
   font-size: 1.5rem;
+  color: #e9f1ee;
   letter-spacing: 1px;
   text-shadow: 0.15rem 0.15rem #1b97de;
 }
@@ -204,6 +205,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 2rem;
   color: #fff;
   position: relative;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  font-size: 1.5rem;
 }
 
 .icon:hover {
@@ -329,7 +337,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 
   .social-icons {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
   }
@@ -378,7 +386,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 
   .social-icons {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
   }
