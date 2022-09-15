@@ -307,6 +307,10 @@ img {
 	cursor: pointer;
 }
 
+.item-title span:hover{
+	color: hsl($coolor-purple);
+}
+
 .content {
 	font-size: 1.5rem;
 	max-height: 0;
