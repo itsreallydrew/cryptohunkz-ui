@@ -229,9 +229,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 #modal-button:hover,
 #modal-button:focus {
-	color: hsl($coolor-purple);
+	// color: hsl($coolor-purple);
 	background-color: hsl($coolor-green);
-	border-color: hsl($coolor-purple);
+	// border-color: hsl($coolor-cream);
+	border: .25rem solid hsl($coolor-cream);
 }
 
 @keyframes changeGradient {
